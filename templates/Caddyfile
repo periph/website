@@ -30,7 +30,7 @@ periph.io {
     X-Content-Type-Options "nosniff"
     # Disallow the site to be rendered within a frame (clickjacking protection)
     X-Frame-Options "DENY"
-	}
+  }
 
   header /x/ {
     # TODO(maruel): Work around a bug in the way the template is processed,
@@ -49,7 +49,7 @@ periph.io {
   templates /templates/gopkg.tpl
 
   markdown {
-   template /templates/default.tpl
+    template /templates/default.tpl
   }
 
   internal /.git
