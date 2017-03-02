@@ -1,5 +1,7 @@
 ---
 title: Periph
+author: Marc-Antoine Ruel
+description: Home page
 ---
 
 # Periph
