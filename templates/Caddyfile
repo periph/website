@@ -1,0 +1,56 @@
+# Example Caddyfile
+
+periph.io {
+  gzip
+  tls me@gmail.com
+  log / /var/log/caddy/periph.io.log "{when} {status} {remote} {method} {latency} {size} {uri} {>Referer
+    rotate {
+      size 100 # Rotate after 100 MB
+      age  120 # Keep log files for 120 days
+      keep 100 # Keep at most 100 log files
+    }
+  }
+  errors {
+    log /var/log/caddy/periph.io.err {
+      size 100 # Rotate after 100 MB
+      age  120 # Keep log files for 120 days
+      keep 100 # Keep at most 100 log files
+    }
+  }
+  
+  # https://davidlazar.org/blog/003-golang-custom-import-domain-with-caddy.txt
+  
+  header / {
+    # Enable HTTP Strict Transport Security (HSTS) to force clients to always
+    # connect via HTTPS (do not use if only testing)
+    Strict-Transport-Security "max-age=31536000;"
+    # Enable cross-site filter (XSS) and tell browser to block detected attacks
+    X-XSS-Protection "1; mode=block"
+    # Prevent some browsers from MIME-sniffing a response away from the declared Content-Type
+    X-Content-Type-Options "nosniff"
+    # Disallow the site to be rendered within a frame (clickjacking protection)
+    X-Frame-Options "DENY"
+	}
+
+  header /x/ {
+    # TODO(maruel): Work around a bug in the way the template is processed,
+    # which causes the files to be downloaded due to Content-Type:
+    # application/gzip.
+    Content-Disposition "inline"
+    Content-Type "text/html; charset=utf-8"
+  }
+  
+  rewrite /x/ {
+    to /templates/gopkg.tpl?path={path}
+  }
+  
+  root periph.io
+  
+  templates /templates/gopkg.tpl
+
+  markdown {
+   template /templates/default.tpl
+  }
+
+  internal /templates
+}   
