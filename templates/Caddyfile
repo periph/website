@@ -52,5 +52,6 @@ periph.io {
    template /templates/default.tpl
   }
 
+  internal /.git
   internal /templates
 }   
