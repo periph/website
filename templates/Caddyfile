@@ -52,6 +52,10 @@ periph.io {
     template /templates/default.tpl
   }
 
+  # Do not serve .git if present.
   internal /.git
-  internal /templates
+  # TODO(maruel): Keeping this line fails as it returns a 404. That's a bit
+  # unexpected. It's not a big deal to serve these files for now until we find a
+  # solution.
+  #internal /templates
 }   

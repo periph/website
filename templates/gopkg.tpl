@@ -7,10 +7,10 @@
 <head>
   <meta charset="utf-8">
   {{- if eq $repoName "periph" -}}
-    <meta name="go-import" content="periph.io/x/{{$repoName}} git https://github.com/google/{{$repoName}
+    <meta name="go-import" content="periph.io/x/{{$repoName}} git https://github.com/google/{{$repoName}}" />
     <meta http-equiv="refresh" content="0; URL='https://godoc.org/periph.io{{$path}}'" />
   {{- else -}}
-    <meta name="go-import" content="periph.io/x/{{$repoName}} git https://github.com/periph/{{$repoName}
+    <meta name="go-import" content="periph.io/x/{{$repoName}} git https://github.com/periph/{{$repoName}}" />
     <meta http-equiv="refresh" content="0; URL='https://godoc.org/periph.io{{$path}}'" />
   {{- end -}}
 </head>
