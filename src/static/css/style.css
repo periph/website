@@ -29,3 +29,7 @@ blockquote, dl, figure, form, ol, p, pre, table, ul {
 ol ol, ol ul, ul ol, ul ul {
   margin: 0.5rem 0 0.5rem 3rem;
 }
+
+.up-link {
+  float: right;
+}
