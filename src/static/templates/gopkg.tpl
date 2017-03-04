@@ -23,16 +23,6 @@
 		ga('send', 'pageview');
 	</script>
 </head>
-<body>
-  <h1>Periph</h1>
-  Are you looking for a Go package?<p>
-  Maybe it exists on
-  {{- if eq $repoName "periph" -}}
-    <a href="https://github.com/google/{{$repoName}}">Github</a>,
-  {{- else -}}
-    <a href="https://github.com/periph/{{$repoName}}">Github</a>,
-  {{- end -}}
-  or on <a href="https://godoc.org/periph.io{{$path}}">GoDoc</a>.
-</body>
+<body>Redirecting to <a href="https://godoc.org/periph.io{{$path}}">https://godoc.org/periph.io{{$path}}</a>...</body>
 </html>
 {{- end -}}
