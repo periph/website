@@ -7,15 +7,27 @@ set -eu
 
 cd "$(dirname $0)"
 
-# Start clean, so files do not accumulate.
-rm -rf root
+## Preparation
+
+# Remove any stale junk if any.
+rm -rf root.old root.new
 # Copy all the documentation from <repo>/doc into src/content/doc
 rsync -r --delete periph/doc src/content
 # Rename all README.md files (default served by github) to index.md (default
 # served by hugo).
 find src/content/doc -type f -name README.md -exec bash -c 'mv "$0" "${0/README/index}"' {} \;
+
+## Generation
+
 # Do the generation of the static web site.
-hugo -s src -d ../root
+hugo -s src -d ../root.new
 # Precompress all the files, so caddy can serve pre-compressed files without
 # having to compress on the fly, leading to zero-CPU static file serving.
-find root -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) -exec gzip -v -k -f --best {} \;
+find root.new -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) -exec gzip -v -k -f --best {} \;
+
+## Making it live
+
+# Now that the new site is ready, switch the old site for the new one.
+mv root root.old
+mv root.new root
+rm -rf root.old
