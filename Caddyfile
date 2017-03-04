@@ -33,7 +33,7 @@ periph.io {
       keep 100 # Keep at most 100 log files
     }
   }
-  
+
   header / {
     # Enable HTTP Strict Transport Security (HSTS) to force clients to always
     # connect via HTTPS (do not use if only testing)
