@@ -1,7 +1,7 @@
 # Example Caddyfile
 
 www.periph.io {
-  log / /var/log/caddy/www.periph.io.log "{when} {status} {remote} {method} {latency} {size} {uri} {>Ref
+  log / /var/log/caddy/www.periph.io.log "{when} {status} {remote} {method} {latency} {size} {uri} {>Referer} {>User-Agent}" {
     rotate {
       size 100 # Rotate after 100 MB
       age  120 # Keep log files for 120 days
@@ -19,7 +19,7 @@ www.periph.io {
 }
 
 periph.io {
-  log / /var/log/caddy/periph.io.log "{when} {status} {remote} {method} {latency} {size} {uri} {>Referer
+  log / /var/log/caddy/periph.io.log "{when} {status} {remote} {method} {latency} {size} {uri} {>Referer} {>User-Agent}" {
     rotate {
       size 100 # Rotate after 100 MB
       age  120 # Keep log files for 120 days
@@ -55,11 +55,11 @@ periph.io {
     Content-Disposition "inline"
     Content-Type "text/html; charset=utf-8"
   }
-  
+
   rewrite /x/ {
     to /templates/gopkg.tpl?path={path}
   }
-  
+
   root periph.io/root
 
   git https://github.com/periph/website .. {
@@ -72,6 +72,29 @@ periph.io {
     hook /api/update/periph <ADD SECRET HERE>
     then ./gen.sh
   }
-  
+
   templates /templates/gopkg.tpl
+}
+
+ci.periph.io {
+  log / /var/log/caddy/ci.periph.io.log "{when} {status} {remote} {method} {latency} {size} {uri} {>Referer} {>User-Agent}" {
+    rotate {
+      size 100 # Rotate after 100 MB
+      age  120 # Keep log files for 120 days
+      keep 100 # Keep at most 100 log files
+    }
+  }
+  errors {
+    log /var/log/caddy/ci.periph.io.err {
+      size 100 # Rotate after 100 MB
+      age  120 # Keep log files for 120 days
+      keep 100 # Keep at most 100 log files
+    }
+  }
+
+  # webhooks for gohci look like this.
+  #proxy /github/periph/device 127.0.0.1:1234 {
+  #  transparent
+  #  without /github/periph/device
+  #}
 }
