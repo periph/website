@@ -1,8 +1,24 @@
 # Example Caddyfile
 
+www.periph.io {
+  log / /var/log/caddy/www.periph.io.log "{when} {status} {remote} {method} {latency} {size} {uri} {>Ref
+    rotate {
+      size 100 # Rotate after 100 MB
+      age  120 # Keep log files for 120 days
+      keep 100 # Keep at most 100 log files
+    }
+  }
+  errors {
+    log /var/log/caddy/www.periph.io.err {
+      size 100 # Rotate after 100 MB
+      age  120 # Keep log files for 120 days
+      keep 100 # Keep at most 100 log files
+    }
+  }
+  redir / https://periph.io{uri} 307
+}
+
 periph.io {
-  gzip
-  tls me@gmail.com
   log / /var/log/caddy/periph.io.log "{when} {status} {remote} {method} {latency} {size} {uri} {>Referer
     rotate {
       size 100 # Rotate after 100 MB
@@ -17,8 +33,6 @@ periph.io {
       keep 100 # Keep at most 100 log files
     }
   }
-  
-  # https://davidlazar.org/blog/003-golang-custom-import-domain-with-caddy.txt
   
   header / {
     # Enable HTTP Strict Transport Security (HSTS) to force clients to always
@@ -60,4 +74,4 @@ periph.io {
   }
   
   templates /templates/gopkg.tpl
-}   
+}
