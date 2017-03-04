@@ -24,7 +24,8 @@
 	</script>
 </head>
 <body>
-  Are you looking for a Go package?
+  <h1>Periph</h1>
+  Are you looking for a Go package?<p>
   Maybe it exists on
   {{- if eq $repoName "periph" -}}
     <a href="https://github.com/google/{{$repoName}}">Github</a>,

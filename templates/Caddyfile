@@ -47,10 +47,13 @@ periph.io {
   }
   
   root periph.io
+
+  ext .md
   
   templates /templates/gopkg.tpl
 
   markdown {
+    ext .md
     template /templates/default.tpl
   }
 
