@@ -50,21 +50,14 @@ periph.io {
 
   git https://github.com/periph/website .. {
     hook /api/update/website <ADD SECRET HERE>
-    then hugo --destination=/home/user/hugosite/public
+    then ./gen.sh
   }
 
   # As periph.io/periph
-  git https://github.com/google/periph periph {
+  git ...periph periph {
     hook /api/update/periph <ADD SECRET HERE>
-    then hugo --destination=/home/user/hugosite/public
+    then ./gen.sh
   }
-
-  ext .md
   
   templates /templates/gopkg.tpl
-
-  markdown {
-    ext .md
-    template /templates/default.tpl
-  }
 }   
