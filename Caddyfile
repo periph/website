@@ -46,7 +46,18 @@ periph.io {
     to /templates/gopkg.tpl?path={path}
   }
   
-  root periph.io
+  root periph.io/root
+
+  git https://github.com/periph/website .. {
+    hook /api/update/website <ADD SECRET HERE>
+    then hugo --destination=/home/user/hugosite/public
+  }
+
+  # As periph.io/periph
+  git https://github.com/google/periph periph {
+    hook /api/update/periph <ADD SECRET HERE>
+    then hugo --destination=/home/user/hugosite/public
+  }
 
   ext .md
   
@@ -56,11 +67,4 @@ periph.io {
     ext .md
     template /templates/default.tpl
   }
-
-  # Do not serve .git if present.
-  internal /.git
-  # TODO(maruel): Keeping this line fails as it returns a 404. That's a bit
-  # unexpected. It's not a big deal to serve these files for now until we find a
-  # solution.
-  #internal /templates
 }   
