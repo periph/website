@@ -7,6 +7,8 @@ set -eu
 
 cd "$(dirname $0)"
 
+# Start clean, so files do not accumulate.
+rm -rf root
 # Copy all the documentation from <repo>/doc into src/content/doc
 rsync -r --delete periph/doc src/content
 # Rename all README.md files (default served by github) to index.md (default
@@ -16,4 +18,4 @@ find src/content/doc -type f -name README.md -exec bash -c 'mv "$0" "${0/README/
 hugo -s src -d ../root
 # Precompress all the files, so caddy can serve pre-compressed files without
 # having to compress on the fly, leading to zero-CPU static file serving.
-find root -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) -exec gzip -v -k -f --best \;
+find root -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) -exec gzip -v -k -f --best {} \;
