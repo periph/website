@@ -11,11 +11,6 @@ cd "$(dirname $0)"
 
 # Remove any stale junk if any.
 rm -rf root.old root.new
-# Copy all the documentation from <repo>/doc into src/content/doc
-rsync -r --delete periph/doc src/content
-# Rename all README.md files (default served by github) to index.md (default
-# served by hugo).
-find src/content/doc -type f -name README.md -exec bash -c 'mv "$0" "${0/README/index}"' {} \;
 
 ## Generation
 
