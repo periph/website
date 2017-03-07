@@ -14,6 +14,10 @@ dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;
 
 /* Custom styles */
 
+body {
+  font-size: 1.75em;
+}
+
 .top {
   background-color: #eeeeff;
   padding: 0.5rem;
