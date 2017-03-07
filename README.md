@@ -17,5 +17,5 @@ Requirements:
   github.com/tdewolff/minify/cmd/minify`
 - caddy to serve over https
 
-The syntax styles was generated with `pygmentize -f html -S colorful -a .syntax
->> src/static/css/style.css` and small modifications.
+The syntax styles was generated with `pygmentize -f html -S colorful -a .syntax >> src/static/css/style.css`
+and small modifications.
