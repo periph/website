@@ -11,8 +11,8 @@ description = "Peripherals I/O in Go"
   [C.H.I.P.](https://getchip.com/) and Windows 10 via
   [gohci](https://github.com/periph/gohci).
 - Interfaces: I²C, SPI, gpio (both low latency memory mapped registers and
-  zero-CPU edge detection), 1-wire and more.
-- Devices: apa102, bme280, ds18b20, ssd1306, tm1637, and more coming.
+  zero-CPU edge detection), 1-wire.
+- Devices: apa102, bme280, ds18b20, ssd1306, tm1637.
 
 
 # Quick links
