@@ -26,7 +26,7 @@ description = "Peripherals I/O in Go"
 
 # Users
 
-periph includes [many ready-to-use
+`periph` includes [many ready-to-use
 tools](https://github.com/google/periph/tree/master/cmd/)! See
 [doc/users/](/doc/users/) for more info on configuring the host and using the
 included tools.
