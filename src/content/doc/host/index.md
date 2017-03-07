@@ -1,4 +1,7 @@
-# periph platforms
++++
+title = "Supported platforms"
+description = "Overview of officially supported platforms"
++++
 
 Periph supports the Linux sysfs drivers for gpio pins, I²C buses, SPI buses,
 LEDs, and thermal sensors. This means that periph supports most **any Linux

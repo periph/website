@@ -1,4 +1,8 @@
-# periph - Samples
++++
+title = "Samples"
+description = "Ready-to-use code snippets"
++++
+
 
 [doc/apps/](../) contains general information for application developpers. The
 complete API documentation, including examples, is at
@@ -12,7 +16,7 @@ To try the following samples, put the code into a file named `sample.go` then
 execute `go run sample.go`.
 
 
-## Toggle a LED
+# Toggle a LED
 
 _Purpose:_ Simplest example
 
@@ -51,7 +55,7 @@ func main() {
 ```
 
 
-## IR (infra red remote)
+# IR (infra red remote)
 
 _Purpose:_ display IR remote keys.
 
@@ -94,7 +98,7 @@ func main() {
 ```
 
 
-## OLED 128x64 display
+# OLED 128x64 display
 
 _Purpose:_ display an animated GIF.
 
@@ -178,7 +182,7 @@ func main() {
 }
 ```
 
-## GPIO Edge detection
+# GPIO Edge detection
 
 _Purpose:_ Signals when a button was pressed or a motion detector detected a
 movement.
@@ -227,7 +231,7 @@ func main() {
 ```
 
 
-## Measuring weather
+# Measuring weather
 
 _Purpose:_ gather temperature, pressure and relative humidity.
 

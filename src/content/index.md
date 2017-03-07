@@ -1,13 +1,11 @@
----
-title: periph
-author: Marc-Antoine Ruel
-description: Home page
----
-
-# periph - Peripherals I/O in Go
++++
+title = "periph"
+author = "Marc-Antoine Ruel"
+description = "Peripherals I/O in Go"
++++
 
 
-## Features
+# Features
 
 - Continuously tested on [Raspberry Pi](https://raspberrypi.org),
   [C.H.I.P.](https://getchip.com/) and Windows 10 via
@@ -17,7 +15,7 @@ description: Home page
 - Devices: apa102, bme280, ds18b20, ssd1306, tm1637, and more coming.
 
 
-## Quick links
+# Quick links
 
 - [doc/users/](/doc/users/) for ready-to-use tools.
 - [doc/apps/](/doc/apps/) to use `periph` as a library. The complete API
@@ -26,7 +24,7 @@ description: Home page
 - [doc/drivers/](/doc/drivers/) to expand the list of supported hardware.
 
 
-## Users
+# Users
 
 periph includes [many ready-to-use
 tools](https://github.com/google/periph/tree/master/cmd/)! See
@@ -45,7 +43,7 @@ gpio-list
 ```
 
 
-## Application developers
+# Application developers
 
 For [application developers](/doc/apps/), `periph` provides OS-independent bus
 interfacing. It really tries hard to _get out of the way_.  Here's the canonical
@@ -86,12 +84,12 @@ This example uses basically no CPU: the `Out()` call doesn't call into the
 kernel. Instead it directly changes the GPIO memory mapped register.
 
 
-### Samples
+## Samples
 
 See [doc/apps/samples/](/doc/apps/samples/) for more examples.
 
 
-## Contributions
+# Contributions
 
 `periph` provides an extensible driver registry and common bus interfaces which
 are explained in more details at [doc/drivers/](/doc/drivers/). `periph` is
@@ -108,7 +106,7 @@ Google Contributor License. Please see
 [doc/drivers/contributing/](/doc/drivers/contributing/) for more details.
 
 
-## Philosophy
+# Philosophy
 
 1. Optimize for simplicity, correctness and usability in that order.
    - e.g. everything, interfaces and structs, uses strict typing, there's no
@@ -151,7 +149,7 @@ Google Contributor License. Please see
      memory mapped GPIO registers to perform single-cycle reads and writes.
 
 
-## Authors
+# Authors
 
 `periph` was initiated by [Marc-Antoine Ruel](https://github.com/maruel). The
 full list of contributors is in
@@ -159,7 +157,7 @@ full list of contributors is in
 [CONTRIBUTORS](https://github.com/google/periph/blob/master/CONTRIBUTORS).
 
 
-## Disclaimer
+# Disclaimer
 
 This is not an official Google product (experimental or otherwise), it
 is just code that happens to be owned by Google.

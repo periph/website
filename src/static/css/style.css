@@ -14,8 +14,14 @@ dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;
 
 /* Custom styles */
 
-h1:first-of-type {
-  background-color: #eeeeff
+.top {
+  background-color: #eeeeff;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.top h1 {
+  margin-bottom: 0;
 }
 
 blockquote, dl, figure, form, ol, p, pre, table, ul {

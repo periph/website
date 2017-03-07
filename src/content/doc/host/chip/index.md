@@ -1,4 +1,7 @@
-# Periph on C.H.I.P
++++
+title = "C.H.I.P."
+description = "NextThing Co's board"
++++
 
 The NextThing Co's C.H.I.P. board is supported by periph using sysfs drivers
 as well as using memory-mapped I/O for gpio pins. The CHIPs use an
@@ -13,7 +16,7 @@ In terms of headers, the `host/chip` package exports the two U13 and U14
 headers.
 
 
-## Tips and tricks
+# Tips and tricks
 
 CHIP is described at NextThing's [product
 page](https://www.getchip.com/pages/chip) and in much more detail in the [CHIP
@@ -49,7 +52,7 @@ rather limited due to the device and the driver (for example, the driver
 interrupts on all edges).
 
 
-## SPI
+# SPI
 
 SPI is not enabled by default. Run the following as root on a recent (4.4+)
 kernel:

@@ -1,7 +1,10 @@
-# periph - Goals
++++
+title = "Goals"
+description = "Design goals"
++++
 
 
-## Abstract
+# Abstract
 
 Go developped a fairly large hardware hacker community in part because the
 language and its tooling have the following properties:
@@ -22,7 +25,7 @@ growing organically) with strict [code requirements](../#requirements) and a
 maintenance.
 
 
-## Goals
+# Goals
 
 `periph` was created as an anwer to specific goals:
 
@@ -70,14 +73,14 @@ maintenance.
   [Background](../#background).
 
 
-## Success criteria
+# Success criteria
 
 - Preferred library used by first time Go users and by experts.
 - Becomes the defacto HAL library.
 - Becomes the central link for hardware support.
 
 
-## Risks
+# Risks
 
 The risks below are being addressed via a strong commitment to [driver lifetime
 management](../#driver-lifetime-management) and having a high quality bar via an
@@ -104,7 +107,7 @@ and
 but the lack of core repository and coherency is less dramatic.
 
 
-### Users
+## Users
 
 - The library is rejected by users as being too cryptic or hard to use.
 - The device drivers are unreliable or non functional, as observed by users.
@@ -112,7 +115,7 @@ but the lack of core repository and coherency is less dramatic.
 - Missing drivers.
 
 
-### Contributors
+## Contributors
 
 - Lack of API stability; high churn rate.
 - Poor fitting of the core interfaces.

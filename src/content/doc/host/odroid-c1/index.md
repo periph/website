@@ -1,6 +1,9 @@
-# Periph on Odroid-C1
++++
+title = "ODROID-C1"
+description = "HardKernel board"
++++
 
-The Odroid-C1, Odroid-C1+, and Odroid-C0 boards are supported by periph using
+The ODROID-C1, ODROID-C1+, and ODROID-C0 boards are supported by periph using
 the sysfs drivers.  These boards use an Amlogic S805 processor (called
 "meson_8b" in the linux kernel).  Currently no package for memory-mapped I/O has
 been written for this processor, thus all gpio functions are implemented via
@@ -15,7 +18,7 @@ which is rPi compatible except for a couple of analog pins (which are not
 currently supported).
 
 
-## Tips and tricks
+# Tips and tricks
 
 The ODROID-C1+ is described on Hardkernel's web site:
 [ODroid-C1+](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G143703355573&tab_idx=2).

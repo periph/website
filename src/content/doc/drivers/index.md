@@ -1,11 +1,10 @@
-# periph - Device driver developers
++++
+title = "Device driver developers"
+description = "Device driver developers who either want to develop a device driver in their own code base or want to submit a contribution to extend the supported hardware"
++++
 
-Documentation for _device driver developers_ who either want to develop a
-device driver in their own code base or want to submit a contribution to extend
-the hardware supported by `periph`.
 
-
-## Background
+# Background
 
 The main purpose of `periph` is to provide interfaces to assemble components
 to communicate with hardware peripherals. As such, it splits boards
@@ -19,7 +18,7 @@ Read more about the [detailed design](design/) to understand more about how
 things are done.
 
 
-### Classes of hardware
+## Classes of hardware
 
 This document distinguishes two classes of drivers:
 
@@ -31,7 +30,7 @@ This document distinguishes two classes of drivers:
   subclasses of devices like sensors, output devices, etc.
 
 
-## Driver lifetime management
+# Driver lifetime management
 
 Proper driver lifetime management is key to the success of this project. There
 must be clear expectations to add, update and remove drivers for the core
@@ -44,7 +43,7 @@ that of software-only projects, there’s an inherent faith in the quality of th
 code that must be asserted.
 
 
-### Experimental
+## Experimental
 
 Any driver can be requested to be added to the library under the
 [experimental/](https://github.com/google/periph/tree/master/experimental/)
@@ -65,7 +64,7 @@ There is no API compatibility guarantee for drivers under
 [experimental/](https://github.com/google/periph/tree/master/experimental/).
 
 
-### Stable
+## Stable
 
 A driver in
 [experimental/](https://github.com/google/periph/tree/master/experimental/) can
@@ -87,7 +86,7 @@ following process must be followed:
 - At this point the driver must maintain an API compatibility promise.
 
 
-### Deprecation
+## Deprecation
 
 A driver can be subsumed by a newer driver with a better core implementation or
 a new breaking API. The previous driver must be deprecated, moved back to
@@ -95,7 +94,7 @@ a new breaking API. The previous driver must be deprecated, moved back to
 announced to be deleted after _TO BE DETERMINED_ amount of time.
 
 
-### Contributing a new driver
+## Contributing a new driver
 
 A new proposed driver must first be implemented out of tree and fit all the
 items in [Requirements](#requirements) listed below. It can then be proposed as
@@ -103,7 +102,7 @@ items in [Requirements](#requirements) listed below. It can then be proposed as
 [Stable](#stable).
 
 
-## Requirements
+# Requirements
 
 All the code must fit the following requirements.
 
@@ -177,7 +176,7 @@ use this as a learning experience.
 - License is Apache v2.0.
 
 
-## Code style
+# Code style
 
 - The code tries to follow Go code style as described at
   https://github.com/golang/go/wiki/CodeReviewComments

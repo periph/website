@@ -1,4 +1,7 @@
-# periph
++++
+title = "Documentation"
+description = "Complementary information to godoc"
++++
 
 periph is a Peripheral I/O library in Go.
 

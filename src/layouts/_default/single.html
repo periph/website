@@ -26,6 +26,11 @@
         {{- if len .File.Dir | ne 0 -}}
         <div class="up-link"><a href="..">Up</a></div>
         {{- end -}}
+        <div id="top" class="top">
+          <h1>{{ .Title }}</h1>
+          <div>{{ .Description }}</div>
+        </div>
+        <div id="toc">{{ .TableOfContents }}</div>
         {{- .Content -}}
       </div>
     </div>

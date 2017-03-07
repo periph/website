@@ -1,13 +1,13 @@
-# periph - Application developers
-
-Documentation for _application developers_ who want to write Go applications
-leveraging `periph`.
++++
+title = "Application developers"
+description = "Application developers who want to write Go applications leveraging periph"
++++
 
 The complete API documentation, including examples, is at
 [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://godoc.org/periph.io/x/periph).
 
 
-## Introduction
+# Introduction
 
 `periph` uses a driver registry to efficiently load the relevant drivers on the
 host it is running on. It differentiates between drivers that _enable_
@@ -37,7 +37,7 @@ In this case the application needs to obtain a handle to the SPI bus and then
 connect the LED device driver to the SPI bus handle.
 
 
-## Project state
+# Project state
 
 The library is **not stable** yet and breaking changes continuously happen.
 Please version the libary using [one of the go vendoring
@@ -45,7 +45,7 @@ tools](https://github.com/golang/go/wiki/PackageManagementTools) and sync
 frequently.
 
 
-## Initialization
+# Initialization
 
 The function to initialize the drivers registered by default is
 [host.Init()](https://godoc.org/periph.io/x/periph/host#Init). It
@@ -71,7 +71,7 @@ the same name were registered. This is a fatal failure. The package
 drivers under it.
 
 
-## Connection
+# Connection
 
 A connection
 [conn.Conn](https://godoc.org/periph.io/x/periph/conn#Conn)
@@ -84,7 +84,7 @@ multiple connections (slaves) to the master, each addressed by the device
 address.
 
 
-### SPI connection
+## SPI connection
 
 An
 [spi.Conn](https://godoc.org/periph.io/x/periph/conn/spi#Conn)
@@ -94,7 +94,7 @@ spi.Conn is locked on a specific CS line, so it is effectively treated as a
 point-to-point connection and not as a bus.
 
 
-### I²C connection
+## I²C connection
 
 An [i2c.Bus](https://godoc.org/periph.io/x/periph/conn/i2c#Bus) is **not**
 a [conn.Conn](https://godoc.org/periph.io/x/periph/conn#Conn).
@@ -118,18 +118,18 @@ Since many devices have their address hardcoded, it's up to the device driver to
 specify the address.
 
 
-### GPIO
+## GPIO
 
 [gpio pins](https://godoc.org/periph.io/x/periph/conn/gpio#PinIO)
 can be leveraged for arbitrary uses, such as buttons, LEDs, relays, etc. 
 
 
-## Samples
+# Samples
 
 See [samples/](samples/) for various examples.
 
 
-## Using out-of-tree drivers
+# Using out-of-tree drivers
 
 Out of tree drivers can be seamlessly loaded by an application. The example
 below shows a hypothetical driver located at github.com/example/virtual_i2c that

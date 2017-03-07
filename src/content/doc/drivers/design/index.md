@@ -1,12 +1,15 @@
-# periph - Design
++++
+title = "Design"
+description = "Dive into some of the key design elements"
++++
 
-This document dives into some of the key design elements. Read more [about the
-goals](../goals/) first if necessary.
+
+Read more [about the goals](../goals/) first if necessary.
 
 
-## Registries
+# Registries
 
-### Driver registry
+## Driver registry
 
 The core of extensibility is implemented as an in-process driver registry. The
 things that make it work are:
@@ -29,7 +32,7 @@ things that make it work are:
   latency.
 
 
-### Other registries
+## Other registries
 
 Many packages under
 [conn](https://godoc.org/periph.io/x/periph/conn) and
@@ -48,7 +51,7 @@ hardware desired. For each of these registries, registering the same pseudo name
 twice is an error. This helps reducing ambiguity for the users.
 
 
-## pins
+# pins
 
 There's a strict separation between
 [analog](https://godoc.org/periph.io/x/periph/experimental/conn/analog#PinIO),
@@ -75,7 +78,7 @@ and
 *Warning:* analog is not yet implemented.
 
 
-## Edge based triggering and input pull resistor
+# Edge based triggering and input pull resistor
 
 CPU drivers can have immediate access to the GPIO pins by leveraging memory
 mapped GPIO registers. The main problem with this approach is that one looses
@@ -92,7 +95,7 @@ write, and CPU-less edge detection, all without the user knowing about the
 intricate details!
 
 
-## Ambiant vs opened devices
+# Ambiant vs opened devices
 
 A device can either be ambiant or opened. An ambiant device _just exists_ and
 doesn't need to be opened. Any other device require an `open()`-like call to get
