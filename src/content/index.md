@@ -50,7 +50,7 @@ interfacing. It really tries hard to _get out of the way_.  Here's the canonical
 "toggle a LED" sample:
 
 
-```go
+~~~go
 package main
 
 import (
@@ -66,7 +66,7 @@ func main() {
         time.Sleep(500 * time.Millisecond)
     }
 }
-```
+~~~
 
 The following are synonyms, use the form you prefer:
 

@@ -24,7 +24,7 @@ _Purpose:_ Simplest example
 stateless as possible.
 
 
-```go
+~~~go
 package main
 
 import (
@@ -52,7 +52,7 @@ func main() {
         time.Sleep(500 * time.Millisecond)
     }
 }
-```
+~~~
 
 
 # IR (infra red remote)
@@ -64,7 +64,7 @@ and configured it. See
 [devices/lirc](https://godoc.org/periph.io/x/periph/devices/lirc)
 for more information.
 
-```go
+~~~go
 package main
 
 import (
@@ -95,7 +95,7 @@ func main() {
         }
     }
 }
-```
+~~~
 
 
 # OLED 128x64 display
@@ -106,7 +106,7 @@ This sample uses a
 [ssd1306](https://godoc.org/periph.io/x/periph/devices/ssd1306).
 The frames in the GIF are resized and centered first to reduce the CPU overhead.
 
-```go
+~~~go
 package main
 
 import (
@@ -180,7 +180,7 @@ func main() {
         <-c
     }
 }
-```
+~~~
 
 # GPIO Edge detection
 
@@ -193,7 +193,7 @@ function permits a edge detection without a busy loop. This is useful for
 **motion detectors**, **buttons** and other kinds of inputs where a busy loop
 would burn CPU for no reason.
 
-```go
+~~~go
 package main
 
 import (
@@ -228,7 +228,7 @@ func main() {
         fmt.Printf("-> %s\n", p.Read())
     }
 }
-```
+~~~
 
 
 # Measuring weather
@@ -238,7 +238,7 @@ _Purpose:_ gather temperature, pressure and relative humidity.
 This sample uses a
 [bme280](https://godoc.org/periph.io/x/periph/devices/bme280).
 
-```go
+~~~go
 package main
 
 import (
@@ -277,4 +277,4 @@ func main() {
     }
     fmt.Printf("%8s %10s %9s\n", env.Temperature, env.Pressure, env.Humidity)
 }
-```
+~~~

@@ -51,9 +51,9 @@ The function to initialize the drivers registered by default is
 [host.Init()](https://godoc.org/periph.io/x/periph/host#Init). It
 returns a [periph.State](https://godoc.org/periph.io/x/periph#State):
 
-```go
+~~~go
 state, err := host.Init()
-```
+~~~
 
 [periph.State](https://godoc.org/periph.io/x/periph#State) contains
 information about:
@@ -105,14 +105,14 @@ bus. To create a point-to-point connection to a device which does implement
 [i2c.Dev](https://godoc.org/periph.io/x/periph/conn/i2c#Dev), which embeds
 the device's address:
 
-```go
+~~~go
 // Open the first available I²C bus:
 bus, _ := i2c.New(-1)
 // Address the device with address 0x76 on the I²C bus:
 dev := i2c.Dev{bus, 0x76}
 // This is now a point-to-point connection and implements conn.Conn:
 var _ conn.Conn = &dev
-```
+~~~
 
 Since many devices have their address hardcoded, it's up to the device driver to
 specify the address.
@@ -137,7 +137,7 @@ exposes an I²C bus over a REST API to a remote device.
 
 This driver can be used with periph as if it were built into periph as follows:
 
-```go
+~~~go
 package main
 
 import (
@@ -187,4 +187,4 @@ func main() {
 
     // Use your bus driver like if it had been provided by periph.
 }
-```
+~~~

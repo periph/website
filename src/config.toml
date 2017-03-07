@@ -1,1 +1,3 @@
 baseURL = "https://periph.io/"
+pygmentsuseclasses = true
+PygmentsCodeFences = true
