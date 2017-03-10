@@ -11,23 +11,30 @@ to communicate with hardware peripherals. As such, it splits boards
 into their individual components: CPU, buses, physical headers, etc, instead of
 representing each board as a whole object.
 
-Read more about the [goals](goals/). This should be read before contributing to
-understand the project rationale.
+Read [the goals](goals/) before contributing to understand the project
+rationale or just to understand better.
 
-Read more about the [detailed design](design/) to understand more about how
-things are done.
+Read the [detailed design](design/) to understand more about how things are
+done.
 
 
 ## Classes of hardware
 
-This document distinguishes two classes of drivers:
+This document distinguishes two classes of drivers.
 
-- Enablers: they are what make the interconnects work, so that you can then
-  use real stuff. That's both point-to-point connections (GPIO, UART, TCP) and
-  buses (I²C, SPI, BT) where individual devices can be addressed.  They enable
-  you to do something but are not the essence of what you want to do.
-- Devices: they are the end goal, to do something functional. There are multiple
-  subclasses of devices like sensors, output devices, etc.
+
+### Enablers
+
+They are what make the interconnects work, so that you can then use real stuff.
+That's both point-to-point connections (GPIO, UART, TCP) and buses (I²C, SPI,
+BT) where individual devices can be addressed. They enable you to do something
+but are not the essence of what you want to do.
+
+
+### Devices
+
+They are the end goal, to do something functional. There are multiple subclasses
+of devices like sensors, output devices, etc.
 
 
 # Driver lifetime management

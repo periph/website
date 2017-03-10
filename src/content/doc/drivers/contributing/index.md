@@ -38,28 +38,28 @@ device support.
 
 # Testing
 
-The `periph` project uses use [gohci](https://github.com/periph/gohci) for
-automated testing on devices. The devices run unit tests, `go vet` and
+The `periph` project uses [gohci](https://github.com/periph/gohci) for automated
+testing on devices. The devices run unit tests, `go vet` and
 [periph-smoketest](https://github.com/google/periph/tree/master/cmd/periph-smoketest).
 
 The fleet currently is currently hosted by [maruel](https://github.com/maruel):
 
-- [Raspberry Pi 3](https://www.raspberrypi.org/) running [Raspbian Jessie
+- [BeagleBone](/doc/host/beaglebone/) Green Wireless
+- [C.H.I.P.](/doc/host/chip/) running Debian headless image provided by NTC
+- [ODROID-C1+](/doc/host/odroid-c1/)
+- [Raspberry Pi 3](/doc/host/raspberrypi/) running [Raspbian Jessie
   Lite](https://www.raspberrypi.org/downloads/raspbian/)
-- [C.H.I.P.](https://getchip.com/pages/chip) running Debian headless image
-  provided by NTC
 - Windows 10 VM
 
-The tests must not be broken by a PR.
+Tests must not be broken by a PR.
 
 
 # Conduct
 
 While this project is not related to the Go project itself, `periph` abides to
 the same code of conduct as the Go project as described at
-https://golang.org/conduct. `periph` doesn't yet have a formal committee (help's
-appreciated), please email directly `maruel@chromium.org` for issues
-encountered.
+https://golang.org/conduct. `periph` doesn't yet have a formal committee, please
+email directly `maruel@chromium.org` for issues encountered.
 
 
 # The small print

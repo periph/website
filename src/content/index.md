@@ -6,20 +6,15 @@ description = "Peripherals I/O in Go"
 
 # Overview
 
-[github.com/google/periph](https://github.com/google/periph) is a standalone
-library with no external dependency to interface with low-level host facilities.
-It can be viewed as a lower level layer than [Gobot](https://gobot.io), and yes
-we're discussing to collaborate in the future!
+[periph.io/x/periph](periph.io/x/periph) is a standalone library with no
+external dependency to interface with low-level host facilities. It can be
+viewed as a lower level layer than [Gobot](https://gobot.io), and yes we're
+discussing to collaborate in the future!
 
 
 # Features
 
-- Continuously tested via [gohci](https://github.com/periph/gohci) on:
-  - [BeagleBone Green Wireless](/doc/host/beaglebone/)
-  - [C.H.I.P.](/doc/host/chip/)
-  - [ODROID-C1+](/doc/host/odroid-c1/)
-  - [Raspberry Pi](/doc/host/raspberrypi/)
-  - Windows 10 VM
+- No external dependencies.
 - Interfaces: [I²C](https://periph.io/x/periph/conn/i2c),
   [SPI](https://periph.io/x/periph/conn/spi),
   [GPIO](https://periph.io/x/periph/conn/gpio) (both low latency memory mapped
@@ -31,6 +26,12 @@ we're discussing to collaborate in the future!
   [ds248x](https://periph.io/x/periph/experimental/devices/ds248x),
   [ssd1306](https://periph.io/x/periph/devices/ssd1306),
   [tm1637](https://periph.io/x/periph/devices/tm1637).
+- Continuously tested via [gohci](https://github.com/periph/gohci) on:
+  - [BeagleBone](/doc/host/beaglebone/)
+  - [C.H.I.P.](/doc/host/chip/)
+  - [ODROID-C1+](/doc/host/odroid-c1/)
+  - [Raspberry Pi](/doc/host/raspberrypi/)
+  - Windows 10 VM
 
 
 # Documentation
@@ -167,8 +168,8 @@ Google Contributor License. Please see
 
 # Authors
 
-`periph` was initiated by [Marc-Antoine Ruel](https://github.com/maruel). The
-full list of contributors is in
+`periph` was initiated with ❤️️ and passion by [Marc-Antoine
+Ruel](https://github.com/maruel).  The full list of contributors is in
 [AUTHORS](https://github.com/google/periph/blob/master/AUTHORS) and
 [CONTRIBUTORS](https://github.com/google/periph/blob/master/CONTRIBUTORS).
 
