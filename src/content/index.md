@@ -6,20 +6,23 @@ description = "Peripherals I/O in Go"
 
 # Overview
 
-[periph.io/x/periph](periph.io/x/periph) is a standalone library with no
+[periph.io/x/periph](https://periph.io/x/periph) is a standalone library with no
 external dependency to interface with low-level host facilities. It can be
 viewed as a lower level layer than [Gobot](https://gobot.io), and yes we're
 discussing to collaborate in the future!
 
+![boardimage](https://raw.githubusercontent.com/wiki/periph/gohci/lab.jpg)
+
 
 # Features
 
-- No external dependencies.
-- Interfaces: [I²C](https://periph.io/x/periph/conn/i2c),
-  [SPI](https://periph.io/x/periph/conn/spi),
-  [GPIO](https://periph.io/x/periph/conn/gpio) (both low latency memory mapped
-  registers and zero-CPU edge detection),
-  [1-wire](https://periph.io/x/periph/experimental/conn/onewire).
+- No external dependencies
+- Interfaces:
+  - [GPIO](https://periph.io/x/periph/conn/gpio): both memory mapped
+  registers and edge detection
+  - [I²C](https://periph.io/x/periph/conn/i2c)
+  - [SPI](https://periph.io/x/periph/conn/spi)
+  - [1-wire](https://periph.io/x/periph/experimental/conn/onewire)
 - Devices: [apa102](https://periph.io/x/periph/devices/apa102),
   [bme280](https://periph.io/x/periph/devices/bme280),
   [ds18b20](https://periph.io/x/periph/experimental/devices/ds18b20),
@@ -90,21 +93,34 @@ func main() {
 The following are synonyms, use the form you prefer:
 
 - Runtime discovery:
-  - [`gpio.ByNumber(13)`](https://periph.io/x/periph/conn/gpio/#ByNumber) or
-    [`gpio.ByName("13")`](https://periph.io/x/periph/conn/gpio/#ByName)
-  - [`gpio.ByName("GPIO13")`](https://periph.io/x/periph/conn/gpio/#ByName)
+  - [`gpio.ByNumber(13)`](https://periph.io/x/periph/conn/gpio#ByNumber) or
+    [`gpio.ByName("13")`](https://periph.io/x/periph/conn/gpio#ByName)
+  - [`gpio.ByName("GPIO13")`](https://periph.io/x/periph/conn/gpio#ByName)
 - Using global variables:
-  - [`rpi.P1_33`](https://periph.io/x/periph/host/rpi#/P1_33) to
+  - [`rpi.P1_33`](https://periph.io/x/periph/host/rpi#P1_33) to
     select the pin via its position on the board
-  - [`bcm283x.GPIO13`](https://periph.io/x/periph/host/bcm283x/#GPIO13)
+  - [`bcm283x.GPIO13`](https://periph.io/x/periph/host/bcm283x#GPIO13)
 
-This example uses basically no CPU: the `Out()` call doesn't call into the
-kernel. Instead it directly changes the GPIO memory mapped register.
+This example uses basically no CPU: the
+[Out()](https://godoc.org/periph.io/x/periph/conn/gpio#PinOut) call doesn't call
+into the kernel. Instead it directly changes the GPIO memory mapped register.
 
 
 ## Samples
 
 See [doc/apps/samples/](/doc/apps/samples/) for more examples.
+
+
+# Contact
+
+There's two mailing lists and one slack channel:
+
+- [periph-users@googlegroups.com](https://groups.google.com/forum/#!forum/periph-users)
+  for users of the library and general questions
+- [periph-dev@googlegroups.com](https://groups.google.com/forum/#!forum/periph-dev)
+  for driver developers
+- [#periph](https://gophers.slack.com/messages/periph/) on gophers.slack.com.
+  You can request access at https://invite.slack.golangbridge.org/
 
 
 # Contributions
@@ -138,8 +154,8 @@ Google Contributor License. Please see
      on each platform.
 3. ... yet doesn't get in the way of platform specific code.
    - e.g. A user can use statically typed global variables
-     [rpi.P1_3](https://periph.io/x/periph/host/rpi#pkg-variables),
-     [bcm283x.GPIO2](https://periph.io/x/periph/host/bcm283x#Pin)
+     [rpi.P1_3](https://periph.io/x/periph/host/rpi#P1_3),
+     [bcm283x.GPIO2](https://periph.io/x/periph/host/bcm283x#GPIO2)
      to refer to the exact same pin on a Raspberry Pi.
 3. The user can chose to optimize for performance instead of usability.
    - e.g.

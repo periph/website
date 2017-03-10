@@ -24,9 +24,9 @@
     ga('send', 'pageview');
   </script>
 </head>
-<body>Redirecting to <a href="https://godoc.org/periph.io{{$path}}">https://godoc.org/periph.io{{$path}}</a>...</body>
+<body>Redirecting to <a id=dest href="https://godoc.org/periph.io{{$path}}">https://godoc.org/periph.io{{$path}}</a>...</body>
 <script>
-window.location.href = 'https://godoc.org/periph.io{{$path}}' + (window.location.search || '') + (window.location.hash || '');
+window.location.href = document.getElementById('dest').href + (window.location.search || '') + (window.location.hash || '');
 </script>
 </html>
 {{- end -}}

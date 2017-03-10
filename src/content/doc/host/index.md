@@ -3,20 +3,22 @@ title = "Supported platforms"
 description = "Overview of officially supported platforms"
 +++
 
-Periph supports the Linux sysfs drivers for gpio pins, I²C buses, SPI buses,
-LEDs, and thermal sensors. This means that periph supports most **any Linux
-platform**. It is tested to be compatible to Windows. In addition, periph has
-special support for a small number of platforms. For some, such as Odroid-C1,
-the additional support means that the headers, pins, and bus names are
-predefined and that all changes are tested on the actual hardware. For others,
-such as the various Raspberry Pi versions, CHIP, and Pine64, the additional
-support means that in addition to the above high-speed memory-mapped I/O has
-been implemented.
+# Overview
 
-Current platforms:
+`periph` is designed to compile on any OSes and CPU architecture but provides
+value only on a few supported OSes.
 
-- [Raspberry Pi](raspberrypi/)
-- [NextThing C.H.I.P.](chip/)
+
+# OSes
+
+Only Linux distributions are currently supported for hardware access. The
+library is compilable on OSX and Windows but doesn't yet provide facilities.
+
+
+# Platforms
+
+- [BeagleBone](beaglebone/)
+- [NextThing's C.H.I.P.](chip/)
+- [Hardkernel's ODROID-C1](odroid-c1/)
 - Pine 64
-- [Odoid-C1](odroid-c1/)
-- Generic Linux
+- [Raspberry Pi](raspberrypi/)

@@ -44,6 +44,12 @@ ol ol, ol ul, ul ol, ul ul {
   float: right;
 }
 
+img[alt=boardimage] {
+  float: right;
+  max-width: 100%;
+  margin-bottom: 2em;
+}
+
 code .hll { background-color: #ffffcc }
 code  { background: #f7f7f7; }
 code .c { color: #888888 } /* Comment */

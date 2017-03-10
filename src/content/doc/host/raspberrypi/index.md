@@ -13,6 +13,8 @@ very well supported. The following functionality is supported:
 - 2x SPI bus
 - 46x high performance edge detection enabled memory-mapped GPIO pins
 
+![boardimage](/img/raspberrypi3.jpg)
+
 
 # Buying
 
@@ -49,9 +51,9 @@ countries.
 
 The pins function can be affected by device overlays as defined in
 `/boot/config.txt`. The full documentation of overlays is at
-https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README.
-Documentation for the file format at
-https://www.raspberrypi.org/documentation/configuration/device-tree.md#part3
+[boot/overlays/README](https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README).
+Documentation for the file format is [on raspberry pi
+site](https://www.raspberrypi.org/documentation/configuration/device-tree.md#part3)
 
 
 ## GPIO
@@ -132,8 +134,9 @@ dtoverlay=lirc-rpi,gpio_out_pin=5,gpio_in_pin=13,gpio_in_pull=high
 Default pins 17 and 18 clashes with SPI1 so change the pin if you plan to
 enable both SPI buses.
 
-See https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README for
-more details on configuring the kernel module.
+See
+[boot/overlays/README](https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README)
+for more details on configuring the kernel module.
 
 
 ### IR/Software
@@ -153,7 +156,7 @@ sed -i s'/MODULES=""/MODULES="lirc_rpi"/' /etc/lirc/hardware.conf
 Linux [lirc_rpi.c](https://github.com/raspberrypi/linux/blob/rpi-4.8.y/drivers/staging/media/lirc/lirc_rpi.c)
 
 Someone made a version that supports multiple devices:
-https://github.com/bengtmartensson/lirc_rpi
+[github.com/bengtmartensson/lirc_rpi](https://github.com/bengtmartensson/lirc_rpi)
 
 
 ## UART
