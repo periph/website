@@ -44,17 +44,15 @@ maintenance.
     whenever possible, etc.
 - Coverage:
   - Be as OS agnostic as possible. Abstract OS specific concepts like
-    [sysfs](https://godoc.org/periph.io/x/periph/host/sysfs).
+    [sysfs](https://periph.io/x/periph/host/sysfs).
   - Each driver implements and exposes as much of the underlying device
     capability as possible and relevant.
   - [cmd/](https://github.com/google/periph/tree/master/cmd/) implements useful
     directly usable tool.
-  - [devices/](https://godoc.org/periph.io/x/periph/devices/) implements common
-    device drivers. Device drivers is not the core focus of this project for
-    now.
-  - [host/](https://godoc.org/periph.io/x/periph/host/) must implement a large
-    base of common platforms that _just work_. This is in addition to
-    extensibility.
+  - [devices/](https://periph.io/x/periph/devices/) implements common device
+    drivers. Device drivers is not the core focus of this project for now.
+  - [host/](https://periph.io/x/periph/host/) must implement a large base of
+    common platforms that _just work_. This is in addition to extensibility.
 - Simplicity:
   - Static typing is _thoroughly used_, to reduce the risk of runtime failure.
   - Minimal coding is needed to accomplish a task.
@@ -66,9 +64,9 @@ maintenance.
   - Breakage in the API should happen at a yearly parce at most once the library
     got to a stable state.
 - Strong distinction about the driver (as a user of a
-  [conn.Conn](https://godoc.org/periph.io/x/periph/conn#Conn) instance) and an
-  application writer (as a user of a device driver). It's the _application_ that
-  controls the objects' lifetime.
+  [conn.Conn](https://periph.io/x/periph/conn#Conn) instance) and an application
+  writer (as a user of a device driver). It's the _application_ that controls
+  the objects' lifetime.
 - Strong distinction between _enablers_ and _devices_. See
   [Background](../#background).
 
@@ -101,10 +99,9 @@ HAL -> the right hardware abstraction layer (not too deep, not too light) is the
 core here.
 
 Devices need common interfaces to help with application developers (like
-[devices.Display](https://godoc.org/periph.io/x/periph/devices#Display)
-and
-[devices.Environmental](https://godoc.org/periph.io/x/periph/devices#Environmental))
-but the lack of core repository and coherency is less dramatic.
+[devices.Display](https://periph.io/x/periph/devices#Display) and
+[devices.Environmental](https://periph.io/x/periph/devices#Environmental)) but
+the lack of core repository and coherency is less dramatic.
 
 
 ## Users

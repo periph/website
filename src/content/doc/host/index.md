@@ -15,8 +15,8 @@ been implemented.
 
 Current platforms:
 
-- Raspberry Pi
-- [NextThing C.H.I.P.](chip)
+- [Raspberry Pi](raspberrypi/)
+- [NextThing C.H.I.P.](chip/)
 - Pine 64
 - [Odoid-C1](odroid-c1/)
 - Generic Linux

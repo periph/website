@@ -58,7 +58,7 @@ directory. The following process must be followed:
   and respond to the code review.
 
 At this point, it is available for use to everyone but it is not loaded by
-default by [host.Init()](https://godoc.org/periph.io/x/periph/host#Init).
+default by [host.Init()](https://periph.io/x/periph/host#Init).
 
 There is no API compatibility guarantee for drivers under
 [experimental/](https://github.com/google/periph/tree/master/experimental/).
@@ -122,8 +122,7 @@ use this as a learning experience.
   - No `interface{}` unless strictly required.
   - Minimal use of factories except for protocol level registries.
   - No `init()` code that accesses peripherals on process startup. These belong
-    to
-    [Driver.Init()](https://godoc.org/periph.io/x/periph#Driver).
+    to [Driver.Init()](https://periph.io/x/periph#Driver).
 - Exact naming
   - Driver for a chipset must have the name of the chipset or the chipset
     family. Don't use `oleddisplay`, use `ssd1306`.
@@ -158,7 +157,7 @@ use this as a learning experience.
   - Floating point arithmetic should only be used when absolutely necesary in
     the driver code. Most of the cases can be replaced by fixed point
     arithmetic, for example
-    [devices.Milli](https://godoc.org/periph.io/x/periph/devices#Milli).
+    [devices.Milli](https://periph.io/x/periph/devices#Milli).
     Floating point arithmetic is acceptable in the unit tests and tools in
     [cmd/](https://github.com/google/periph/tree/master/cmd/) but should not be
     abused.

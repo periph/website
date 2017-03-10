@@ -4,23 +4,41 @@ author = "Marc-Antoine Ruel"
 description = "Peripherals I/O in Go"
 +++
 
+# Overview
+
+[github.com/google/periph](https://github.com/google/periph) is a standalone
+library with no external dependency to interface with low-level host facilities.
+It can be viewed as a lower level layer than [Gobot](https://gobot.io), and yes
+we're discussing to collaborate in the future!
+
 
 # Features
 
-- Continuously tested on [Raspberry Pi](https://raspberrypi.org),
-  [C.H.I.P.](https://getchip.com/) and Windows 10 via
-  [gohci](https://github.com/periph/gohci).
-- Interfaces: I²C, SPI, gpio (both low latency memory mapped registers and
-  zero-CPU edge detection), 1-wire.
-- Devices: apa102, bme280, ds18b20, ssd1306, tm1637.
+- Continuously tested via [gohci](https://github.com/periph/gohci) on:
+  - [BeagleBone Green Wireless](/doc/host/beaglebone/)
+  - [C.H.I.P.](/doc/host/chip/)
+  - [ODROID-C1+](/doc/host/odroid-c1/)
+  - [Raspberry Pi](/doc/host/raspberrypi/)
+  - Windows 10 VM
+- Interfaces: [I²C](https://periph.io/x/periph/conn/i2c),
+  [SPI](https://periph.io/x/periph/conn/spi),
+  [GPIO](https://periph.io/x/periph/conn/gpio) (both low latency memory mapped
+  registers and zero-CPU edge detection),
+  [1-wire](https://periph.io/x/periph/experimental/conn/onewire).
+- Devices: [apa102](https://periph.io/x/periph/devices/apa102),
+  [bme280](https://periph.io/x/periph/devices/bme280),
+  [ds18b20](https://periph.io/x/periph/experimental/devices/ds18b20),
+  [ds248x](https://periph.io/x/periph/experimental/devices/ds248x),
+  [ssd1306](https://periph.io/x/periph/devices/ssd1306),
+  [tm1637](https://periph.io/x/periph/devices/tm1637).
 
 
-# Quick links
+# Documentation
 
 - [doc/users/](/doc/users/) for ready-to-use tools.
 - [doc/apps/](/doc/apps/) to use `periph` as a library. The complete API
   documentation, including examples, is at
-  [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://godoc.org/periph.io/x/periph).
+  [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://periph.io/x/periph)
 - [doc/drivers/](/doc/drivers/) to expand the list of supported hardware.
 
 
@@ -71,14 +89,13 @@ func main() {
 The following are synonyms, use the form you prefer:
 
 - Runtime discovery:
-  - [`gpio.ByNumber(13)`](https://godoc.org/periph.io/x/periph/conn/gpio/#ByNumber)
-    or
-    [`gpio.ByName("13")`](https://godoc.org/periph.io/x/periph/conn/gpio/#ByName)
-  - [`gpio.ByName("GPIO13")`](https://godoc.org/periph.io/x/periph/conn/gpio/#ByName)
+  - [`gpio.ByNumber(13)`](https://periph.io/x/periph/conn/gpio/#ByNumber) or
+    [`gpio.ByName("13")`](https://periph.io/x/periph/conn/gpio/#ByName)
+  - [`gpio.ByName("GPIO13")`](https://periph.io/x/periph/conn/gpio/#ByName)
 - Using global variables:
-  - [`rpi.P1_33`](https://godoc.org/periph.io/x/periph/host/rpi#/P1_33) to
+  - [`rpi.P1_33`](https://periph.io/x/periph/host/rpi#/P1_33) to
     select the pin via its position on the board
-  - [`bcm283x.GPIO13`](https://godoc.org/periph.io/x/periph/host/bcm283x/#GPIO13)
+  - [`bcm283x.GPIO13`](https://periph.io/x/periph/host/bcm283x/#GPIO13)
 
 This example uses basically no CPU: the `Out()` call doesn't call into the
 kernel. Instead it directly changes the GPIO memory mapped register.
@@ -112,20 +129,20 @@ Google Contributor License. Please see
    - e.g. everything, interfaces and structs, uses strict typing, there's no
      `interface{}` in sight.
 2. OS agnostic. Clear separation of interfaces in
-   [conn/](https://godoc.org/periph.io/x/periph/conn),
-   enablers in [host/](https://godoc.org/periph.io/x/periph/host) and device
-   drivers in [devices/](https://godoc.org/periph.io/x/periph/devices).
+   [conn/](https://periph.io/x/periph/conn),
+   enablers in [host/](https://periph.io/x/periph/host) and device
+   drivers in [devices/](https://periph.io/x/periph/devices).
    - e.g. no devfs or sysfs path in sight.
    - e.g. conditional compilation enables only the relevant drivers to be loaded
      on each platform.
 3. ... yet doesn't get in the way of platform specific code.
    - e.g. A user can use statically typed global variables
-     [rpi.P1_3](https://godoc.org/periph.io/x/periph/host/rpi#pkg-variables),
-     [bcm283x.GPIO2](https://godoc.org/periph.io/x/periph/host/bcm283x#Pin)
+     [rpi.P1_3](https://periph.io/x/periph/host/rpi#pkg-variables),
+     [bcm283x.GPIO2](https://periph.io/x/periph/host/bcm283x#Pin)
      to refer to the exact same pin on a Raspberry Pi.
 3. The user can chose to optimize for performance instead of usability.
    - e.g.
-     [apa102.Dev](https://godoc.org/periph.io/x/periph/devices/apa102#Dev)
+     [apa102.Dev](https://periph.io/x/periph/devices/apa102#Dev)
      exposes both high level
      [draw.Image](https://golang.org/pkg/image/draw/#Image) to draw an image and
      low level [io.Writer](https://golang.org/pkg/io/#Writer) to write raw RGB
@@ -136,17 +153,16 @@ Google Contributor License. Please see
      "component": one for the CPU, one for the board headers, one for each
      bus and sensor, etc.
 5. Extensible via a [driver
-   registry](https://godoc.org/periph.io/x/periph#Register).
+   registry](https://periph.io/x/periph#Register).
    - e.g. a user can inject a custom driver to expose more pins, headers, etc.
      A USB device (like an FT232H) can expose headers _in addition_ to the
      headers found on the host.
 6. The drivers must use the fastest possible implementation.
-   - e.g. both
-     [allwinner](https://godoc.org/periph.io/x/periph/host/allwinner)
-     and
-     [bcm283x](https://godoc.org/periph.io/x/periph/host/bcm283x)
-     leverage sysfs gpio to expose interrupt driven edge detection, yet use
-     memory mapped GPIO registers to perform single-cycle reads and writes.
+   - e.g. both [allwinner](https://periph.io/x/periph/host/allwinner) and
+     [bcm283x](https://periph.io/x/periph/host/bcm283x) leverage [sysfs
+     gpio](https://periph.io/x/periph/host/sysfs#Pin) to expose interrupt driven
+     edge detection, yet use memory mapped GPIO registers to perform
+     single-cycle reads and writes.
 
 
 # Authors
