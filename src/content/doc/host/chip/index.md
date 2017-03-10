@@ -15,7 +15,7 @@ functionality is supported:
   few more)
 - 8x low performance GPIO pins via pcf8574 I²C I/O extender ("XIO" pins)
 
-![boardimage](/img/chip.jpg)
+![boardimage](https://raw.githubusercontent.com/periph/website/master/src/static/img/chip.jpg)
 
 
 # Buying
