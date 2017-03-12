@@ -111,6 +111,19 @@ into the kernel. Instead it directly changes the GPIO memory mapped register.
 See [doc/apps/samples/](/doc/apps/samples/) for more examples.
 
 
+# Code
+
+Code is located at https://github.com/google/periph
+
+Supplemental projects are located at https://github.com/periph. This includes:
+
+- The [website](https://github.com/periph/website) itself, so you can easily
+  submit a PR to improve the documentation.
+- [gohci](https://github.com/periph/gohci) for hardware smoke testing.
+- [periph-tester](https://github.com/periph/periph-tester) which is a board used
+  to confirm the buses (I²C, SPI, 1-wire) are correctly working.
+
+
 # Contact
 
 There's two mailing lists and one slack channel:
@@ -121,6 +134,8 @@ There's two mailing lists and one slack channel:
   for driver developers
 - [#periph](https://gophers.slack.com/messages/periph/) on gophers.slack.com.
   You can request access at https://invite.slack.golangbridge.org/
+
+You can file issues at https://github.com/google/periph/issues
 
 
 # Contributions
