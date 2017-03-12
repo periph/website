@@ -7,4 +7,4 @@ set -eu
 
 cd "$(dirname $0)"
 
-hugo server -s src -d ../root --bind=0.0.0.0 -w -b $(hostname)
+hugo server -s site -d ../www --bind=0.0.0.0 -w -b $(hostname)

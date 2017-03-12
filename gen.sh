@@ -7,27 +7,4 @@ set -eu
 
 cd "$(dirname $0)"
 
-## Preparation
-
-# Remove any stale junk if any.
-rm -rf root.old root.new
-
-## Generation
-
-# Do the generation of the static web site.
-hugo -s src -d ../root.new
-# Minify all the output in-place.
-minify -r -o root.new root.new
-# Precompress all the minified files, so caddy can serve pre-compressed files
-# without having to compress on the fly, leading to zero-CPU static file
-# serving.
-find root.new -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o -name '*.xml' -o -name '*.svg' \) -exec gzip -v -k -f --best {} \;
-
-## Making it live
-
-# Now that the new site is ready, switch the old site for the new one.
-if [ -d root ]; then
-  mv root root.old
-fi
-mv root.new root
-rm -rf root.old
+docker run --rm -u $(id -u):$(id -g) -v $(pwd):/data marcaruel/hugo-tidy:hugo-0.19-alpine-3.4-pygments-2.2.0
