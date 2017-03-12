@@ -46,7 +46,7 @@ Restart=on-failure
 ExecStart=$ROOT/caddy -agree $EMAIL_FLAG -log logs/server.log
 WorkingDirectory=$ROOT
 ExecReload=/bin/kill -USR1 \$MAINPID
-Environment="HOME=$ROOT" "CADDYPATH=$ROOT/data"
+Environment="HOME=$ROOT" "CADDYPATH=$ROOT/ssl"
 LimitNOFILE=1048576
 LimitNPROC=64
 TasksMax=4096
