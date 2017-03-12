@@ -10,13 +10,18 @@ guidelines](https://periph.io/doc/drivers/contributing/).
 
 ## Setup
 
-Requirements:
+- [caddy](https://caddyserver.com) to serve over https
+- [docker](https://docker.com) to be functional and callable from caddy.
+
+The git hook uses https://hub.docker.com/r/marcaruel/hugo-tidy/ to do the
+processing whenever a new commit happens.
+
+hugo-tidy leverages:
 - [pygment](http://pygments.org) to generate the syntax highlighting: `pip
   install --user Pygments`
 - [hugo](https://gohugo.io) to generate the html
 - [minify](https://github.com/tdewolff/minify/tree/master/cmd/minify) to reduce
   the size: `go get -u -v github.com/tdewolff/minify/cmd/minify`
-- [caddy](https://caddyserver.com) to serve over https
 
 The syntax styles was generated with `pygmentize -f html -S colorful -a .syntax >> src/static/css/style.css`
 and small modifications.
