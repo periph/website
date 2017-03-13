@@ -37,9 +37,17 @@
   <div class="container">
     <div class="row">
       <div class="column">
-        {{- if len .File.Dir | ne 0 -}}
-        <div class="up-link"><a href="..">Up</a></div>
+        <div class="up-link">
+          <a href="https://groups.google.com/forum/#!forum/periph-users">Discussion</a>
+          —
+          <a href="https://gophers.slack.com/messages/periph/">
+            <img src="https://raw.githubusercontent.com/periph/website/master/img/slack.png" width=24 height=24></a>
+          <a href="https://invite.slack.golangbridge.org/">get invite</a>
+        {{ if len .File.Dir | ne 0 }}
+          —
+          <a href="..">Up</a>
         {{- end -}}
+        </div>
         <div id="top" class="top">
           <h1>{{ .Title }}</h1>
           <div>{{ .Description }}</div>
