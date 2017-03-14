@@ -23,11 +23,11 @@ future!
   registers and edge detection
   - [I²C](https://periph.io/x/periph/conn/i2c)
   - [SPI](https://periph.io/x/periph/conn/spi)
-  - [1-wire](https://periph.io/x/periph/experimental/conn/onewire)
+  - [1-wire](https://periph.io/x/periph/conn/onewire)
 - [Devices](/device/): [apa102](https://periph.io/x/periph/devices/apa102),
   [bme280](https://periph.io/x/periph/devices/bme280),
-  [ds18b20](https://periph.io/x/periph/experimental/devices/ds18b20),
-  [ds248x](https://periph.io/x/periph/experimental/devices/ds248x),
+  [ds18b20](https://periph.io/x/periph/devices/ds18b20),
+  [ds248x](https://periph.io/x/periph/devices/ds248x),
   [ssd1306](https://periph.io/x/periph/devices/ssd1306),
   [tm1637](https://periph.io/x/periph/devices/tm1637).
 - Continuously tested via [gohci](https://github.com/periph/gohci) on:

@@ -36,14 +36,14 @@ support low precision temperature measurement.
 
 ## DS18b20
 
-[periph.io/x/periph/experimental/devices/ds18b20](https://periph.io/x/periph/experimental/devices/ds18b20)
+[periph.io/x/periph/devices/ds18b20](https://periph.io/x/periph/devices/ds18b20)
 provides support for inexpensive Dallas Semi / Maxim DS18B20 and MAX31820 1-wire
 temperature sensors.
 
 
 ## DS248X
 
-[periph.io/x/periph/experimental/devices/ds248x](https://periph.io/x/periph/experimental/devices/ds248x)
+[periph.io/x/periph/devices/ds248x](https://periph.io/x/periph/devices/ds248x)
 provides support for a Maxim DS2483 or DS2482-100 1-wire interface chip over
 I²C.
 
