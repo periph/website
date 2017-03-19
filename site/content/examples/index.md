@@ -1,5 +1,5 @@
 +++
-title = "Samples"
+title = "Examples"
 description = "Ready-to-use code snippets"
 +++
 
@@ -12,8 +12,8 @@ You are encouraged to look at tools in
 [cmd/](https://github.com/google/periph/tree/master/cmd/). These can be used as
 the basis of your projects.
 
-To try the following samples, put the code into a file named `sample.go` then
-execute `go run sample.go`.
+To try the following examples, put the code into a file named `example.go` then
+execute `go run example.go`.
 
 
 # Toggle a LED
@@ -59,7 +59,7 @@ func main() {
 
 _Purpose:_ display IR remote keys.
 
-This sample uses lirc (http://www.lirc.org/). This assumes you installed lirc
+This example uses lirc (http://www.lirc.org/). This assumes you installed lirc
 and configured it. See [devices/lirc](https://periph.io/x/periph/devices/lirc)
 for more information.
 
@@ -101,7 +101,7 @@ func main() {
 
 _Purpose:_ display an animated GIF.
 
-This sample uses a [ssd1306](https://periph.io/x/periph/devices/ssd1306). The
+This example uses a [ssd1306](https://periph.io/x/periph/devices/ssd1306). The
 frames in the GIF are resized and centered first to reduce the CPU overhead.
 
 ~~~go
@@ -232,7 +232,7 @@ func main() {
 
 _Purpose:_ gather temperature, pressure and relative humidity.
 
-This sample uses a [bme280](https://periph.io/x/periph/devices/bme280).
+This example uses a [bme280](https://periph.io/x/periph/devices/bme280).
 
 ~~~go
 package main

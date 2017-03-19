@@ -47,7 +47,7 @@ discussing to collaborate in the future!
   Pi, CHIP, etc).
 - [project/](/project/) to read about design goals, contribution rules or expand
   the list of supported hardware.
-- [samples/](/samples/) for simple examples to help get started.
+- [examples/](/examples/) to help get started.
 
 
 # Users
@@ -72,7 +72,7 @@ gpio-list
 
 For [application developers](/apps/), `periph` provides OS-independent bus
 interfacing. It really tries hard to _get out of the way_.  Here's the canonical
-"toggle a LED" sample:
+"toggle a LED" example:
 
 
 ~~~go
@@ -109,9 +109,9 @@ This example uses basically no CPU: the
 into the kernel. Instead it directly changes the GPIO memory mapped register.
 
 
-## Samples
+## Examples
 
-See [samples/](/samples/) for more examples.
+See [examples/](/examples/) for more examples.
 
 ![boardimage](https://raw.githubusercontent.com/periph/website/master/site/static/img/lab-280.jpg)
 

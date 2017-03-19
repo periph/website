@@ -114,9 +114,9 @@ specify the address.
 arbitrary uses, such as buttons, LEDs, relays, etc.
 
 
-# Samples
+# Examples
 
-See [samples/](samples/) for various examples.
+See [examples/](examples/) for various examples.
 
 
 # Using out-of-tree drivers
