@@ -20,7 +20,7 @@ functionality is supported:
 
 # Buying
 
-C.H.I.P. is directly distributed by NextThing Co at https://getchip.com/
+C.H.I.P. is directly distributed by [NextThing Co](https://getchip.com/).
 
 
 # Support
@@ -28,10 +28,11 @@ C.H.I.P. is directly distributed by NextThing Co at https://getchip.com/
 The NextThing Co's C.H.I.P. board is supported using sysfs drivers as well as
 using high performance memory-mapped I/O for gpio pins.
 
-- `periph` is tested with NTC provided 4.4.13+ kernel Debian. Tool live at
-  https://flash.getchip.com/ and doc at
-  https://docs.getchip.com/chip.html#flash-chip-firmware but should work with
-  any flavor, [file a bug](https://github.com/google/periph/issues) otherwise.
+- `periph` is tested with [NTC provided 4.4.13+ kernel
+  Debian](https://docs.getchip.com/chip.html#flash-chip-firmware) which can be
+  done via their [Web UI flashing tool](https://flash.getchip.com/). It should
+  work with any flavor, [file a bug](https://github.com/google/periph/issues)
+  otherwise.
 - C.H.I.P. is fully supported
 - C.H.I.P. Pro and PocketCHIP specific pinouts will be supported very soon
   (hardware is already acquired)

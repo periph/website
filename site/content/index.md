@@ -139,9 +139,11 @@ There's two mailing lists and one slack channel:
 - [periph-dev@googlegroups.com](https://groups.google.com/forum/#!forum/periph-dev)
   for driver developers
 - [#periph](https://gophers.slack.com/messages/periph/) on gophers.slack.com.
-  You can request access at https://invite.slack.golangbridge.org/
+  You can request access at
+  [invite.slack.golangbridge.org/](https://invite.slack.golangbridge.org/)
 
-You can file issues at https://github.com/google/periph/issues
+You can file issues at
+[github.com/google/periph/issues](https://github.com/google/periph/issues)
 
 
 # Contributions

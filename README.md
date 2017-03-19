@@ -13,8 +13,9 @@ guidelines](https://periph.io/project/contributing/).
 - [caddy](https://caddyserver.com) to serve over https
 - [docker](https://docker.com) to be functional and callable from caddy.
 
-The git hook uses https://hub.docker.com/r/marcaruel/hugo-tidy/ to do the
-processing whenever a new commit happens.
+The git hook uses
+[hub.docker.com/r/marcaruel/hugo-tidy/](https://hub.docker.com/r/marcaruel/hugo-tidy/)
+to do the processing whenever a new commit happens.
 
 hugo-tidy leverages:
 - [pygment](http://pygments.org) to generate the syntax highlighting: `pip

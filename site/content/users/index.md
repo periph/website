@@ -18,10 +18,7 @@ build from sources.
 
 # Prerequisite
 
-First, make sure to have Go installed. Get it from https://golang.org/dl/.
-
-If you are running a Debian based distribution (Raspbian, Ubuntu, etc), you can
-run `sudo apt-get install golang` to get the Go toolchain installed.
+First, make sure to have [Go installed](https://golang.org/dl/).
 
 
 # Installation
