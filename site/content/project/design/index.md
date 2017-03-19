@@ -1,6 +1,6 @@
 +++
 title = "Design"
-description = "Dive into some of the key design elements"
+description = "Dive into key design elements"
 +++
 
 

@@ -1,6 +1,6 @@
 +++
 title = "Application developers"
-description = "Application developers who want to write Go applications leveraging periph"
+description = "Leverage periph to write Go applications"
 +++
 
 The complete API documentation, including examples, is at

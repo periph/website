@@ -129,5 +129,11 @@ header h1 {
 }
 
 header a {
+  text-decoration: none;
   color: #fff;
+}
+
+.top-right {
+  line-height: 200%;
+  font-size: 75%;
 }
