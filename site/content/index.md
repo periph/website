@@ -4,14 +4,14 @@ author = "Marc-Antoine Ruel"
 description = "Peripherals I/O in Go"
 +++
 
+![boardimage](https://raw.githubusercontent.com/periph/website/master/site/static/img/periph-mascotte-280.png)
+
 # Overview
 
 [periph.io/x/periph](https://periph.io/x/periph) is a standalone library with no
 external dependency to interface with low-level host facilities. It can be
 viewed as a lower level layer than [Gobot](https://gobot.io), and yes we're
 discussing to collaborate in the future!
-
-![boardimage](https://raw.githubusercontent.com/wiki/periph/gohci/lab.jpg)
 
 
 # Features
@@ -110,12 +110,15 @@ into the kernel. Instead it directly changes the GPIO memory mapped register.
 
 See [doc/apps/samples/](/doc/apps/samples/) for more examples.
 
+![boardimage](https://raw.githubusercontent.com/periph/website/master/site/static/img/lab-280.jpg)
+
 
 # Code
 
-Code is located at https://github.com/google/periph
+Code is located at [github.com/google/periph](https://github.com/google/periph)
 
-Supplemental projects are located at https://github.com/periph. This includes:
+Supplemental projects are located at
+[github.com/periph](https://github.com/periph). This includes:
 
 - The [website](https://github.com/periph/website) itself, so you can easily
   submit a PR to improve the documentation.
