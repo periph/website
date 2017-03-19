@@ -4,7 +4,7 @@ author = "Marc-Antoine Ruel"
 description = "Peripherals I/O in Go"
 +++
 
-![boardimage](https://raw.githubusercontent.com/periph/website/master/site/static/img/periph-mascotte-280.png)
+![boardimage](https://raw.githubusercontent.com/periph/website/master/site/static/img/periph-mascot-280.png)
 
 # Overview
 
