@@ -29,7 +29,7 @@ countries.
   Lite](https://www.raspberrypi.org/downloads/raspbian/) 4.4.21-v7+.
 - Raspberry Pi 1, 2 and 3 are fully supported.
 - Other versions like Compute module doesn't have yet pin out defined because
-  lack of hardware in test lab. [Please contribute](/doc/drivers/contributing/).
+  lack of hardware in test lab. [Please contribute](/project/contributing/).
 - [Windows IoT](https://developer.microsoft.com/windows/iot) is not supported
   yet but support [is planned](https://github.com/google/periph/issues/114).
 

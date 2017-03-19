@@ -5,7 +5,7 @@ Contains all the code necessary to generate https://periph.io via
 
 The web pages content is located at [src/content/](src/content/). Please send
 PR as per [contributing
-guidelines](https://periph.io/doc/drivers/contributing/).
+guidelines](https://periph.io/project/contributing/).
 
 
 ## Setup

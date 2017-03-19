@@ -44,10 +44,10 @@ testing on devices. The devices run unit tests, `go vet` and
 
 The fleet currently is currently hosted by [maruel](https://github.com/maruel):
 
-- [BeagleBone](/doc/host/beaglebone/) Green Wireless
-- [C.H.I.P.](/doc/host/chip/) running Debian headless image provided by NTC
-- [ODROID-C1+](/doc/host/odroid-c1/)
-- [Raspberry Pi 3](/doc/host/raspberrypi/) running [Raspbian Jessie
+- [BeagleBone](/host/beaglebone/) Green Wireless
+- [C.H.I.P.](/host/chip/) running Debian headless image provided by NTC
+- [ODROID-C1+](/host/odroid-c1/)
+- [Raspberry Pi 3](/host/raspberrypi/) running [Raspbian Jessie
   Lite](https://www.raspberrypi.org/downloads/raspbian/)
 - Windows 10 VM
 

@@ -1,6 +1,6 @@
 +++
-title = "Device driver developers"
-description = "Device driver developers who either want to develop a device driver in their own code base or want to submit a contribution to extend the supported hardware"
+title = "Project"
+description = "Design, contribution, driver writing"
 +++
 
 
@@ -11,11 +11,11 @@ to communicate with hardware peripherals. As such, it splits boards
 into their individual components: CPU, buses, physical headers, etc, instead of
 representing each board as a whole object.
 
-Read [the goals](goals/) before contributing to understand the project
-rationale or just to understand better.
 
-Read the [detailed design](design/) to understand more about how things are
-done.
+## References
+
+- [Goals](goals/) to understand the project rationale.
+- [Detailed Design](design/) to understand more about how things are done.
 
 
 ## Classes of hardware
@@ -41,8 +41,8 @@ of devices like sensors, output devices, etc.
 
 Proper driver lifetime management is key to the success of this project. There
 must be clear expectations to add, update and remove drivers for the core
-project. As described in the [Risks section in goals/](goals/#risks) below,
-poor drivers or high churn rate will destroy the value proposition.
+project. As described in the [Risks section in Goals page](goals/#risks), poor
+drivers or high churn rate will destroy the value proposition.
 
 This is critical as drivers can be silently broken by seemingly innocuous
 changes. Because the testing of hardware drivers is significantly harder than
@@ -185,7 +185,7 @@ use this as a learning experience.
 # Code style
 
 - The code tries to follow Go code style as described at
-  https://github.com/golang/go/wiki/CodeReviewComments
+  [github.com/golang/go/wiki/CodeReviewComments](https://github.com/golang/go/wiki/CodeReviewComments)
 - Top level comments are expected to be wrapped at 80 cols. Indented comments
   should be wrapped at reasonable width.
 - Comments should start with a capitalized letter and end with a period.

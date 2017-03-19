@@ -4,7 +4,7 @@ description = "Ready-to-use code snippets"
 +++
 
 
-[doc/apps/](../) contains general information for application developpers. The
+[apps/](/apps/) contains general information for application developpers. The
 complete API documentation, including examples, is at
 [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://periph.io/x/periph)
 

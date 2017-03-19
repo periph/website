@@ -30,28 +30,31 @@ discussing to collaborate in the future!
   [ssd1306](https://periph.io/x/periph/devices/ssd1306),
   [tm1637](https://periph.io/x/periph/devices/tm1637).
 - Continuously tested via [gohci](https://github.com/periph/gohci) on:
-  - [BeagleBone](/doc/host/beaglebone/)
-  - [C.H.I.P.](/doc/host/chip/)
-  - [ODROID-C1+](/doc/host/odroid-c1/)
-  - [Raspberry Pi](/doc/host/raspberrypi/)
+  - [BeagleBone](/host/beaglebone/)
+  - [C.H.I.P.](/host/chip/)
+  - [ODROID-C1+](/host/odroid-c1/)
+  - [Raspberry Pi](/host/raspberrypi/)
   - Windows 10 VM
 
 
 # Documentation
 
-- [doc/users/](/doc/users/) for ready-to-use tools.
-- [doc/apps/](/doc/apps/) to use `periph` as a library. The complete API
+- [users/](/users/) for ready-to-use tools.
+- [apps/](/apps/) to use `periph` as a library. The complete API
   documentation, including examples, is at
   [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://periph.io/x/periph)
-- [doc/drivers/](/doc/drivers/) to expand the list of supported hardware.
+- [host/](/host/) to get tips and tricks for known supported hosts (Raspberry
+  Pi, CHIP, etc).
+- [project/](/project/) to read about design goals, contribution rules or expand
+  the list of supported hardware.
+- [samples/](/samples/) for simple examples to help get started.
 
 
 # Users
 
 `periph` includes [many ready-to-use
-tools](https://github.com/google/periph/tree/master/cmd/)! See
-[doc/users/](/doc/users/) for more info on configuring the host and using the
-included tools.
+tools](https://github.com/google/periph/tree/master/cmd/)! See [users/](/users/)
+for more info on configuring the host and using the included tools.
 
 ```bash
 # Retrieve and install all the commands at once:
@@ -67,7 +70,7 @@ gpio-list
 
 # Application developers
 
-For [application developers](/doc/apps/), `periph` provides OS-independent bus
+For [application developers](/apps/), `periph` provides OS-independent bus
 interfacing. It really tries hard to _get out of the way_.  Here's the canonical
 "toggle a LED" sample:
 
@@ -108,7 +111,7 @@ into the kernel. Instead it directly changes the GPIO memory mapped register.
 
 ## Samples
 
-See [doc/apps/samples/](/doc/apps/samples/) for more examples.
+See [samples/](/samples/) for more examples.
 
 ![boardimage](https://raw.githubusercontent.com/periph/website/master/site/static/img/lab-280.jpg)
 
@@ -144,18 +147,17 @@ You can file issues at https://github.com/google/periph/issues
 # Contributions
 
 `periph` provides an extensible driver registry and common bus interfaces which
-are explained in more details at [doc/drivers/](/doc/drivers/). `periph` is
-designed to work well with drivers living in external repositories so you are
-not _required_ to fork the periph repository to load out-of-tree drivers for
-your platform.
+are explained in more details at [project/](/project/). `periph` is designed to
+work well with drivers living in external repositories so you are not _required_
+to fork the periph repository to load out-of-tree drivers for your platform.
 
-**Every commit is [tested on real hardware](/doc/drivers/contributing/#testing)
+**Every commit is [tested on real hardware](/project/contributing/#testing)
 via [gohci](https://github.com/periph/gohci) workers.**
 
 We gladly accept contributions for documentation improvements and from device
 driver developers via GitHub pull requests, as long as the author has signed the
 Google Contributor License. Please see
-[doc/drivers/contributing/](/doc/drivers/contributing/) for more details.
+[project/contributing/](/project/contributing/) for more details.
 
 
 # Philosophy
