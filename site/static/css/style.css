@@ -137,7 +137,11 @@ footer, header {
 }
 
 footer {
-  font-size: 50%;
+  font-size: 60%;
+}
+
+footer a {
+  color: #fff;
 }
 
 header {
@@ -158,6 +162,10 @@ header a {
   line-height: 200%;
 }
 
+/* Slack image */
+.top-right img {
+  margin-right: 3px;
+}
 
 /* NAVBAR */
 
