@@ -47,7 +47,7 @@ future!
   anywhere. The complete API documentation is at
   [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://periph.io/x/periph)
 - [examples/](/examples/) to help get started.
-- [users/](/users/) for ready-to-use tools.
+- [tools/](/tools/) for a quick overview of ready-to-use tools.
 - [project/](/project/) to read about design goals, contribution rules or expand
   the list of supported hardware.
 
