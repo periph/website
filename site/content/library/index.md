@@ -1,5 +1,5 @@
 +++
-title = "Application developers"
+title = "Library"
 description = "Leverage periph to write Go applications"
 +++
 
@@ -9,9 +9,11 @@ The complete API documentation, including examples, is at
 
 # Introduction
 
-`periph` uses a driver registry to efficiently load the relevant drivers on the
-board and OS it is running on. It differentiates between drivers that _enable_
-functionality on the host and drivers for devices connected _to_ the host.
+`periph` is designed to be a package leveraged to abstract OSes and boards
+differences to write an app once, run anywhere. It uses a driver registry to
+efficiently load the relevant drivers on the board and OS it is running on. It
+differentiates between drivers that _enable_ functionality on the host and
+drivers for devices connected _to_ the host.
 
 Most micro computers expose at least some of the following:
 [I²C bus](https://periph.io/x/periph/conn/i2c#Bus), [SPI

@@ -43,13 +43,13 @@ future!
 - [platform/](/platform/) for an overview of supported boards (Raspberry Pi,
   CHIP, etc) and OSes plus tips and tricks.
 - [device/](/device/) for an overview of included device drivers.
-- [users/](/users/) for ready-to-use tools.
-- [apps/](/apps/) to use `periph` as a library. The complete API
-  documentation, including examples, is at
+- [library/](/library/) to use `periph` as a library to write an app once, run
+  anywhere. The complete API documentation is at
   [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://periph.io/x/periph)
+- [examples/](/examples/) to help get started.
+- [users/](/users/) for ready-to-use tools.
 - [project/](/project/) to read about design goals, contribution rules or expand
   the list of supported hardware.
-- [examples/](/examples/) to help get started.
 
 
 # Users
@@ -70,11 +70,11 @@ gpio-list
 ```
 
 
-# Application developers
+# Library
 
-For [application developers](/apps/), `periph` provides OS-independent bus
-interfacing. It really tries hard to _get out of the way_.  Here's the canonical
-"toggle a LED" example:
+For [application developers](/library/), using `periph` as a library provides
+OS-independent bus interfacing. It really tries hard to _get out of the way_.
+Here's the canonical "toggle a LED" example:
 
 
 ~~~go

@@ -4,8 +4,8 @@ description = "Ready-to-use code snippets"
 +++
 
 
-[apps/](/apps/) contains general information for application developpers. The
-complete API documentation, including examples, is at
+[library/](/library/) contains general information for application developpers.
+The complete API documentation, including examples, is at
 [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://periph.io/x/periph)
 
 You are encouraged to look at tools in
