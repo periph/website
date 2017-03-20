@@ -45,7 +45,13 @@
     navbar = document.getElementsByClassName('navbar')[0];
     navOffsetTop = navbar.offsetHeight;
   }
-  window.addEventListener('DOMContentLoaded', onDOMContentLoaded);
+  if (document.readyState === "complete" || document.readyState === "loaded" || document.readyState === "interactive") {
+    // DOMContentLoaded already fired because of the async JS reference.
+    onDOMContentLoaded();
+  } else {
+    // DOM wasn't parsed yet, install handler.
+    document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
+  }
 
   function onResize() {
     navOffsetTop = -1;
