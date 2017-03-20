@@ -52,11 +52,11 @@ future!
   the list of supported hardware.
 
 
-# Users
+# Tools
 
 `periph` includes [many ready-to-use
-tools](https://github.com/google/periph/tree/master/cmd/)! See [users/](/users/)
-for more info on configuring the board and OS and using the included tools.
+tools](https://github.com/google/periph/tree/master/cmd/)! See [tools/](/tools/)
+for more info about using the included tools.
 
 ```bash
 # Retrieve and install all the commands at once:
@@ -103,8 +103,9 @@ The following are synonyms, use the form you prefer:
   - [`gpio.ByName("GPIO13")`](https://periph.io/x/periph/conn/gpio#ByName)
 - Using global variables:
   - [`rpi.P1_33`](https://periph.io/x/periph/host/rpi#P1_33) to
-    select the pin via its position on the board
-  - [`bcm283x.GPIO13`](https://periph.io/x/periph/host/bcm283x#GPIO13)
+    select the pin via its _position on the board_
+  - [`bcm283x.GPIO13`](https://periph.io/x/periph/host/bcm283x#GPIO13) for the
+    pin as defined by the CPU
 
 This example uses basically no CPU: the
 [Out()](https://godoc.org/periph.io/x/periph/conn/gpio#PinOut) call doesn't call
