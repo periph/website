@@ -24,12 +24,33 @@
   <nav class="navbar">
     <div class="container">
       <ul class="navbar-list">
-        <li class="navbar-item"><a class="navbar-link" href="/platform/">Platforms</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="/device/">Devices</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="/library/">Library</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="/examples/">Examples</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="/tools/">Tools</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="/project/">Project</a></li>
+        <li class="navbar-item">
+          {{ partial "popover-root.html" (dict "c" . "h" "/platform/" "n" "Platforms") }}
+          <div class="popover">
+            <ul class="popover-list">
+              {{ partial "popup-item.html" (dict "c" . "h" "/platform/" "n" "Overview") }}
+              {{/* TODO(maruel): Generate the rest of the list automatically. */}}
+              {{ partial "popup-item.html" (dict "c" . "h" "/platform/beaglebone/" "n" "Beaglebone") }}
+              {{ partial "popup-item.html" (dict "c" . "h" "/platform/chip/" "n" "C.H.I.P.") }}
+              {{ partial "popup-item.html" (dict "c" . "h" "/platform/odroid-c1/" "n" "ODROID-C1") }}
+              {{ partial "popup-item.html" (dict "c" . "h" "/platform/raspberrypi/" "n" "Raspberry Pi") }}
+            </ul>
+          </div>
+        </li>
+        {{ partial "navbar-item.html" (dict "c" . "h" "/device/" "n" "Devices") }}
+        {{ partial "navbar-item.html" (dict "c" . "h" "/library/" "n" "Library") }}
+        {{ partial "navbar-item.html" (dict "c" . "h" "/examples/" "n" "Examples") }}
+        {{ partial "navbar-item.html" (dict "c" . "h" "/tools/" "n" "Tools") }}
+        <li class="navbar-item">
+          {{ partial "popover-root.html" (dict "c" . "h" "/project/" "n" "Project") }}
+          <div class="popover">
+            <ul class="popover-list">
+              {{ partial "popup-item.html" (dict "c" . "h" "/project/" "n" "Overview") }}
+              {{ partial "popup-item.html" (dict "c" . "h" "/project/goals/" "n" "Goals") }}
+              {{ partial "popup-item.html" (dict "c" . "h" "/project/design/" "n" "Design") }}
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>

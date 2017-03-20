@@ -39,18 +39,51 @@
 // Menu handler.
 (function() {
   var navbar;
-  var navOffsetTop = -1;
+  var navOffsetTop;
 
   function onDOMContentLoaded() {
     navbar = document.getElementsByClassName('navbar')[0];
     navOffsetTop = navbar.offsetHeight;
   }
-  if (document.readyState === "complete" || document.readyState === "loaded" || document.readyState === "interactive") {
+  if (document.readyState === 'complete' || document.readyState === 'loaded' || document.readyState === 'interactive') {
     // DOMContentLoaded already fired because of the async JS reference.
     onDOMContentLoaded();
   } else {
     // DOM wasn't parsed yet, install handler.
     document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
+  }
+
+  function openPopover(e) {
+    // this is the a link.
+    closePopover();
+    var popovers = this.parentElement.getElementsByClassName('popover');
+    if (popovers) {
+      e.preventDefault();
+      popovers[0].classList.toggle('open');
+      e.stopImmediatePropagation();
+    }
+  }
+
+  function closePopover(e) {
+    var elems = document.getElementsByClassName('popover open');
+    for (var x = 0; x < elems.length; x++) {
+      elems[x].classList.remove('open');
+    }
+  }
+  document.addEventListener('click', closePopover);
+
+  function onLoad() {
+    var popOvers = document.querySelectorAll('li.navbar-item div.popover');
+    for (var x = 0; x < popOvers.length; x++) {
+      // Find the a link just aside and install an handler. Slightly cheezy but
+      // much simpler than adding "data-foo" attributes.
+      popOvers[x].parentElement.querySelector('a').addEventListener('click', openPopover);
+    }
+  }
+  if (document.readyState === 'complete') {
+    onLoad();
+  } else {
+    window.addEventListener('load', onLoad);
   }
 
   function onResize() {
