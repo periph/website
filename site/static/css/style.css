@@ -105,15 +105,15 @@ ol ol, ol ul, ul ol, ul ul {
 
 img[alt=boardimage] {
   float: right;
-  max-width: 100%;
   margin-bottom: 2em;
+  max-width: 100%;
 }
 
 footer, header {
-  padding-top: 5px;
-  padding-bottom: 5px;
   background-color: #2a78bd;
   color: #fff;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 footer {
@@ -121,7 +121,7 @@ footer {
 }
 
 header {
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
 
 header h1 {
@@ -134,6 +134,72 @@ header a {
 }
 
 .top-right {
-  line-height: 200%;
   font-size: 75%;
+  line-height: 200%;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+  display: none;
+}
+
+.navbar-spacer {
+  margin-bottom: 10px;
+}
+
+/* TODO: Implement phone hotdog menu or vertical menu. */
+
+/* For wide viewport, use complete enumeration as an horizontal bar */
+@media (min-width: 750px) {
+  .navbar, .navbar-spacer {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    margin-bottom: 10px;
+    display: block;
+    height: 5rem;
+    width: 100%;
+    z-index: 99;
+  }
+  .navbar-spacer {
+    display: none;
+  }
+  .navbar > .container {
+    width: 100%;
+  }
+  .navbar-list {
+    list-style: none;
+    margin-bottom: 0;
+  }
+  .navbar-item {
+    float: left;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .navbar-link {
+    color: #222;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    line-height: 5rem;
+    margin-right: 35px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .navbar-link.active {
+    color: #33C3F0;
+  }
+  .has-docked-nav .navbar {
+    left: 0;
+    position: fixed;
+    top: 0;
+  }
+  .has-docked-nav .navbar-spacer {
+    display: block;
+  }
+  .has-docked-nav .navbar > .container {
+    width: 80%;
+  }
 }
