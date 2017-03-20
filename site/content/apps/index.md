@@ -10,7 +10,7 @@ The complete API documentation, including examples, is at
 # Introduction
 
 `periph` uses a driver registry to efficiently load the relevant drivers on the
-host it is running on. It differentiates between drivers that _enable_
+board and OS it is running on. It differentiates between drivers that _enable_
 functionality on the host and drivers for devices connected _to_ the host.
 
 Most micro computers expose at least some of the following:

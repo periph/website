@@ -9,9 +9,10 @@ description = "Peripherals I/O in Go"
 # Overview
 
 [periph.io/x/periph](https://periph.io/x/periph) is a standalone library with no
-external dependency to interface with low-level host facilities. It can be
-viewed as a lower level layer than [Gobot](https://gobot.io), and yes we're
-discussing to collaborate in the future!
+external dependency to interface with low-level board facilities exposed by the
+OS or leveraged against OS' will. It can be viewed as a lower level layer than
+[Gobot](https://gobot.io), and yes we're discussing to collaborate in the
+future!
 
 
 # Features
@@ -30,10 +31,10 @@ discussing to collaborate in the future!
   [ssd1306](https://periph.io/x/periph/devices/ssd1306),
   [tm1637](https://periph.io/x/periph/devices/tm1637).
 - Continuously tested via [gohci](https://github.com/periph/gohci) on:
-  - [BeagleBone](/host/beaglebone/)
-  - [C.H.I.P.](/host/chip/)
-  - [ODROID-C1+](/host/odroid-c1/)
-  - [Raspberry Pi](/host/raspberrypi/)
+  - [BeagleBone](/platform/beaglebone/)
+  - [C.H.I.P.](/platform/chip/)
+  - [ODROID-C1+](/platform/odroid-c1/)
+  - [Raspberry Pi](/platform/raspberrypi/)
   - Windows 10 VM
 
 
@@ -43,8 +44,8 @@ discussing to collaborate in the future!
 - [apps/](/apps/) to use `periph` as a library. The complete API
   documentation, including examples, is at
   [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://periph.io/x/periph)
-- [host/](/host/) to get tips and tricks for known supported hosts (Raspberry
-  Pi, CHIP, etc).
+- [platform/](/platform/) to get tips and tricks for known supported boards
+  (Raspberry Pi, CHIP, etc).
 - [project/](/project/) to read about design goals, contribution rules or expand
   the list of supported hardware.
 - [examples/](/examples/) to help get started.
@@ -54,7 +55,7 @@ discussing to collaborate in the future!
 
 `periph` includes [many ready-to-use
 tools](https://github.com/google/periph/tree/master/cmd/)! See [users/](/users/)
-for more info on configuring the host and using the included tools.
+for more info on configuring the board and OS and using the included tools.
 
 ```bash
 # Retrieve and install all the commands at once:
@@ -195,7 +196,7 @@ Google Contributor License. Please see
    registry](https://periph.io/x/periph#Register).
    - e.g. a user can inject a custom driver to expose more pins, headers, etc.
      A USB device (like an FT232H) can expose headers _in addition_ to the
-     headers found on the host.
+     headers found on the board.
 6. The drivers must use the fastest possible implementation.
    - e.g. both [allwinner](https://periph.io/x/periph/host/allwinner) and
      [bcm283x](https://periph.io/x/periph/host/bcm283x) leverage [sysfs

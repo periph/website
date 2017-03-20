@@ -15,7 +15,7 @@ Only Linux distributions are currently supported for hardware access. The
 library is compilable on OSX and Windows but doesn't yet provide facilities.
 
 
-# Platforms
+# Boards
 
 - [BeagleBone](beaglebone/)
 - [NextThing's C.H.I.P.](chip/)

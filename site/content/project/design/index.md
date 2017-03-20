@@ -90,10 +90,10 @@ A device can either be ambiant or opened. An ambiant device _just exists_ and
 doesn't need to be opened. Any other device require an `open()`-like call to get
 an handle to be used.
 
-Most operating system virtualizes the system's GPU even if the host only has one
-video card. The application "opens" the video card, effectively its driver, and
-ask the GPU device drive rto load texture, run shaders and display in a window
-context.
+Most operating system virtualizes the system's GPU even if the host system only
+has one video card. The application "opens" the video card, effectively its
+driver, and ask the GPU device drive rto load texture, run shaders and display
+in a window context.
 
 When working with hardware, coordination of multiple users is needed but
 virtualization eventually fall short in certain use cases.

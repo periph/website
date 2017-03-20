@@ -64,7 +64,7 @@ with full interrupt based edge detection.
 
 ## I²C
 
-The BCM238x has two I²C host but [it is
+The BCM238x has two I²C buses but [it is
 recommended](https://github.com/raspberrypi/hats) to only use the second.
 Enabling `/dev/i2c-1` permanently:
 ```
@@ -83,7 +83,7 @@ dtparam=audio=on
 
 ## SPI
 
-The BCM238x has 3 SPI host but only 2 are soldered on the RPi.
+The BCM238x has 3 SPI buses but only 2 are soldered on the RPi.
 
 The first SPI controller (`/dev/spidev0.0` and `/dev/spidev0.1`) can be enabled
 permanently with:
