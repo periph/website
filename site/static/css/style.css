@@ -87,85 +87,89 @@ code .il { color: #0000DD; font-weight: bold } /* Literal.Number.Integer.Long */
  * Custom styles
  */
 
+
+/* Push footer to bottom */
 html, body {
   height: 100%;
 }
-
 .whole-container {
   display: flex;
   height: 100%;
   flex-direction: column;
 }
-
 .content-container {
   flex: 1;
 }
 
+
+/* Patch skeleton defaults to our taste */
 body {
   font-size: 1.75em;
 }
-
 blockquote, dl, figure, form, ol, p, pre, table, ul {
   margin-bottom: 1.5rem;
 }
-
 .button, button, li {
   margin-bottom: 0.5rem;
 }
-
 ol ol, ol ul, ul ol, ul ul {
   margin: 0.5rem 0 0.5rem 3rem;
 }
+ul {
+  list-style: circle outside;
+  margin-left: 25px;
+}
+ol {
+  list-style: decimal outside;
+  margin-left: 25px;
+}
 
+
+/* Align boardimage in-document pictures */
 img[alt=boardimage] {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
 @media (min-width: 750px) {
   img[alt=boardimage] {
     float: right;
   }
 }
 
+
+/* Header and footer styling */
 footer, header {
   background-color: #2a78bd;
   color: #fff;
   padding-bottom: 5px;
   padding-top: 5px;
 }
-
 footer {
   font-size: 60%;
 }
-
 footer a {
   color: #fff;
 }
-
 header {
   margin-bottom: 0;
 }
-
 header h1 {
   margin-bottom: 0;
 }
-
 header a {
   text-decoration: none;
   color: #fff;
 }
-
 .top-right {
   font-size: 75%;
   line-height: 200%;
 }
-
 /* Slack image */
 .top-right img {
   margin-right: 3px;
 }
+
 
 /* NAVBAR */
 
@@ -286,13 +290,13 @@ header a {
   margin-left: -11px;
 }
 .popover-list {
-  padding: 0;
-  margin: 0;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .popover-item {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 .popover-link {
   border-bottom: 1px solid #eee;
