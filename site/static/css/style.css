@@ -42,7 +42,7 @@ code .kp { color: #003388; font-weight: bold } /* Keyword.Pseudo */
 code .kr { color: #008800; font-weight: bold } /* Keyword.Reserved */
 code .kt { color: #333399; font-weight: bold } /* Keyword.Type */
 code .m { color: #6600EE; font-weight: bold } /* Literal.Number */
-code .s { background-color: #fff0f0 } /* Literal.String */
+code .s { color: #00006f } /* Literal.String */
 code .na { color: #0000CC } /* Name.Attribute */
 code .nb { color: #007020 } /* Name.Builtin */
 code .nc { color: #BB0066; font-weight: bold } /* Name.Class */
