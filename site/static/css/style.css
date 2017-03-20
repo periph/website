@@ -87,6 +87,20 @@ code .il { color: #0000DD; font-weight: bold } /* Literal.Number.Integer.Long */
  * Custom styles
  */
 
+html, body {
+  height: 100%;
+}
+
+.whole-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.content-container {
+  flex: 1;
+}
+
 body {
   font-size: 1.75em;
 }
