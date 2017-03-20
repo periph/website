@@ -24,7 +24,7 @@ future!
   - [I²C](https://periph.io/x/periph/conn/i2c)
   - [SPI](https://periph.io/x/periph/conn/spi)
   - [1-wire](https://periph.io/x/periph/experimental/conn/onewire)
-- Devices: [apa102](https://periph.io/x/periph/devices/apa102),
+- [Devices](/device/): [apa102](https://periph.io/x/periph/devices/apa102),
   [bme280](https://periph.io/x/periph/devices/bme280),
   [ds18b20](https://periph.io/x/periph/experimental/devices/ds18b20),
   [ds248x](https://periph.io/x/periph/experimental/devices/ds248x),
@@ -40,12 +40,13 @@ future!
 
 # Documentation
 
+- [platform/](/platform/) for an overview of supported boards (Raspberry Pi,
+  CHIP, etc) and OSes plus tips and tricks.
+- [device/](/device/) for an overview of included device drivers.
 - [users/](/users/) for ready-to-use tools.
 - [apps/](/apps/) to use `periph` as a library. The complete API
   documentation, including examples, is at
   [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://periph.io/x/periph)
-- [platform/](/platform/) to get tips and tricks for known supported boards
-  (Raspberry Pi, CHIP, etc).
 - [project/](/project/) to read about design goals, contribution rules or expand
   the list of supported hardware.
 - [examples/](/examples/) to help get started.
