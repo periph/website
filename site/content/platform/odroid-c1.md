@@ -70,7 +70,7 @@ By default, I²C is not enabled. Enable with: `modprobe aml_i2c`
 
 I²C #1 is on pins 3&5, I²C #2 on pins 27&28. I²C #0 is not usable.
 
-This needs to be done at each boot. A simple location is to add the above into
+This needs to be done at each boot. A good location is to add the above into
 `/etc/rc.local` before the `exit 0` statement.
 
 
@@ -80,7 +80,7 @@ By default, SPI is not enabled. Enable with: `modprobe spicc`
 
 Bus on pins 19, 21, 23 and chip enable pin 24.
 
-This needs to be done at each boot. A simple location is to add the above into
+This needs to be done at each boot. A good location is to add the above into
 `/etc/rc.local` before the `exit 0` statement.
 
 

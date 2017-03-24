@@ -102,5 +102,5 @@ mkdir -p /sys/kernel/config/device-tree/overlays/spi
 cat /lib/firmware/nextthingco/chip/sample-spi.dtbo > /sys/kernel/config/device-tree/overlays/spi/dtbo
 ```
 
-This needs to be done at each boot. A simple location is to add the above into
+This needs to be done at each boot. A good location is to add the above into
 `/etc/rc.local` before the `exit 0` statement.

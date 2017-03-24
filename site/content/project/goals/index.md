@@ -9,14 +9,13 @@ description = "Design goals"
 Go developped a fairly large hardware hacker community in part because the
 language and its tooling have the following properties:
 
-- Easy to cross compile to ARM/Linux via `GOOS=linux GOARCH=arm go build .`.
+- Native support in the tool chain to cross compile to ARM/Linux via `GOOS=linux
+  GOARCH=arm go build .`.
 - Significantly faster to execute than python and node.js.
 - Significantly lighter in term of memory use than Java or node.js.
 - Significantly more productive to code than C/C++.
 - Builds reasonably fast on ARM.
-- Fairly good OS level support: Debian pre-provided Go package (albeit a tad
-  old) makes it easy to apt-get install on arm64, or arm32 users have access to
-  package on [golang.org](https://golang.org).
+- Fairly good OS level support.
 
 Many Go packages, both generic and specialized, were created to fill the space.
 This library came out of the desire to have a _designed_ API (contrary to

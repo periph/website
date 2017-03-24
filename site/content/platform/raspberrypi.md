@@ -6,8 +6,8 @@ description = "running Raspbian Jessie Lite"
 # Overview
 
 [Raspberry Pis](https://raspberrypi.org/) are the poster child of micro
-computers and are extremely popular and easy to get from resellers. They are
-very well supported. The following functionality is supported:
+computers and are extremely popular and available from multiple resellers. They
+are very well supported. The following functionality is supported:
 
 - 2x I²C buses
 - 2x SPI bus

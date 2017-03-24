@@ -175,8 +175,8 @@ use this as a learning experience.
 - Code must compile on all OSes, with minimal use of OS-specific thunk as
   strictly needed. Take advantage of constructs like `if isArm { ...}` where the
   conditional is optimized away at compile time via dead code elimination
-  and `isArm` is a simple boolean constant defined in relevant .go files
-  having a build constraint.
+  and `isArm` is a boolean constant defined in relevant .go files having a build
+  constraint.
 - Struct implementing an interface must validate at compile time with `var _
   <Interface> = &<Type>{}`.
 - License is Apache v2.0.

@@ -25,7 +25,7 @@ First, make sure to have [Go installed](https://golang.org/dl/).
 
 ## Installation
 
-It is as simple as:
+It is done via:
 
 ```bash
 go get -u periph.io/x/periph/cmd/...

@@ -18,7 +18,7 @@ execute `go run example.go`.
 
 # Toggle a LED
 
-_Purpose:_ Simplest example
+_Purpose:_ Short example including full error checking.
 
 `periph` doesn't expose any _toggle_-like functionality on purpose, it is as
 stateless as possible.
@@ -42,14 +42,12 @@ func main() {
         log.Fatal(err)
     }
 
-    l := gpio.Low
-    for {
-        // Lookup a pin by its location on the board:
-        if err := rpi.P1_33.Out(l); err != nil {
-            log.Fatal(err)
-        }
-        l = !l
-        time.Sleep(500 * time.Millisecond)
+    for l := gpio.Low; ; l = !l {
+      // Lookup a pin by its location on the board:
+      if err := rpi.P1_33.Out(l); err != nil {
+        log.Fatal(err)
+      }
+      time.Sleep(500 * time.Millisecond)
     }
 }
 ~~~
