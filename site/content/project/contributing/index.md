@@ -7,7 +7,7 @@ description = "Want to contribute? Great!"
 # Before you contribute
 
 Before we can use your code, you must sign the [Google Individual Contributor
-License Agreement] (https://cla.developers.google.com/about/google-individual)
+License Agreement](https://cla.developers.google.com/about/google-individual)
 (CLA), which you can do online. The CLA is necessary mainly because you own the
 copyright to your changes, even after your contribution becomes part of our
 codebase, so we need your permission to use and distribute your code. We also
