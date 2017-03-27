@@ -34,7 +34,7 @@ linux based distribution.
 ## Drivers
 
 - Headers driver lives in
-  [periph.io/x/periph/host/odroid_c1](https://periph.io/x/periph/host/odroid_c1).
+  [periph.io/x/periph/host/odroidc1](https://periph.io/x/periph/host/odroidc1).
   It exports the main `J2` header, which is rPi compatible except for a couple
   of analog pins (which are not currently supported).
 - sysfs driver lives in
