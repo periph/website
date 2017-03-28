@@ -136,7 +136,7 @@ func main() {
     }
 
     // Open a handle to the first available I²C bus:
-    bus, err := i2c.OpenByName("")
+    bus, err := i2c.Open("")
     if err != nil {
         log.Fatal(err)
     }
@@ -251,7 +251,7 @@ func main() {
     }
 
     // Open a handle to the first available I²C bus:
-    bus, err := i2c.OpenByName("")
+    bus, err := i2c.Open("")
     if err != nil {
         log.Fatal(err)
     }

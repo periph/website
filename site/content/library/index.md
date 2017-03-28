@@ -99,7 +99,7 @@ address:
 
 ~~~go
 // Open the first available I²C bus:
-bus, _ := i2c.OpenByName("")
+bus, _ := i2c.Open("")
 // Address the device with address 0x76 on the I²C bus:
 dev := i2c.Dev{bus, 0x76}
 // This is now a point-to-point connection and implements conn.Conn:
@@ -171,7 +171,7 @@ func main() {
         log.Fatal(err)
     }
 
-    bus, err := i2c.OpenByName("I2C1")
+    bus, err := i2c.Open("1")
     if err != nil {
         log.Fatal(err)
     }
