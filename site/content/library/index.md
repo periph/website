@@ -99,7 +99,7 @@ address:
 
 ~~~go
 // Open the first available I²C bus:
-bus, _ := i2c.Open("")
+bus, _ := i2creg.Open("")
 // Address the device with address 0x76 on the I²C bus:
 dev := i2c.Dev{bus, 0x76}
 // This is now a point-to-point connection and implements conn.Conn:
@@ -139,6 +139,7 @@ import (
     "periph.io/x/periph"
     "periph.io/x/periph/host"
     "periph.io/x/periph/conn/i2c"
+    "periph.io/x/periph/conn/i2c/i2creg"
 )
 
 type driver struct{}
@@ -171,7 +172,7 @@ func main() {
         log.Fatal(err)
     }
 
-    bus, err := i2c.Open("1")
+    bus, err := i2creg.Open("1")
     if err != nil {
         log.Fatal(err)
     }

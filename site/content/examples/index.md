@@ -113,6 +113,7 @@ import (
     "os"
     "time"
 
+    "periph.io/x/periph/conn/i2c/i2creg"
     "periph.io/x/periph/devices/ssd1306"
     "periph.io/x/periph/host"
     "github.com/nfnt/resize"
@@ -136,7 +137,7 @@ func main() {
     }
 
     // Open a handle to the first available I²C bus:
-    bus, err := i2c.Open("")
+    bus, err := i2creg.Open("")
     if err != nil {
         log.Fatal(err)
     }
@@ -239,6 +240,7 @@ import (
     "fmt"
     "log"
 
+    "periph.io/x/periph/conn/i2c/i2creg"
     "periph.io/x/periph/devices"
     "periph.io/x/periph/devices/bme280"
     "periph.io/x/periph/host"
@@ -251,7 +253,7 @@ func main() {
     }
 
     // Open a handle to the first available I²C bus:
-    bus, err := i2c.Open("")
+    bus, err := i2creg.Open("")
     if err != nil {
         log.Fatal(err)
     }
