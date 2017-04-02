@@ -29,6 +29,10 @@ The main disadvantage is slightly higher cost.
 
 ## BME280
 
+Two BME280 connected to a Raspberry Pi 3; the top one is connected over I²C, the bttom one over SPI:
+
+![bme280](https://raw.githubusercontent.com/periph/website/master/site/static/img/bme280-two.jpg)
+
 [periph.io/x/periph/devices/bme280](https://periph.io/x/periph/devices/bme280)
 provides support for BME280, a popular humidity and pressure sensor. It also
 support low precision temperature measurement.
