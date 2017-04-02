@@ -29,7 +29,10 @@ The main disadvantage is slightly higher cost.
 
 ## BME280
 
-Two BME280 connected to a Raspberry Pi 3; the top one is connected over I²C, the bttom one over SPI:
+Setup for [BME280 smoke
+test](https://periph.io/x/periph/devices/bme280/bme280smoketest): two BME280
+connected are to a Raspberry Pi 3; the top one is connected via I²C, the bottom
+one is connected via SPI:
 
 ![bme280](https://raw.githubusercontent.com/periph/website/master/site/static/img/bme280-two.jpg)
 
