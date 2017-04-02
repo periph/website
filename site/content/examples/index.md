@@ -231,7 +231,11 @@ func main() {
 
 _Purpose:_ gather temperature, pressure and relative humidity.
 
-This example uses a [bme280](https://periph.io/x/periph/devices/bme280).
+This example uses a [BME280](https://periph.io/x/periph/devices/bme280)
+connected via [I²C](https://periph.io/x/periph/conn/i2c).
+
+![bme280](https://raw.githubusercontent.com/periph/website/master/site/static/img/bme280.jpg)
+
 
 ~~~go
 package main
