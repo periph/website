@@ -30,15 +30,16 @@ The main disadvantage is slightly higher cost.
 ## BME280
 
 Setup for [BME280 smoke
-test](https://periph.io/x/periph/devices/bme280/bme280smoketest): two BME280
-connected are to a Raspberry Pi 3; the top one is connected via I²C, the bottom
-one is connected via SPI:
+test](https://periph.io/x/periph/devices/bme280/bme280smoketest): two
+[BME280](https://periph.io/x/periph/devices/bme280) connected are to a Raspberry
+Pi 3; the top one is connected via [I²C](https://periph.io/x/periph/conn/i2c),
+the bottom one is connected via [SPI](https://periph.io/x/periph/conn/spi):
 
 ![bme280](https://raw.githubusercontent.com/periph/website/master/site/static/img/bme280-two.jpg)
 
 [periph.io/x/periph/devices/bme280](https://periph.io/x/periph/devices/bme280)
-provides support for BME280, a popular humidity and pressure sensor. It also
-support low precision temperature measurement.
+provides support for BME280 via either I²C or SPI, a popular humidity and
+pressure sensor. It also support low precision temperature measurement.
 
 
 ## DS18b20
