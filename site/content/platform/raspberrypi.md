@@ -71,6 +71,36 @@ Enabling `/dev/i2c-1` permanently:
 sudo raspi-config nonint do_i2c 0
 ```
 
+### Speed
+
+The speed defaults as 100kHz. The spec calls for 400kHz. For a bandwidth heavy
+device like an SSD1306, this may be a requirement.
+
+#### Permanent
+
+The I²C bus speed can be increased permanently to 400kHz by either:
+
+- (prefered) appending to `/boot/config.txt`:
+```
+dtparam=i2c_baudrate=400000
+```
+- adding a file in ` /etc/modprobe.d/` containing:
+```
+options i2c_bcm2708 baudrate=400000
+```
+
+#### Temporary
+
+The I²C bus speed can be changed temporarily by one of these:
+
+- write a number to `/sys/module/i2c_bcm2708/parameters/baudrate`
+- running `modprobe -r i2c_bcm2708 && modprobe i2c_bcm2708 baudrate=400000`
+
+In this case, the default value is used upon next reboot.
+
+Either of the 4 methods above affect both buses `I2C0` and `I2C1`
+simultaneously.
+
 
 ## PWM
 
