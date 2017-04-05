@@ -76,9 +76,10 @@ sudo raspi-config nonint do_i2c 0
 The speed defaults as 100kHz. The spec calls for 400kHz. For a bandwidth heavy
 device like an SSD1306, this may be a requirement.
 
+
 #### Permanent
 
-The I²C bus speed can be increased permanently to 400kHz by either:
+The I²C #1 bus speed can be increased permanently to 400kHz by either:
 
 - (prefered) appending to `/boot/config.txt`:
 ```
@@ -88,6 +89,11 @@ dtparam=i2c_baudrate=400000
 ```
 options i2c_bcm2708 baudrate=400000
 ```
+
+Refer to the [official
+documentation](https://www.raspberrypi.org/documentation/configuration/device-tree.md#part3.3)
+for more information.
+
 
 #### Temporary
 
