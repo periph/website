@@ -58,9 +58,11 @@ I²C.
 
 ## SSD1306
 
+{{< youtube 1yEPFeP7Ky4 >}}
+
 [periph.io/x/periph/devices/ssd1306](https://periph.io/x/periph/devices/ssd1306)
-provides support for the SSD1306 monochrome OLED display controller. It can
-control displays up to 128x64 in size.
+provides support for the SSD1306 monochrome OLED display controller via I²C or
+SPI in 4-wire mode. It can control displays up to 128x64 in size.
 
 
 ## TM1637
