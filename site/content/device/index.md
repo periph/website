@@ -58,7 +58,7 @@ I²C.
 
 ## SSD1306
 
-{{< youtube 1yEPFeP7Ky4 >}}
+<div class="youtube"><iframe src=//www.youtube.com/embed/1yEPFeP7Ky4 allowfullscreen frameborder=0></iframe></div>
 
 [periph.io/x/periph/devices/ssd1306](https://periph.io/x/periph/devices/ssd1306)
 provides support for the SSD1306 monochrome OLED display controller via I²C or
