@@ -99,6 +99,10 @@ func main() {
 
 _Purpose:_ display an animated GIF.
 
+![ballerine](https://raw.githubusercontent.com/periph/website/master/site/static/img/ballerine.gif)
+
+<div class="youtube"><iframe src=//www.youtube.com/embed/aP_9yPT5IGg allowfullscreen frameborder=0></iframe></div>
+
 This example uses a [ssd1306](https://periph.io/x/periph/devices/ssd1306). The
 frames in the GIF are resized and centered first to reduce the CPU overhead.
 
