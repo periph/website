@@ -147,6 +147,19 @@ sudo systemctl disable hciuart
 ```
 
 
+### SPI buffer size
+
+SPI transaction size is limited by spidev driver buffer size. Its default is
+4096 bytes. The current value can be viewed with the following command:
+```
+cat /sys/module/spidev/parameters/bufsiz
+```
+
+In some case this may not be enough like with the FLIR Lepton. The permanent fix
+is to edit `/boot/cmdline.txt` to insert `spidev.bufsiz=65536` at the beginning
+of the line.
+
+
 ## I2S
 
 I2S can be enabled by adding the following in `/boot/config`:
