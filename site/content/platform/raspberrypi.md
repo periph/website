@@ -91,7 +91,7 @@ few values tested:
 | 1000kHz  |  625Khz |
 
 It doesn't make any sense. The author is not sure why asking for 400Khz doesn't
-lead to 321kHz, looks like the
+lead to 375kHz, looks like the
 [i2c_bcm2708](https://github.com/raspberrypi/linux/blob/rpi-4.9.y/drivers/i2c/busses/i2c-bcm2708.c)
 driver speed selection algorithm is poorly implemented. As such, this is
 currently (as of 2017-04-12) recommended to ask for 600kHz to get 375kHz.
