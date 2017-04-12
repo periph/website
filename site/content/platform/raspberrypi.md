@@ -73,21 +73,49 @@ sudo raspi-config nonint do_i2c 0
 
 ### Speed
 
-The speed defaults as 100kHz. The spec calls for 400kHz. For a bandwidth heavy
-device like an SSD1306, this may be a requirement.
+The speed default is **62.5kHz, not 100kHz** as advertized by the driver. The
+I²C spec calls for 400kHz for many I²C devices so it is worth increasing the
+default bus speed. For a bandwidth heavy device like an SSD1306, this may be a
+requirement.
+
+*Warning*: A slower speed is selected and used than the one specified. Here's a
+few values tested:
+
+|Requested |  Actual |
+|----------|---------|
+|  100kHz  | 62.5kHz |
+|  400kHz  |  250Khz |
+|  500kHz  |  312Khz |
+|  600kHz  |  375Khz |
+|  650kHz  |  410Khz |
+| 1000kHz  |  625Khz |
+
+It doesn't make any sense. The author is not sure why asking for 400Khz doesn't
+lead to 321kHz, looks like the
+[i2c_bcm2708](https://github.com/raspberrypi/linux/blob/rpi-4.9.y/drivers/i2c/busses/i2c-bcm2708.c)
+driver speed selection algorithm is poorly implemented. As such, this is
+currently (as of 2017-04-12) recommended to ask for 600kHz to get 375kHz.
+
+If the value was overriden, it can be queried with:
+```
+cat /sys/module/i2c_bcm2708/parameters/baudrate
+```
+
+Writing to this file doesn't update the bus speed.
 
 
 #### Permanent
 
-The I²C #1 bus speed can be increased permanently to 400kHz by either:
+The I²C #1 bus speed can be increased permanently to 375kHz by either:
 
-- (prefered) appending to `/boot/config.txt`:
+- Append to `/boot/config.txt`:
 ```
-dtparam=i2c_baudrate=400000
+dtparam=i2c_baudrate=600000
 ```
-- adding a file in ` /etc/modprobe.d/` containing:
+- Create a file in `/etc/modprobe.d/` (e.g. `/etc/modprobe.d/i2c.conf`)
+  containing:
 ```
-options i2c_bcm2708 baudrate=400000
+options i2c_bcm2708 baudrate=600000
 ```
 
 Refer to the [official
@@ -97,14 +125,12 @@ for more information.
 
 #### Temporary
 
-The I²C bus speed can be changed temporarily by one of these:
+The I²C bus speed can be changed temporarily until next reboot by running:
+```
+sudo modprobe -r i2c_bcm2708 && sudo modprobe i2c_bcm2708 baudrate=600000
+```
 
-- write a number to `/sys/module/i2c_bcm2708/parameters/baudrate`
-- running `modprobe -r i2c_bcm2708 && modprobe i2c_bcm2708 baudrate=400000`
-
-In this case, the default value is used upon next reboot.
-
-Either of the 4 methods above affect both buses `I2C0` and `I2C1`
+Either of the 3 methods above affect both buses `I2C0` and `I2C1`
 simultaneously.
 
 
