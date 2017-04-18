@@ -18,6 +18,7 @@ future!
 # Features
 
 - No external dependencies
+- No C dependency, doesn't use `cgo`
 - Interfaces:
   - [GPIO](https://periph.io/x/periph/conn/gpio): both memory mapped
   registers and edge detection
