@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div class="whole-container">
+    <div class="content-container">
+      {{ partial "header.html" . }}
+      <div class="container">
+        <div class="row">
+          <div class="column">
+            {{ .Content }}
+            <ul>
+            {{ range .Data.Pages.ByWeight }}
+            <li><a href="#{{ .TranslationBaseName }}">{{ .Title }}</a></li>
+            {{ end }}
+            </ul>
+          </div>
+        </div>
+        {{ range .Data.Pages.ByWeight }}
+        <hr>
+        <div class="row">
+          <div class="column">
+            <h1 id="{{ .TranslationBaseName }}" class="center_title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+            {{- .Content -}}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    <div class="footer-container">
+      {{ partial "footer.html" . }}
+    </div>
+  </div>
+</body>
+</html>

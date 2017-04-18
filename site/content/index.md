@@ -31,11 +31,11 @@ future!
   [ssd1306](https://periph.io/x/periph/devices/ssd1306),
   [tm1637](https://periph.io/x/periph/devices/tm1637).
 - Continuously tested via [gohci](https://github.com/periph/gohci) on:
-  - [BeagleBone](/platform/beaglebone/)
-  - [C.H.I.P.](/platform/chip/)
-  - [ODROID-C1+](/platform/odroid-c1/)
-  - [Raspberry Pi](/platform/raspberrypi/)
-  - Windows 10 VM
+  - [BeagleBone](/platform/#beaglebone)
+  - [C.H.I.P.](/platform/#chip)
+  - [ODROID-C1+](/platform/#odroid-c1)
+  - [Raspberry Pi](/platform/#raspberrypi)
+  - [Windows 10 VM](/platform/#windows)
 
 
 # Documentation

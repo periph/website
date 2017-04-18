@@ -124,6 +124,9 @@ ol {
   margin-left: 25px;
 }
 
+/*
+ * Content
+ */
 
 /* Align boardimage in-document pictures */
 img[alt=boardimage] {
@@ -139,6 +142,28 @@ img[alt=boardimage] {
 
 .container img {
   max-width: 100%;
+}
+
+/* Youtube */
+.youtube {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.youtube iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.center_title {
+  text-align: center;
 }
 
 /* Header and footer styling */
@@ -173,24 +198,6 @@ header a {
   margin-right: 3px;
 }
 
-
-/* Youtube */
-.youtube {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  position: relative;
-  width: 100%;
-}
-
-.youtube iframe {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
 
 /* NAVBAR */
 
