@@ -6,8 +6,8 @@ weight = 1
 
 # Overview
 
-Most boards use a [Debian](http://debian.org/) derivativee as their official
-linux based platform.
+Most boards use a [Debian](http://debian.org/) derivative as their official
+linux based platform so the library is best tested on debian.
 
 Because Go executables are statically linked by default, there should be no
 problem to run a `periph` based executable on a

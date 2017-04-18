@@ -29,11 +29,9 @@
   <nav class="navbar">
     <div class="container">
       <ul class="navbar-list">
+        {{ partial "navbar-item-eq.html" (dict "c" . "h" "/" "n" "Home") }}
         {{ partial "navbar-item.html" (dict "c" . "h" "/platform/" "n" "Platforms") }}
         {{ partial "navbar-item.html" (dict "c" . "h" "/device/" "n" "Devices") }}
-        {{ partial "navbar-item.html" (dict "c" . "h" "/library/" "n" "Library") }}
-        {{ partial "navbar-item.html" (dict "c" . "h" "/examples/" "n" "Examples") }}
-        {{ partial "navbar-item.html" (dict "c" . "h" "/tools/" "n" "Tools") }}
         <li class="navbar-item">
           {{ partial "popover-root.html" (dict "c" . "h" "/project/" "n" "Project") }}
           <div class="popover">
@@ -42,6 +40,8 @@
               {{ partial "popup-item.html" (dict "c" . "h" "/project/goals/" "n" "Goals") }}
               {{ partial "popup-item.html" (dict "c" . "h" "/project/design/" "n" "Design") }}
               {{ partial "popup-item.html" (dict "c" . "h" "/project/contributing/" "n" "Contributing") }}
+              {{ partial "popup-item.html" (dict "c" . "h" "/project/library/" "n" "Library") }}
+              {{ partial "popup-item.html" (dict "c" . "h" "/project/tools/" "n" "Tools") }}
             </ul>
           </div>
         </li>

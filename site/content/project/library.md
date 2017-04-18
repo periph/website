@@ -118,7 +118,7 @@ arbitrary uses, such as buttons, LEDs, relays, etc.
 
 # Examples
 
-See [examples/](examples/) for various examples.
+See [device/](device/) for various examples.
 
 
 # Using out-of-tree drivers

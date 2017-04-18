@@ -42,20 +42,16 @@ future!
 
 - [platform/](/platform/) for an overview of supported boards (Raspberry Pi,
   CHIP, etc) and OSes plus tips and tricks.
-- [device/](/device/) for an overview of included device drivers.
-- [library/](/library/) to use `periph` as a library to write an app once, run
-  anywhere. The complete API documentation is at
+- [device/](/device/) for an overview of included device drivers and examples.
   [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://periph.io/x/periph)
-- [examples/](/examples/) to help get started.
-- [tools/](/tools/) for a quick overview of ready-to-use tools.
-- [project/](/project/) to read about design goals, contribution rules or expand
-  the list of supported hardware.
+- [project/](/project/) to read about design goals, using as a libray, using
+  included tools, contribution rules or expand the list of supported hardware.
 
 
 # Tools
 
 `periph` includes [many ready-to-use
-tools](https://github.com/google/periph/tree/master/cmd/)! See [tools/](/tools/)
+tools](https://github.com/google/periph/tree/master/cmd/)! See [project/tools/](/project/tools/)
 for more info about using the included tools.
 
 ```bash
@@ -72,9 +68,9 @@ gpio-list
 
 # Library
 
-For [application developers](/library/), using `periph` as a library provides
-OS-independent bus interfacing. It really tries hard to _get out of the way_.
-Here's the canonical "toggle a LED" example:
+For [application developers](/project/library/), using `periph` as a library
+provides OS-independent bus interfacing. It really tries hard to _get out of the
+way_.  Here's the canonical "toggle a LED" example:
 
 
 ~~~go
@@ -114,7 +110,7 @@ into the kernel. Instead it directly changes the GPIO memory mapped register.
 
 ## Examples
 
-See [examples/](/examples/) for more examples.
+See [device/](/device/) for more examples.
 
 ![boardimage](https://raw.githubusercontent.com/periph/website/master/site/static/img/lab-280.jpg)
 
