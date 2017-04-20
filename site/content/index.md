@@ -19,6 +19,8 @@ future!
 
 - No external dependencies
 - No C dependency, doesn't use `cgo`
+- Explicit initialization: know what [hardware is detected and what is
+  not](https://github.com/google/periph/tree/master/cmd/periph-info)
 - Interfaces:
   - [GPIO](https://periph.io/x/periph/conn/gpio): both memory mapped
   registers and edge detection
