@@ -39,6 +39,15 @@ future!
   - [Windows 10 VM](/platform/#windows)
 
 
+## WARNING
+
+**This library is unstable. Breaking API changes occur frequently.**
+
+If you want to use `periph.io/x/periph`, please [vendor
+periph](https://github.com/golang/go/wiki/PackageManagementTools) first and
+frequently roll.
+
+
 # Documentation
 
 - [platform/](/platform/) for an overview of supported boards (Raspberry Pi,
