@@ -89,13 +89,14 @@ package main
 import (
     "time"
     "periph.io/x/periph/conn/gpio"
+    "periph.io/x/periph/conn/gpio/gpioreg"
     "periph.io/x/periph/host"
 )
 
 func main() {
     host.Init()
     for l := gpio.Low; ; l = !l {
-        gpio.ByNumber(13).Out(l)
+        gpioreg.ByNumber(13).Out(l)
         time.Sleep(500 * time.Millisecond)
     }
 }
@@ -104,9 +105,9 @@ func main() {
 The following are synonyms, use the form you prefer:
 
 - Runtime discovery:
-  - [`gpio.ByNumber(13)`](https://periph.io/x/periph/conn/gpio#ByNumber) or
-    [`gpio.ByName("13")`](https://periph.io/x/periph/conn/gpio#ByName)
-  - [`gpio.ByName("GPIO13")`](https://periph.io/x/periph/conn/gpio#ByName)
+  - [`gpioreg.ByNumber(13)`](https://periph.io/x/periph/conn/gpio/gpioreg#ByNumber) or
+    [`gpioreg.ByName("13")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName)
+  - [`gpioreg.ByName("GPIO13")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName)
 - Using global variables:
   - [`rpi.P1_33`](https://periph.io/x/periph/host/rpi#P1_33) to
     select the pin via its _position on the board_
