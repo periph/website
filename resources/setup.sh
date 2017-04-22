@@ -48,13 +48,13 @@ WorkingDirectory=$ROOT
 ExecReload=/bin/kill -USR1 \$MAINPID
 Environment="HOME=$ROOT" "CADDYPATH=$ROOT/ssl"
 LimitNOFILE=1048576
-LimitNPROC=64
-TasksMax=4096
-PrivateTmp=true
-PrivateDevices=true
-ProtectHome=true
-ProtectSystem=full
-NoNewPrivileges=true
+#LimitNPROC=64
+#TasksMax=4096
+#PrivateTmp=true
+#PrivateDevices=true
+#ProtectHome=true
+#ProtectSystem=full
+#NoNewPrivileges=true
 [Install]
 WantedBy=default.target
 EOF
@@ -76,9 +76,13 @@ if [ ! -d periph.io/www ]; then
   docker run --rm -u 1000:1000 -v $ROOT/periph.io:/data marcaruel/hugo-tidy:hugo-0.19-alpine-3.4-pygments-2.2.0
 fi
 if [ ! -f Caddyfile ]; then
-  # Do not update automatically, just add when missing.
-  cp periph.io/resources/periph.io.conf Caddyfile
+  echo "import periph.io.conf" > Caddyfile
   chown chronos:chronos Caddyfile
+fi
+if [ ! -f periph.io.conf ]; then
+   # Do not update automatically, just add when missing.
+  cp periph.io/resources/periph.io.conf .
+  chown chronos:chronos periph.io.conf
 fi
 
 if [ ! -f caddy ]; then
