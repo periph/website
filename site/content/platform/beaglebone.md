@@ -9,7 +9,7 @@ BeagleBone is a [group of open source board
 designs](https://beagleboard.org/boards). They use a AM335x 1Ghz ARM Cortex-A8
 or AM5728 Cortex-A16 CPUs. It is currently only minimally supported.
 
-![boardimage](https://raw.githubusercontent.com/periph/website/master/site/static/img/beaglebone-green-wireless.jpg)
+![boardimage](/img/beaglebone-green-wireless.jpg)
 
 
 # Buying

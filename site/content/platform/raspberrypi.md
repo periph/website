@@ -13,7 +13,7 @@ are very well supported. The following functionality is supported:
 - 2x SPI bus
 - 46x high performance edge detection enabled memory-mapped GPIO pins
 
-![boardimage](https://raw.githubusercontent.com/periph/website/master/site/static/img/raspberrypi3.jpg)
+![boardimage](/img/raspberrypi3.jpg)
 
 
 # Buying
