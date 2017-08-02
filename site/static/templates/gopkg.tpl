@@ -14,9 +14,11 @@
   <noscript>
     <meta name="destination" http-equiv="refresh" content="0; URL='https://godoc.org/periph.io{{$path}}'" />
   </noscript>
-  <script src="/js/ga.js"></script>
+  {{ partial "ga.html" . }}
 </head>
 <body>Redirecting to <a id=dest href="https://godoc.org/periph.io{{$path}}">https://godoc.org/periph.io{{$path}}</a>...</body>
-<script src="/js/redirect.js"></script>
+<script>
+window.location.href = document.getElementById('dest').href + (window.location.search || '') + (window.location.hash || '');
+</script>
 </html>
 {{- end -}}

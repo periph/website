@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <title>{{.Title}}</title>
-<script async src="/js/ga.js"></script>
-<script async defer src="/js/script.js"></script>
+{{ partial "ga.html" . }}
+{{ partial "script.html" . }}
 <meta name="description" content="{{.Description}}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:type" content="article" />
@@ -20,4 +20,4 @@
 }
 </script>
 <link rel="icon" type="image/png" href="/favicon.ico">
-<link rel="stylesheet" href="/css/style.css">
+{{ partial "style.html" . }}
