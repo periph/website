@@ -4,7 +4,7 @@ description = "Leverage periph to write Go applications"
 +++
 
 The complete API documentation, including examples, is at
-[![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://godoc.org/periph.io/x/periph)
+[![GoDoc](/img/godoc.svg)](https://godoc.org/periph.io/x/periph)
 
 
 # Introduction

@@ -53,7 +53,7 @@ frequently roll.
 - [platform/](/platform/) for an overview of supported boards (Raspberry Pi,
   CHIP, etc) and OSes plus tips and tricks.
 - [device/](/device/) for an overview of included device drivers and examples.
-  [![GoDoc](https://godoc.org/periph.io/x/periph?status.svg)](https://periph.io/x/periph)
+  [![GoDoc](/img/godoc.svg)](https://periph.io/x/periph)
 - [project/](/project/) to read about design goals, using as a libray, using
   included tools, contribution rules or expand the list of supported hardware.
 
