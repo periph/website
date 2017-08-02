@@ -7,4 +7,6 @@ set -eu
 
 cd "$(dirname $0)"
 
-docker run --rm -u $(id -u):$(id -g) -v $(pwd):/data marcaruel/hugo-tidy:hugo-0.19-alpine-3.4-pygments-2.2.0
+TAG=marcaruel/hugo-tidy:hugo-0.25.1-alpine-3.6-pygments-2.2.0
+docker pull $TAG
+docker run --rm -u $(id -u):$(id -g) -v $(pwd):/data $TAG
