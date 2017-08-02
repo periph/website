@@ -120,7 +120,7 @@ fi
 
 # Make everything usable by people who access via ssh.
 chown -R chronos:google-sudoers .
-chown -R g+rXw .
+chmod -R g+rXw .
 
 # Authorize HTTP inside the container-os firewall itself.
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
