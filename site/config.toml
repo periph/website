@@ -1,4 +1,4 @@
 baseURL = "https://periph.io/"
 pygmentsuseclasses = true
 PygmentsCodeFences = true
-disableRSS = true
+disableKinds = ["RSS"]
