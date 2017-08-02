@@ -20,6 +20,7 @@ set -eu
 
 # Email address to use for Let's Encrypt.
 # "you@gmail.com"
+# TODO(maruel): Get a default from curl -H "Metadata-Flavor: Google" http://metadata.google.internal/computeMetadata/v1/... ?
 EMAIL_ADDRESS=""
 
 
@@ -63,26 +64,20 @@ systemctl daemon-reload
 
 if [ ! -d logs ]; then
   mkdir logs
-  chown chronos:chronos logs
 fi
+
 if [ ! -d periph.io ]; then
   # TODO(maruel): This is done as user 'chronos', which is not optimal.
   git clone https://github.com/periph/website periph.io
-  chown -R chronos:chronos periph.io
 fi
-if [ ! -d periph.io/www ]; then
-  # Do not update automatically, just add when missing.
-  # 1000 is chronos
-  docker run --rm -u 1000:1000 -v $ROOT/periph.io:/data marcaruel/hugo-tidy:hugo-0.19-alpine-3.4-pygments-2.2.0
-fi
+
 if [ ! -f Caddyfile ]; then
   echo "import periph.io.conf" > Caddyfile
-  chown chronos:chronos Caddyfile
 fi
+
 if [ ! -f periph.io.conf ]; then
-   # Do not update automatically, just add when missing.
+  # Do not update automatically, just add when missing.
   cp periph.io/resources/periph.io.conf .
-  chown chronos:chronos periph.io.conf
 fi
 
 if [ ! -f caddy ]; then
@@ -91,14 +86,41 @@ if [ ! -f caddy ]; then
   # - git
   # - ipfilter
   # - ratelimit
-  URL='https://caddyserver.com/download/build?os=linux&arch=amd64&features=git%2Cipfilter%2Cratelimit'
+  # TODO(maruel): Sadly the getcaddy.com script is hardcoded to download to
+  # /usr/bin so it can't be used so inline the relevant parts below.
+  #   curl https://getcaddy.com | bash -s http.git,http.ipfilter,http.ratelimit
+  caddy_plugins="http.git,http.ipfilter,http.ratelimit"
+  caddy_bin="caddy"
+  caddy_os="linux"
+  caddy_arch="amd64"
+  caddy_arm=""
+  caddy_dl_ext=".tar.gz"
+  caddy_file="caddy_${caddy_os}_$caddy_arch${caddy_arm}_custom$caddy_dl_ext"
+  caddy_url="https://caddyserver.com/download/$caddy_os/$caddy_arch$caddy_arm?plugins=$caddy_plugins"
   echo "- Downloading caddy"
-  curl -o caddy.tar.gz "$URL"
-  tar -xvf caddy.tar.gz caddy
-  rm caddy.tar.gz
+  curl -fsSL "$caddy_url" -o "$caddy_file"
+  tar -xzf "$caddy_file" "$caddy_bin"
+  chmod +x "$caddy_bin"
+  rm "$caddy_file"
   echo "- Got:"
-  ./caddy -version
+  ./$caddy_bin -version
 fi
+
+if [ ! -d periph.io/www ]; then
+  # Do not update automatically, just add when missing.
+  # 1000 is chronos
+  userid=$(id -u chronos)
+  # 1002 is google-sudoers.
+  # TODO(maruel): This is brittle!
+  groupid=1002
+  # TODO(maruel): Use the tag from periph.io.conf instead of duplicating it
+  # here.
+  docker run --rm -u $userid:$groupid -v $ROOT/periph.io:/data marcaruel/hugo-tidy:hugo-0.25.1-alpine-3.6-pygments-2.2.0
+fi
+
+# Make everything usable by people who access via ssh.
+chown -R chronos:google-sudoers .
+chown -R g+rXw .
 
 # Authorize HTTP inside the container-os firewall itself.
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
