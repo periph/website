@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <title>{{.Title}}</title>
-{{ partial "ga.html" . }}
-{{ partial "script.html" . }}
+{{ partial "html_head_ga.html" . }}
+{{ partial "html_head_script.html" . }}
 <meta name="description" content="{{.Description}}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:type" content="article" />
@@ -34,4 +34,4 @@
 <link rel="icon" sizes="192x192" href="/touch-icon-192x192.png">
 <link rel="icon" type="image/png" href="/favicon.ico">
 
-{{ partial "style.html" . }}
+{{ partial "html_head_style.html" . }}
