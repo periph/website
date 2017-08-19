@@ -189,6 +189,6 @@ use this as a learning experience.
 - Top level comments are expected to be wrapped at 80 cols. Indented comments
   should be wrapped at reasonable width.
 - Comments should start with a capitalized letter and end with a period.
-- Markdown style is a "try to similar to the current doc".
+- Markdown style is a "try to have similar style to the current doc".
 
 # Subpages
