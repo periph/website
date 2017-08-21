@@ -64,9 +64,9 @@ import (
     "fmt"
     "log"
 
-    "periph.io/x/periph/host"
     "periph.io/x/periph/conn/gpio"
     "periph.io/x/periph/conn/gpio/gpioreg"
+    "periph.io/x/periph/host"
 )
 
 func main() {
@@ -76,7 +76,7 @@ func main() {
     }
 
     // Lookup a pin by its number:
-    p, err := gpioreg.ByNumber(16)
+    p, err := gpioreg.ByName("16")
     if err != nil {
         log.Fatal(err)
     }
