@@ -89,7 +89,7 @@ func main() {
 
     // Wait for edges as detected by the hardware, and print the value read:
     for {
-        p.WaitForEdge()
+        p.WaitForEdge(-1)
         fmt.Printf("-> %s\n", p.Read())
     }
 }
