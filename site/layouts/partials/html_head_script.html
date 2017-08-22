@@ -43,7 +43,7 @@
   var navOffsetTop;
 
   function onDOMContentLoaded() {
-    navbar = document.getElementsByClassName('navbar')[0];
+    navbar = document.getElementsByTagName('header')[0];
     navOffsetTop = navbar.offsetHeight;
   }
   if (document.readyState === 'complete' || document.readyState === 'loaded' || document.readyState === 'interactive') {
