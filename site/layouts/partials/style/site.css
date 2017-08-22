@@ -109,6 +109,7 @@ header a {
   color: #fff;
 }
 .top-right {
+  margin-top: 1rem;
   font-size: 75%;
   line-height: 200%;
 }
@@ -116,7 +117,9 @@ header a {
 .top-right img {
   margin-right: 3px;
 }
-
+.nobreak {
+  white-space: nowrap;
+}
 
 /* NAVBAR */
 
