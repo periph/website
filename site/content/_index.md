@@ -39,11 +39,11 @@ future!
   - [ODROID-C1+](/platform/#odroid-c1)
   - [Raspberry Pi](/platform/#raspberrypi)
   - [Windows 10 VM](/platform/#windows)
-- **[Semver](http://semver.org) compatibility guarantee**
-  - Major version change (`v1.0` to `v2.0`) may introduce breaking changes
-    but not minor versions (`v1.1` to `v1.2`)
+- **[SemVer](http://semver.org) compatibility guarantee**
+  - Major version change (`v1.0` to `v2.0`) may introduce breaking changes.
+  - Minor version change (`v1.1` to `v1.2`) will be backward compatible.
   - `master` may contain breaking changes, use
-    [dep](https://github.com/golang/dep)
+    [dep](https://github.com/golang/dep).
 
 
 # Documentation

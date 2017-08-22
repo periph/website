@@ -35,12 +35,14 @@ In this case the application needs to obtain a handle to the SPI bus and then
 connect the LED device driver to the SPI bus handle.
 
 
-# Project state
+# Compatibility guarantee
 
-The library is **not stable** yet and breaking changes continuously happen.
-Please version the libary using [one of the go vendoring
-tools](https://github.com/golang/go/wiki/PackageManagementTools) and sync
-frequently.
+`periph` follows [SemVer](http://semver.org) compatibility guarantee:
+
+- Major version change (`v1.0` to `v2.0`) may introduce breaking changes.
+- Minor version change (`v1.1` to `v1.2`) will be backward compatible.
+- `master` may contain breaking changes, use
+	[dep](https://github.com/golang/dep).
 
 
 # Initialization
