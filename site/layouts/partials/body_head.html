@@ -29,6 +29,7 @@
   <div class="container">
     <ul class="navbar-list">
       {{ partial "navbar-item-eq.html" (dict "c" . "h" "/" "n" "Home") }}
+      {{ partial "navbar-item.html" (dict "c" . "h" "/news/" "n" "News") }}
       <li class="navbar-item">
         {{ partial "popover-root.html" (dict "c" . "h" "/platform/" "n" "Platforms") }}
         <div class="popover">

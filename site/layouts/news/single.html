@@ -8,17 +8,23 @@
     <div class="content-container">
       {{ partial "body_head.html" . }}
       <div class="container">
-        <h1>News</h1>
-        {{ range (where .Data.Pages "Section" "news").ByDate.Reverse }}
-          <div>
-            <span class="date-tag">{{- .Date.Format "2006-01-02" -}}</span>
-            <a href="{{.RelPermalink}}">{{ .Title }}</a>: {{.Params.description}}
-          </div>
-        {{ end }}
         <div class="row">
           <div class="column">
             {{/* TODO(maruel): Add on right side? <div id="toc">{{.TableOfContents}}</div> */}}
             {{- .Content -}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            {{ if or .PrevInSection .NextInSection }}<hr>{{ end }}
+            {{ if .PrevInSection }}
+              <a href="{{.PrevInSection.RelPermalink}}">← {{.PrevInSection.Title}}</a>
+            {{ end }}
+            {{ if and .PrevInSection .NextInSection }} | {{ end }}
+            {{ if .NextInSection }}
+              <a href="{{ .NextInSection.Permalink }}">{{.NextInSection.Title}} →</a>
+            {{ end }}
+            <p>
           </div>
         </div>
       </div>
@@ -30,3 +36,4 @@
 {{ partial "body_end.html" . }}
 </body>
 </html>
+

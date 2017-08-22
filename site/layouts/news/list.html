@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "html_head.html" . }}
+</head>
+<body>
+  <div class="whole-container">
+    <div class="content-container">
+      {{ partial "body_head.html" . }}
+      <div class="container">
+        <div class="row">
+          <div class="column">
+            {{ $cur := . }}
+            {{ range $e := .Site.AllRegularPages.ByDate.Reverse }}
+              {{ if hasPrefix $e.RelPermalink $cur.RelPermalink }}
+                <div class="news-hdr">
+                  <h1 id="{{ .TranslationBaseName }}"><a href="{{.RelPermalink}}">{{.Title}}</a></h1>
+                  <span class="news-desc">{{.Params.description}}</span>
+                  <span class="date-tag float-right">{{- .Date.Format "2006-01-02" -}}</span>
+                </div>
+                {{ if and .Truncated (not .Params.notruncate) }}
+                  {{ .Summary }}
+                  <div class="news-read-more"><a href="{{.RelPermalink}}">~~~ read more ~~~</a></div>
+                {{ else }}
+                  {{ .Content }}
+                  <hr>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-container">
+      {{ partial "footer.html" . }}
+    </div>
+  </div>
+{{ partial "body_end.html" . }}
+</body>
+</html>
