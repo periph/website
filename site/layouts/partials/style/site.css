@@ -30,7 +30,8 @@ blockquote, dl, figure, form, ol, p, pre, table, ul {
 ol ol, ol ul, ul ol, ul ul {
   margin: 0.5rem 0 0.5rem 3rem;
 }
-ul {
+/* Must not apply to navbar */
+.column > ul {
   list-style: circle outside;
   margin-left: 25px;
 }
@@ -157,35 +158,26 @@ header a {
 }
 .navbar-link {
   color: #222;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 16px;
+  font-size: 2.2vw;
+  font-weight: 300;
   letter-spacing: .2rem;
   line-height: 5rem;
-  margin-right: 35px;
+  margin-right: 10px;
+  margin-right: 3vw;
   text-decoration: none;
   text-transform: uppercase;
 }
-/* Densify links on smaller screen */
-@media (max-width: 799px) {
+/* Max font size: 100*16/2.2 */
+@media (min-width: 727px) {
   .navbar-link {
-    letter-spacing: 0rem;
-    margin-right: 25px;
-    line-height: 4rem;
+    font-size: 16px;
   }
 }
-@media (max-width: 599px) {
+/* Min font size: 100*10/2.2 */
+@media (max-width: 454px) {
   .navbar-link {
-    margin-right: 15px;
-  }
-}
-@media (max-width: 499px) {
-  .navbar-link {
-    font-size: 9px;
-  }
-}
-@media (max-width: 449px) {
-  .navbar-link {
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 .navbar-link.active {
@@ -198,9 +190,6 @@ header a {
 }
 .has-docked-nav .navbar-spacer {
   display: block;
-}
-.has-docked-nav .navbar > .container {
-  width: 80%;
 }
 
 /* Submenus */
