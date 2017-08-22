@@ -21,16 +21,18 @@ future!
 - No C dependency, doesn't use `cgo`
 - Explicit initialization: know what [hardware is detected and what is
   not](https://github.com/google/periph/tree/master/cmd/periph-info)
-- Interfaces:
+- [Interfaces](https://periph.io/x/periph/conn):
   - [GPIO](https://periph.io/x/periph/conn/gpio): both memory mapped
   registers and edge detection
   - [I²C](https://periph.io/x/periph/conn/i2c)
   - [SPI](https://periph.io/x/periph/conn/spi)
   - [1-wire](https://periph.io/x/periph/conn/onewire)
-- [Devices](/device/): [apa102](/device/apa102/), [bme280](/device/bme280/),
-  [bmp180](/device/bmp180/), [ds18b20](/device/ds18b20/),
-  [ds248x](/device/ds248x/), [lepton](/device/lepton/),
-  [ssd1306](/device/ssd1306/), [tm1637](/device/tm1637/).
+- [Devices](/device/):
+  - Output: [apa102](/device/apa102/), [ssd1306](/device/ssd1306/),
+    [tm1637](/device/tm1637/)
+  - Sensing: [bme280](/device/bme280/), [bmp180](/device/bmp180/),
+    [ds18b20](/device/ds18b20/), [ir](/device/ir/), [lepton](/device/lepton/)
+  - Interfacing: [ds248x](/device/ds248x/)
 - Continuously tested via [gohci](https://github.com/periph/gohci) on:
   - [BeagleBone](/platform/#beaglebone)
   - [C.H.I.P.](/platform/#chip)

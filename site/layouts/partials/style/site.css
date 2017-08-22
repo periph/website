@@ -225,13 +225,13 @@ header a {
   border-color: rgba(255, 255, 255, 0);
   border-bottom-color: #fff;
   border-width: 10px;
-  margin-left: -10px;
+  margin-left: -36%;
 }
 .popover-item:first-child .popover-link:before {
   border-color: rgba(238, 238, 238, 0);
   border-bottom-color: #eee;
   border-width: 11px;
-  margin-left: -11px;
+  margin-left: -35%;
 }
 .popover-list {
   list-style: none;
