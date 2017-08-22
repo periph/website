@@ -1,6 +1,6 @@
 +++
 title = "FLIR Lepton"
-description = "IR Camera"
+description = "InfraRed Thermal Camera"
 +++
 
 # Overview

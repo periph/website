@@ -27,17 +27,21 @@ future!
   - [I²C](https://periph.io/x/periph/conn/i2c)
   - [SPI](https://periph.io/x/periph/conn/spi)
   - [1-wire](https://periph.io/x/periph/conn/onewire)
-- [Devices](/device/): [apa102](/device/#apa102), [bme280](/device/#bme280),
-  [ds18b20](/device/#ds18b20), [ds248x](/device/#ds248x),
-  [lepton](/device/#lepton), [ssd1306](/device/#ssd1306),
-  [tm1637](/device/#tm1637).
+- [Devices](/device/): [apa102](/device/apa102/), [bme280](/device/bme280/),
+  [bmp180](/device/bmp180/), [ds18b20](/device/ds18b20/),
+  [ds248x](/device/ds248x/), [lepton](/device/lepton/),
+  [ssd1306](/device/ssd1306/), [tm1637](/device/tm1637/).
 - Continuously tested via [gohci](https://github.com/periph/gohci) on:
   - [BeagleBone](/platform/#beaglebone)
   - [C.H.I.P.](/platform/#chip)
   - [ODROID-C1+](/platform/#odroid-c1)
   - [Raspberry Pi](/platform/#raspberrypi)
   - [Windows 10 VM](/platform/#windows)
-- Compatibility guarantee: `v1.x` releases are guaranteed to be backward compatible
+- **[Semver](http://semver.org) compatibility guarantee**
+  - Major version change (`v1.0` to `v2.0`) may introduce breaking changes
+    but not minor versions (`v1.1` to `v1.2`)
+  - `master` may contain breaking changes, use
+    [dep](https://github.com/golang/dep)
 
 
 # Documentation
@@ -88,7 +92,7 @@ import (
 func main() {
     host.Init()
     for l := gpio.Low; ; l = !l {
-        gpioreg.ByName("13").Out(l)
+        gpioreg.ByName("11").Out(l)
         time.Sleep(500 * time.Millisecond)
     }
 }
@@ -97,18 +101,20 @@ func main() {
 The following are synonyms, use the form you prefer:
 
 - Runtime discovery:
-    [`gpioreg.ByName("13")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName)
-  - [`gpioreg.ByName("GPIO13")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName)
-  - [`gpioreg.ByName("P1_33")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName)
+  - [`gpioreg.ByName("11")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName): gpio number
+  - [`gpioreg.ByName("GPIO11")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName): gpio name as per the CPU driver
+  - [`gpioreg.ByName("P1_23")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName): board header `P1` position `23`
+  - [`gpioreg.ByName("SPI0_CLK")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName): function clock on SPI bus 0
 - Using global variables:
-  - [`rpi.P1_33`](https://periph.io/x/periph/host/rpi#P1_33) to
+  - [`rpi.P1_23`](https://periph.io/x/periph/host/rpi#P1_33) to
     select the pin via its _position on the board_
-  - [`bcm283x.GPIO13`](https://periph.io/x/periph/host/bcm283x#GPIO13) for the
+  - [`bcm283x.GPIO11`](https://periph.io/x/periph/host/bcm283x#GPIO13) for the
     pin as defined by the CPU
 
 This example uses basically no CPU: the
 [Out()](https://godoc.org/periph.io/x/periph/conn/gpio#PinOut) call doesn't call
-into the kernel. Instead it directly changes the GPIO memory mapped register.
+into the kernel, unlike other Go hardware libraries. Instead it *directly*
+writes to the GPIO memory mapped register.
 
 
 ## Examples

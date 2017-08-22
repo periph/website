@@ -269,3 +269,6 @@ header a {
 .popover-link:hover, .popover-item:first-child .popover-link:hover:after {
   border-bottom-color: #33C3F0;
 }
+.popover-list-left .popover-link {
+  text-align: left;
+}
