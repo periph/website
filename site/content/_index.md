@@ -138,22 +138,21 @@ Supplemental projects are located at
 - [gohci](https://github.com/periph/gohci) for hardware smoke testing.
 - [periph-tester](https://github.com/periph/periph-tester) which is a board used
   to confirm the buses (I²C, SPI, 1-wire) are correctly working.
+- [bootstrap](https://github.com/periph/bootstrap) tool to automate the
+  deployment of Raspberry Pis.
 
 
 # Contact
 
-There's two mailing lists and one slack channel:
-
+- [#periph](https://gophers.slack.com/messages/periph/) on gophers.slack.com.
+  Request access at
+  [invite.slack.golangbridge.org](https://invite.slack.golangbridge.org/)
+- File issues at
+  [github.com/google/periph/issues](https://github.com/google/periph/issues)
 - [periph-users@googlegroups.com](https://groups.google.com/forum/#!forum/periph-users)
   for users of the library and general questions
 - [periph-dev@googlegroups.com](https://groups.google.com/forum/#!forum/periph-dev)
   for driver developers
-- [#periph](https://gophers.slack.com/messages/periph/) on gophers.slack.com.
-  You can request access at
-  [invite.slack.golangbridge.org/](https://invite.slack.golangbridge.org/)
-
-You can file issues at
-[github.com/google/periph/issues](https://github.com/google/periph/issues)
 
 
 # Contributions
