@@ -38,6 +38,13 @@ ol {
   list-style: decimal outside;
   margin-left: 25px;
 }
+a {
+  text-decoration: none;
+}
+/* On <400px display, pad horizontally much less than skeleton default*/
+.container {
+  padding: 0 5px;
+}
 
 /*
  * Content
