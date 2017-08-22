@@ -178,6 +178,7 @@ header a {
 @media (max-width: 454px) {
   .navbar-link {
     font-size: 10px;
+    letter-spacing: .1rem;
   }
 }
 .navbar-link.active {
