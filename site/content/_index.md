@@ -1,6 +1,5 @@
 +++
 title = "periph"
-author = "Marc-Antoine Ruel"
 description = "Peripherals I/O in Go"
 +++
 
