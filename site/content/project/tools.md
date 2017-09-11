@@ -49,7 +49,7 @@ to wrap this:
 
 ```bash
 cd $GOPATH/src/periph.io/x/periph/cmd
-./push.sh raspberrypi bme280
+./push.sh raspberrypi bmxx80
 ```
 
 It is basically a wrapper around `GOOS=linux GOARCH=arm go build .; scp <exe>

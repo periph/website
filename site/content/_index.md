@@ -29,7 +29,7 @@ future!
 - [Devices](/device/):
   - Output: [apa102](/device/apa102/), [ssd1306](/device/ssd1306/),
     [tm1637](/device/tm1637/)
-  - Sensing: [bme280](/device/bme280/), [bmp180](/device/bmp180/),
+  - Sensing: [bmp180, bme280 and bmp280](/device/bmxx80/),
     [ds18b20](/device/ds18b20/), [ir](/device/ir/), [lepton](/device/lepton/)
   - Interfacing: [ds248x](/device/ds248x/)
 - Continuously tested via [gohci](https://github.com/periph/gohci) on:
