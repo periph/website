@@ -6,11 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ .Title }}" />
+{{if .Params.author -}}
+<meta property="og:author" content="{{ .Params.author }}" />
+{{- end}}
 <meta property="og:description" content="{{ .Description }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:image" content="https://periph.io/img/periph-mascot-fb.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:creator" content="@maruel" />
+<meta name="twitter:creator" content="@periphio" />
 <meta name="twitter:image" content="https://periph.io/img/periph-mascot-fb.png">
 <script type="application/ld+json">
 {

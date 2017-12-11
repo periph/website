@@ -1,6 +1,8 @@
 +++
 date = "2017-08-27"
 title = "One Year!"
+author = "Marc-Antoine Ruel"
+authorlink = "https://maruel.ca"
 description = "One year already, what a ride."
 tags = []
 notruncate = false

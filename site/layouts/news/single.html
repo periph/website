@@ -12,6 +12,14 @@
           <div class="column">
             {{/* TODO(maruel): Add on right side? <div id="toc">{{.TableOfContents}}</div> */}}
             {{- .Content -}}
+            {{- if .Params.author}}
+              <div class="by-author">— By
+                {{if .Params.authorlink}}
+                  <a href="{{.Params.authorlink}}">{{.Params.author}}</a>
+                {{else}}{{.Params.author}}
+                {{end}}
+              </div>
+            {{end -}}
           </div>
         </div>
         <div class="row">
