@@ -17,7 +17,7 @@ In this article, we'll describe how we:
 
 - wrote a reproducible benchmark for GPIO that can be used across platforms,
   which measures output performance by toggling the output low and high
-	continuously as fast as possible ⎍⎍⎍⎍  and for input performance by,
+  continuously as fast as possible ⎍⎍⎍⎍  and for input performance by,
   _unsurprisingly_, reading continuously
 - optimized outputs and inputs against the benchmarks
 - determined incorrect optimizations and benchmarking issues
@@ -90,13 +90,13 @@ generated clock is half of the rate printed out.
 ```go
 p := s.p
 if err := p.Out(gpio.Low); err != nil {
-	b.Fatal(err)
+  b.Fatal(err)
 }
 n := (b.N + 1) / 2
 b.ResetTimer()
 for i := 0; i < n; i++ {
-	p.Out(gpio.High)
-	p.Out(gpio.Low)
+  p.Out(gpio.High)
+  p.Out(gpio.Low)
 }
 ```
 
@@ -375,37 +375,37 @@ Pattern #2:
 ```go
 p := s.p
 if err := p.In(s.pull, gpio.NoEdge); err != nil {
-	b.Fatal(err)
+  b.Fatal(err)
 }
 buf := make(gpiostream.BitsLSB, (b.N+7)/8)
 b.ResetTimer()
 for i := range buf {
-	l := byte(0)
-	if p.Read() {
-		l |= 0x01
-	}
-	if p.Read() {
-		l |= 0x02
-	}
-	if p.Read() {
-		l |= 0x04
-	}
-	if p.Read() {
-		l |= 0x08
-	}
-	if p.Read() {
-		l |= 0x10
-	}
-	if p.Read() {
-		l |= 0x20
-	}
-	if p.Read() {
-		l |= 0x40
-	}
-	if p.Read() {
-		l |= 0x80
-	}
-	buf[i] = l
+  l := byte(0)
+  if p.Read() {
+    l |= 0x01
+  }
+  if p.Read() {
+    l |= 0x02
+  }
+  if p.Read() {
+    l |= 0x04
+  }
+  if p.Read() {
+    l |= 0x08
+  }
+  if p.Read() {
+    l |= 0x10
+  }
+  if p.Read() {
+    l |= 0x20
+  }
+  if p.Read() {
+    l |= 0x40
+  }
+  if p.Read() {
+    l |= 0x80
+  }
+  buf[i] = l
 }
 b.StopTimer()
 ```
@@ -492,27 +492,27 @@ directory.
 
 ```
 $ periph-smoketest bcm283x-benchmark -p 12
-InNaive              	200000000	         8.36 ns/op	119.7MHz
-InDiscard            	20000000	        70.2 ns/op	14.3MHz
-InSliceLevel         	20000000	        71.6 ns/op	14.0MHz
-InBitsLSBLoop        	20000000	        70.4 ns/op	14.2MHz
-InBitsMSBLoop        	20000000	        70.5 ns/op	14.2MHz
-InBitsLSBUnroll      	20000000	        65.0 ns/op	15.4MHz
-InBitsMSBUnroll      	20000000	        64.8 ns/op	15.4MHz
-OutClock             	10000000	       223 ns/op	4.5MHz
-OutSliceLevel        	10000000	       227 ns/op	4.4MHz
-OutBitsLSBLoop       	10000000	       229 ns/op	4.4MHz
-OutBitsMSBLoop       	10000000	       229 ns/op	4.4MHz
-OutBitsLSBUnroll     	10000000	       221 ns/op	4.5MHz
-OutBitsMSBUnrool     	10000000	       221 ns/op	4.5MHz
-FastOutClock         	100000000	        11.3 ns/op	88.7MHz
-FastOutSliceLevel    	100000000	        14.7 ns/op	67.8MHz
-FastOutBitsLSBLoop   	100000000	        17.7 ns/op	56.6MHz
-FastOutBitsMSBLoop   	100000000	        17.5 ns/op	57.1MHz
-FastOutBitsLSBUnroll 	100000000	        12.3 ns/op	81.5MHz
-FastOutBitsMSBUnroll 	100000000	        12.4 ns/op	80.8MHz
-FastOutInterface     	50000000	        30.6 ns/op	32.7MHz
-FastOutMemberVariabl 	100000000	        14.6 ns/op	68.5MHz
+InNaive                200000000   8.36 ns/op   119.7MHz
+InDiscard               20000000   70.2 ns/op    14.3MHz
+InSliceLevel            20000000   71.6 ns/op    14.0MHz
+InBitsLSBLoop           20000000   70.4 ns/op    14.2MHz
+InBitsMSBLoop           20000000   70.5 ns/op    14.2MHz
+InBitsLSBUnroll         20000000   65.0 ns/op    15.4MHz
+InBitsMSBUnroll         20000000   64.8 ns/op    15.4MHz
+OutClock                10000000    223 ns/op     4.5MHz
+OutSliceLevel           10000000    227 ns/op     4.4MHz
+OutBitsLSBLoop          10000000    229 ns/op     4.4MHz
+OutBitsMSBLoop          10000000    229 ns/op     4.4MHz
+OutBitsLSBUnroll        10000000    221 ns/op     4.5MHz
+OutBitsMSBUnrool        10000000    221 ns/op     4.5MHz
+FastOutClock           100000000   11.3 ns/op    88.7MHz
+FastOutSliceLevel      100000000   14.7 ns/op    67.8MHz
+FastOutBitsLSBLoop     100000000   17.7 ns/op    56.6MHz
+FastOutBitsMSBLoop     100000000   17.5 ns/op    57.1MHz
+FastOutBitsLSBUnroll   100000000   12.3 ns/op    81.5MHz
+FastOutBitsMSBUnroll   100000000   12.4 ns/op    80.8MHz
+FastOutInterface        50000000   30.6 ns/op    32.7MHz
+FastOutMemberVariabl   100000000   14.6 ns/op    68.5MHz
 ```
 
 This test is run as part of the continuous integration via
