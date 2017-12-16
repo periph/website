@@ -69,6 +69,28 @@ h6 { font-size: 1.2rem; }
   h6 { font-size: 1.2rem; }
 }
 
+/* Reduce text size in tables for mobile otherwise it overflows poorly.
+ * It'll still overflow poorly, but less so.
+ * */
+@media (max-width: 550px) {
+  table, th, td {
+    font-size: 1em;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+@media (max-width: 450px) {
+  table, th, td {
+    font-size: 0.8em;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+table {
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
 
 /*
  * Content
