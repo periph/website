@@ -91,6 +91,18 @@ table {
   margin-bottom: 1.5rem;
 }
 
+/* Reduce code size to reduce overflow on mobile (similar to tables) */
+@media (max-width: 550px) {
+  code {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 450px) {
+  code {
+    font-size: 0.8rem;
+  }
+}
+
 
 /*
  * Content
