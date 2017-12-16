@@ -50,6 +50,25 @@ figcaption h4 {
 .container {
   padding: 0 5px;
 }
+/* Reduce hN default skeleton size by 2 notches because the default is way too
+ * large, which makes the text hard to read, especially on mobile. */
+h1 { font-size: 3.0rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.3rem; }
+h6 { font-size: 1.2rem; }
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 { font-size: 3.6rem; }
+  h2 { font-size: 3.0rem; }
+  h3 { font-size: 2.4rem; }
+  h4 { font-size: 1.5rem; }
+  h5 { font-size: 1.3rem; }
+  h6 { font-size: 1.2rem; }
+}
+
 
 /*
  * Content
