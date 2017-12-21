@@ -14,9 +14,9 @@ Read more [about the goals](../goals/) first if necessary.
 The core of extensibility is implemented as an in-process driver registry. The
 things that make it work are:
 
-- Clear priority classes via [periph.Type](https://periph.io/x/periph#Type).
-  Each category is loaded one after the other so a driver of a type can assume
-  that all relevant drivers of lower level types were fully loaded.
+- Clear priority classes via [periph.Type](/x/periph#Type). Each category is
+  loaded one after the other so a driver of a type can assume that all relevant
+  drivers of lower level types were fully loaded.
 - Native way to skip a driver on unrelated platform.
   - At compile time via conditional compilation.
   - At runtime via early `Init()` exit.
@@ -29,40 +29,41 @@ things that make it work are:
   latency.
 
 
-## Other registries
+## Interface-specific registries
 
-Many packages under [conn](https://periph.io/x/periph/conn) and
-[host/headers](https://periph.io/x/periph/host/headers) contains small focused
-registries. The goal is to not have a one-size-fits-all approach that would
-require broad generalization; when a user needs an I²C bus handle, the user
-knows they can find it in [conn/i2c](https://periph.io/x/periph/conn/i2c). It's
-is assumed the user knows what bus to use in the first place. Strict type typing
-guides the user towards providing the right object.
+Many packages under [conn](/x/periph/conn) contain interface-specific `XXXreg`
+registry as a subpackage. The goal is to not have a one-size-fits-all approach
+that would require broad generalization; when a user needs an I²C bus handle,
+the user knows they can find it in [conn/i2c/i2creg](/x/periph/conn/i2c/i2creg).
+It's is assumed the user knows what bus to use in the first place. Strict type
+typing guides the user towards providing the right object. A non exhaustive list
+of registries: [gpioreg](/x/periph/conn/gpio/gpioreg), [i2creg]
+(/x/periph/conn/i2c/i2creg), [onewirereg](/x/periph/conn/onewire/onewirereg),
+[pinreg](/x/periph/conn/pin/pinreg), [spireg](/x/periph/conn/spi/spireg).
 
-The packages follow the `Register()` and `All()` pattern. At `drivers.Init()`
-time, each driver registers themselves in the relevant components. Then the
-application can query for the available components, based on the type of
-hardware desired. For each of these registries, registering the same pseudo name
-twice is an error. This helps reducing ambiguity for the users.
+The packages follow the `Register()` and `All()` pattern. At
+[host.Init()](/x/periph/host#Init) time, each driver registers itself in the
+relevant registry. Then the application can query for the available components,
+based on the type of hardware interface desired. For each of these registries,
+registering the same pseudo name twice is an error. This helps reducing
+ambiguity for the users.
 
 
 # pins
 
 There's a strict separation between
-[analog](https://periph.io/x/periph/experimental/conn/analog#PinIO), [digital
-(gpio)](https://periph.io/x/periph/conn/gpio#PinIO) and [generic
-pins](https://periph.io/x/periph/conn/pins#Pin).
+[analog](/x/periph/experimental/conn/analog#PinIO), [digital
+(gpio)](/x/periph/conn/gpio#PinIO) and [generic pins](/x/periph/conn/pins#Pin).
 
-The common base is [pins.Pin](https://periph.io/x/periph/conn/pins#Pin), which
-is a purely generic pin. This describes GROUND, VCC, etc. Each pin is registered
-by the relevant device driver at initialization time and has a unique name. The
-same pin may be present multiple times on a header.
+The common base is [pins.Pin](/x/periph/conn/pins#Pin), which is a purely
+generic pin. This describes GROUND, VCC, etc. Each pin is registered by the
+relevant device driver at initialization time and has a unique name. The same
+pin may be present multiple times on a header.
 
 The only pins not registered are the INVALID ones. There's one generic at
-[pins.INVALID](https://periph.io/x/periph/conn/pins#INVALID) and two
-specialized,
-[analog.INVALID](https://periph.io/x/periph/experimental/conn/analog#INVALID)
-and [gpio.INVALID](https://periph.io/x/periph/conn/gpio#INVALID).
+[pins.INVALID](/x/periph/conn/pins#INVALID) and two specialized,
+[analog.INVALID](/x/periph/experimental/conn/analog#INVALID) and
+[gpio.INVALID](/x/periph/conn/gpio#INVALID).
 
 *Warning:* analog is not yet implemented.
 
