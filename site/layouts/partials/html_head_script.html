@@ -3,20 +3,26 @@
 
 // Automatic highlight of hash anchor.
 (function() {
+  var prev;
+
   function onLoad() {
     if (window.location.hash) {
-      var e = document.getElementById(window.location.hash.substr(1));
-      if (e) {
-        e.classList.add('highlighted');
+      if (prev) {
+        prev.classList.remove('highlighted');
+      }
+      prev = document.getElementById(window.location.hash.substr(1));
+      if (prev) {
+        prev.classList.add('highlighted');
       }
     }
-    return true;
   }
   if (document.readyState === 'complete') {
     onLoad();
   } else {
     window.addEventListener('load', onLoad);
   }
+  // https://devdocs.io/dom_events/hashchange
+  window.addEventListener('hashchange', onLoad);
 }());
 
 // Polyfill for requestAnimationFrame.
@@ -55,7 +61,7 @@
 }());
 
 
-// Menu handler.
+// Navbar floating and menu handler.
 (function() {
   var navbar;
   var navOffsetTop;
@@ -107,16 +113,27 @@
     window.addEventListener('load', onLoad);
   }
 
+  // Fix the navbar floating property as needed when resizing.
   function onResize() {
     navOffsetTop = -1;
     window.requestAnimationFrame(fixNavBar);
   }
   window.addEventListener('resize', onResize);
 
+  // Make the navbar floating when scrolling down and unfloat when scrolling up.
   function onScroll() {
     window.requestAnimationFrame(fixNavBar);
   }
   window.addEventListener('scroll', onScroll);
+
+  // Move the hash anchor to be visible, when the navbar is floating.
+  function shiftWindow() {
+    console.log('shifting');
+    scrollBy(0, -navOffsetTop);
+    return true;
+  }
+  // https://devdocs.io/dom_events/hashchange
+  window.addEventListener('hashchange', shiftWindow);
 
   function fixNavBar() {
     if (navOffsetTop == -1) {
