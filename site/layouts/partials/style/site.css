@@ -134,6 +134,9 @@ img[alt=boardimage] {
   padding: 0px 5px;
   white-space: nowrap;
 }
+.highlighted {
+  background-color: #FDFF9E;
+}
 .news-hdr {
   margin-bottom: 2rem;
 }

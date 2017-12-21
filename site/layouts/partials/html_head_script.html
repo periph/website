@@ -1,6 +1,24 @@
 <script>
 'use strict';
 
+// Automatic highlight of hash anchor and scroll to get past the navbar.
+(function() {
+  function onLoad() {
+    if (window.location.hash) {
+      var e = document.getElementById(window.location.hash.substr(1));
+      if (e) {
+        e.classList.add('highlighted');
+      }
+    }
+    return true;
+  }
+  if (document.readyState === 'complete') {
+    onLoad();
+  } else {
+    window.addEventListener('load', onLoad);
+  }
+}());
+
 // Polyfill for requestAnimationFrame.
 (function() {
   var lastTime = 0;
@@ -42,6 +60,7 @@
   var navbar;
   var navOffsetTop;
 
+  // https://devdocs.io/dom_events/domcontentloaded
   function onDOMContentLoaded() {
     navbar = document.getElementsByTagName('header')[0];
     navOffsetTop = navbar.offsetHeight;
@@ -73,6 +92,7 @@
   }
   document.addEventListener('click', closePopover);
 
+  // https://devdocs.io/dom_events/load
   function onLoad() {
     var popOvers = document.querySelectorAll('li.navbar-item div.popover');
     for (var x = 0; x < popOvers.length; x++) {
