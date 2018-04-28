@@ -34,22 +34,33 @@ efficient operation.
 
 - Install the latest Debian image from http://beagleboard.org/latest-images to
   a microSD card.
+- Copy your ssh public key from `~/.ssh/id_ed25519.pub` to `/boot`. If you don't
+  know what it means, skip this step.
 - For devices with eMMC (most):
   - Edit `/boot/uEnv.txt` (may require root access)
   - Uncomment the very last line so the eMMC get flashed upon boot, i.e. remove
     the `#` so the last line looks like:
+
     ```
     cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh
     ```
   - Put microSD card it and let the eMMC be flashed. It is doing to flash the
-    blue LEDs while it's happening and will become silent once done.
+    blue LEDs while it's happening and will become silent once done, after
+    several minutes.
   - Unplug power, remove the microSD card and reconnect power.
-- Give it two minutes for the first boot.
-- Connect over its `BeagleBone-xxx` wifi, password is `BeagleBone`
-- Make it connect to your home wifi (password is `temppwd`):
-
+- Give it three minutes for the first boot.
+- Over serial
+  - Use a serial cable and plug into J1 to get to the terminal.
+  - Login with user `debian` and password `temppwd`.
+- Over Wifi
+  - From a laptop, connect over its `BeagleBone-xxx` wifi, password is
+    `BeagleBone`.
+  - ssh in to make it connect to your home wifi (password is `temppwd`):
     ```
     ssh debian@192.168.8.2
+    ```
+- Configure the BeagleBone wifi to connect to your home wifi:
+    ```
     sudo connmanctl
     > scan wifi
     > services
@@ -61,19 +72,25 @@ efficient operation.
     ifconfig | grep -A 1 wlan0
       (make sure you are connected via wlan0, note the IP address)
     exit
-      (confirm the BBBW/BBGW is correctly on your lan)
-    ssh debian@<new ip>
     ```
+- If you had connected to the `BeagleBone-xxx` network, disconnect your laptop
+  from it and connect back to your normal wifi, then confirm the BBBW/BBGW is
+  correctly on your lan:
+    ```
+    ssh debian@<new ip>
+    exit
+    ```
+  - This is possible this fails if you flashed your BeagleBone twice. Cleanup
+    `~/.ssh/known_hosts` if needed.
 - Disable the wifi access point on the BeagleBone, as this reduces 2.4GHz band
-  performance (password is still `temppwd`):
+  performance:
     ```
     ssh debian@<new ip>
     sudo systemctl stop bb-wl18xx-wlan0
     sudo systemctl disable bb-wl18xx-wlan0
     sudo shutdown -r now
     ```
-- Stop the embedded web server, to speed up booting and reduce memory usage
-  (again, via ssh):
+- Stop the embedded web server, to speed up booting and reduce memory usage:
     ```
     sudo systemctl stop bonescript-autorun
     sudo systemctl disable bonescript-autorun
@@ -88,9 +105,26 @@ efficient operation.
     sudo systemctl stop bluetooth
     sudo systemctl disable bluetooth
     ```
-
-Each of the above can be reenabled by changing `disable` with `enable` and
-`stop` with `start`.
+- Setup via [github.com/periph/bootstrap](https://github.com/periph/bootstrap).
+  You need to adjust each argument to your need or just skip them. This installs
+  latest Go version, fix the timezone, configure ssh, auto-update every week and
+  sends you an email to keep you updated.
+    ```
+    curl -sSL https://goo.gl/JcTSsH -o setup.sh
+    bash setup.sh --help
+    bash setup.sh \
+        --email you+bb@gmail.com \
+        --timezone America/Toronto \
+        --ssh-key /boot/id_ed25519.pub
+    sudo shutdown -r now
+    ```
+- If you plan to use your BeagleBone only via periph.io and not use the included
+  tooling, you can uninstall default applications to save space, as the base
+  image uses 2Gb:
+    ```
+    curl -sSL https://goo.gl/JcTSsH -o setup.sh
+    bash setup.sh -- do_beaglebone_trim
+    ```
 
 
 ## Drivers
