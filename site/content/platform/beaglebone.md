@@ -21,8 +21,22 @@ The board can be bought directly from
 
 # Support
 
-The BeagleBones are supported when running a Debian based distribution. There is
-no CPU nor headers drivers yet.
+- BeagleBone Black/Green both non-wireless and Wireless are fully supported.
+- Tested on recent [Debian Stretch IoT](http://beagleboard.org/latest-images).
+
+
+## Drivers
+
+- CPU driver lives in
+  [periph.io/x/periph/host/am335x](https://periph.io/x/periph/host/am335x) but
+  is just a stub for now.
+- Headers driver lives in subpackages of
+  [periph.io/x/periph/host/beagle](https://periph.io/x/periph/host/beagle).
+  [bone](https://periph.io/x/periph/host/beagle/bone) and
+  [green](https://periph.io/x/periph/host/beagle/green) exports the headers
+  based on the detected host.
+- sysfs driver lives in
+  [periph.io/x/periph/host/sysfs](https://periph.io/x/periph/host/sysfs).
 
 
 # Setup
@@ -125,9 +139,3 @@ efficient operation.
     curl -sSL https://goo.gl/JcTSsH -o setup.sh
     bash setup.sh -- do_beaglebone_trim
     ```
-
-
-## Drivers
-
-- sysfs driver lives in
-  [periph.io/x/periph/host/sysfs](https://periph.io/x/periph/host/sysfs).

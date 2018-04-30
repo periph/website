@@ -25,13 +25,13 @@ countries.
 
 # Support
 
-- Tested on recent [Raspbian Jessie
-  Lite](https://www.raspberrypi.org/downloads/raspbian/) 4.4.21-v7+.
+- Tested on recent [Raspbian Stretch
+  Lite](https://www.raspberrypi.org/downloads/raspbian/) 4.14.30-v7+.
 - Raspberry Pi 1, 2 and 3 are fully supported.
 - Other versions like Compute module doesn't have yet pin out defined because
   lack of hardware in test lab. [Please contribute](/project/contributing/).
-- [Windows IoT](https://developer.microsoft.com/windows/iot) is not supported
-  yet but support [is planned](https://github.com/google/periph/issues/114).
+- [Windows IoT](https://developer.microsoft.com/windows/iot) is not [supported
+  yet](https://github.com/google/periph/issues/114).
 
 
 ## Drivers
