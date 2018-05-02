@@ -37,8 +37,7 @@ can do [5000 requests per hour](https://developer.github.com/v3/#rate-limiting),
 including sending commit status updates. That's all that was needed to start the
 initial prototype.
 
-![screen cast](https://raw.githubusercontent.com/wiki/periph/gohci/gohci.gif
-"screen cast")
+![screen cast](/gohci.gif "screen cast")
 
 The end result is something that can conceptually thought of similar to
 [Travis](https://travis-ci.com/), except that instead of specifying a single set
