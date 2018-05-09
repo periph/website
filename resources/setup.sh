@@ -115,7 +115,7 @@ if [ ! -d periph.io/www ]; then
   groupid=1002
   # TODO(maruel): Use the tag from periph.io.conf instead of duplicating it
   # here.
-  docker run --rm -u $userid:$groupid -v $ROOT/periph.io:/data marcaruel/hugo-tidy:hugo-0.25.1-alpine-3.6-pygments-2.2.0-brotli-0.6.0
+  docker run --rm -u $userid:$groupid -v $ROOT/periph.io:/data marcaruel/hugo-tidy:hugo-0.40.3-alpine-3.7-brotli-1.0.4
 fi
 
 # Make everything usable by people who access via ssh.
