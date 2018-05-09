@@ -30,7 +30,7 @@
             {{ end }}
             {{ if and .PrevInSection .NextInSection }} | {{ end }}
             {{ if .NextInSection }}
-              <a href="{{ .NextInSection.Permalink }}">{{.NextInSection.Title}} →</a>
+              <a href="{{ .NextInSection.RelPermalink }}">{{.NextInSection.Title}} →</a>
             {{ end }}
             <p>
           </div>
