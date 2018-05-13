@@ -6,7 +6,7 @@ authorlink = "https://maruel.ca"
 description = "Drive and slew limiting are now configurable"
 tags = ["bcm283x"]
 notruncate = false
-image = "/news/2018/drive_unloaded.png"
+image = "https://periph.io/news/2018/drive_unloaded.png"
 +++
 
 Periph just gained super powers (in the _literal sense_) to enable increasing or
