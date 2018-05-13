@@ -2,3 +2,6 @@ baseURL = "https://periph.io/"
 pygmentsuseclasses = true
 PygmentsCodeFences = true
 disableKinds = ["RSS"]
+
+[params]
+  image = "https://periph.io/img/periph-mascot-fb.png"
