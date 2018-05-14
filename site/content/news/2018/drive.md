@@ -137,6 +137,7 @@ import (
     "runtime"
     "runtime/debug"
   
+    "periph.io/x/periph/conn/physic"
     "periph.io/x/periph/host"
     "periph.io/x/periph/host/bcm283x"
 )
@@ -146,7 +147,7 @@ func main() {
         log.Fatal(err)
     }
     // Try to change it once, if it worked, the rest will work.
-    if err := bcm283x.PinsSetup0To27(2, true, true); err != nil {
+    if err := bcm283x.PinsSetup0To27(2*physic.MilliAmpere, true, true); err != nil {
         log.Fatal(err)
     }
     fmt.Printf("Running\n")
@@ -164,7 +165,7 @@ func main() {
     const loop = 100
 
     // 2mA, limited
-    bcm283x.PinsSetup0To27(2, true, true)
+    bcm283x.PinsSetup0To27(2*physic.MilliAmpere, true, true)
     for i := 0; i < loop; i++ {
     }
     bcm283x.PinsSet0To31(mask)
@@ -175,7 +176,7 @@ func main() {
     }
 
     // 16mA, limited
-    bcm283x.PinsSetup0To27(16, true, true)
+    bcm283x.PinsSetup0To27(16*physic.MilliAmpere, true, true)
     for i := 0; i < loop; i++ {
     }
     bcm283x.PinsSet0To31(mask)
@@ -186,7 +187,7 @@ func main() {
     }
 
     // 2mA, unlimited
-    bcm283x.PinsSetup0To27(2, false, true)
+    bcm283x.PinsSetup0To27(2*physic.MilliAmpere, false, true)
     for i := 0; i < loop; i++ {
     }
     bcm283x.PinsSet0To31(mask)
@@ -197,7 +198,7 @@ func main() {
     }
 
     // 16mA, unlimited
-    bcm283x.PinsSetup0To27(16, false, true)
+    bcm283x.PinsSetup0To27(16*physic.MilliAmpere, false, true)
     for i := 0; i < loop; i++ {
     }
     bcm283x.PinsSet0To31(mask)
