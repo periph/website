@@ -8,10 +8,9 @@ description = "Peripherals I/O in Go"
 # Overview
 
 [periph.io/x/periph](https://periph.io/x/periph) is a standalone library with no
-external dependency to interface with low-level board facilities exposed by the
-OS or leveraged against OS' will. It can be viewed as a lower level layer than
-[Gobot](https://gobot.io), and yes we're discussing to collaborate in the
-future!
+external dependency to interface with hardware. It can be viewed as a lower
+level layer than [Gobot](https://gobot.io), and yes we're discussing to
+collaborate in the future!
 
 
 # Features
@@ -37,12 +36,13 @@ future!
   - [C.H.I.P.](/platform/#chip)
   - [ODROID-C1+](/platform/#odroid-c1)
   - [Raspberry Pi](/platform/#raspberrypi)
-  - [Windows 10 VM](/platform/#windows)
+  - macOS
+  - [Windows 10](/platform/#windows)
 - **[SemVer](http://semver.org) compatibility guarantee**
   - Major version change (`v1.0` to `v2.0`) may introduce breaking changes.
   - Minor version change (`v1.1` to `v1.2`) will be backward compatible.
   - `master` may contain breaking changes, use
-    [dep](https://github.com/golang/dep).
+    [dep](https://github.com/golang/dep) or another vendoring tool.
 
 
 # Documentation
@@ -77,7 +77,7 @@ gpio-list
 
 For [application developers](/project/library/), using `periph` as a library
 provides OS-independent bus interfacing. It really tries hard to _get out of the
-way_.  Here's the canonical "toggle a LED" example:
+way_.  Here's the minimal "toggle a LED" example:
 
 
 ~~~go
@@ -148,18 +148,13 @@ Supplemental projects are located at
   [invite.slack.golangbridge.org](https://invite.slack.golangbridge.org/)
 - File issues at
   [github.com/google/periph/issues](https://github.com/google/periph/issues)
-- [periph-users@googlegroups.com](https://groups.google.com/forum/#!forum/periph-users)
-  for users of the library and general questions
-- [periph-dev@googlegroups.com](https://groups.google.com/forum/#!forum/periph-dev)
-  for driver developers
 
 
 # Contributions
 
 `periph` provides an extensible driver registry and common bus interfaces which
 are explained in more details at [project/](/project/). `periph` is designed to
-work well with drivers living in external repositories so you are not _required_
-to fork the periph repository to load out-of-tree drivers for your platform.
+work well with drivers living in external packages.
 
 **Every commit is [tested on real hardware](/project/contributing/#testing)
 via [gohci](https://github.com/periph/gohci) workers.**
