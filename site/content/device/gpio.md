@@ -1,6 +1,7 @@
 +++
 title = "GPIO"
 description = "Generic digital input/output support"
+picture = "/img/lab-280.jpg"
 +++
 
 # Overview

@@ -1,12 +1,13 @@
 +++
 title = "BMxx80"
 description = "Family of atmospheric sensors"
+picture = "/img/bmxx80.jpg"
 +++
 
 # Overview
 
-[periph.io/x/periph/devices/bmxx80](https://periph.io/x/periph/devices/bmxx80)
-provides support for a [popular sensor family from
+[bmxx80](https://periph.io/x/periph/devices/bmxx80) provides support for a
+[popular sensor family from
 Bosch](https://www.bosch-sensortec.com/bst/products/environmental/overview_environmental):
 
 * BMP180 and BMP280, temperature and pressure
@@ -23,7 +24,7 @@ They all provide low precision temperature measurement.
 
 The driver as the following functionality:
 
-- Integer only calculation
+- Fast integer only calculation
 - Support for both I²C and SPI (BMx280 only) connectivity
 
 

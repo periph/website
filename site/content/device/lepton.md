@@ -1,14 +1,15 @@
 +++
 title = "FLIR Lepton"
 description = "InfraRed Thermal Camera"
+picture = "/img/lepton.jpg"
 +++
 
 # Overview
 
 ![boardimage](/img/lepton.jpg)
 
-[periph.io/x/periph/devices/lepton](https://periph.io/x/periph/devices/lepton)
-provides support for the FLIR Lepton InfraRed camera.
+[lepton](https://periph.io/x/periph/devices/lepton) provides support for the
+FLIR Lepton InfraRed camera.
 
 
 # Driver
@@ -33,3 +34,14 @@ The recommended buy is the Lepton breakout board + Lepton 2.5 with radiometry at
 
 Note that this driver was tested with an older version of this board without
 radiometry.
+
+
+# Example
+
+```go
+package main
+
+func main() {
+  // TODO 😳
+}
+```

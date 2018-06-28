@@ -1,12 +1,13 @@
 +++
 title = "IR remote"
 description = "InfraRed remote support"
+picture = "/img/lab-280.jpg"
 +++
 
 # Overview
 
-[periph.io/x/periph/devices/lirc](https://periph.io/x/periph/devices/lirc)
-provides support to interact with the [lircd service](http://www.lirc.org/).
+[lirc](https://periph.io/x/periph/devices/lirc) provides support to interact
+with the [lircd service](http://www.lirc.org/).
 
 
 # Example

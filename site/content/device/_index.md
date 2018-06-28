@@ -14,7 +14,7 @@ You are encouraged to look at tools in
 [cmd/](https://github.com/google/periph/tree/master/cmd/). These can be used as
 the basis of your projects.
 
-To try the examples below, put the code into a file named `example.go` then
-execute `go run example.go`.
+To try the example for each device, put the code into a file named `example.go`
+then execute `go run example.go`.
 
 # Devices
