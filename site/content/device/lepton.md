@@ -6,8 +6,6 @@ picture = "/img/lepton.jpg"
 
 # Overview
 
-![boardimage](/img/lepton.jpg)
-
 [lepton](https://periph.io/x/periph/devices/lepton) provides support for the
 FLIR Lepton InfraRed camera.
 
