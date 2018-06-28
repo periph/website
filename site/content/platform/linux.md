@@ -1,8 +1,8 @@
 +++
 title = "Linux"
-description = "Overview of linux support"
+description = "Generic linux support for any board"
 weight = 1
-picture = "/img/lab-280.jpg"
+picture = "/img/linux.jpg"
 +++
 
 # Overview
@@ -12,7 +12,7 @@ linux based platform so the library is best tested on debian.
 
 Because Go executables are statically linked by default, there should be no
 problem to run a `periph` based executable on a
-[buildroot](https://buildroot.org/) system but this hasn't been tried yet.
+[buildroot](https://buildroot.org/).
 
 
 ## ACL
