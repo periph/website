@@ -164,6 +164,11 @@ img[alt=boardimage] {
   font-size: 1.25rem;
   line-height: 1.4rem;
 }
+.top-right-picture {
+  float: right;
+  max-height: 128px;
+  max-width: 128px;
+}
 .news-hdr {
   margin-bottom: 2rem;
 }
