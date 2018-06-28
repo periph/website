@@ -41,5 +41,6 @@ package main
 
 func main() {
   // TODO 😳
+  // Please sent a PR against https://github.com/periph/website
 }
 ```
