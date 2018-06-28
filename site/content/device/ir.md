@@ -1,7 +1,7 @@
 +++
 title = "IR remote"
 description = "InfraRed remote support"
-picture = "/img/lab-280.jpg"
+picture = "/img/ir.jpg"
 +++
 
 # Overview

@@ -1,97 +1,23 @@
 +++
 title = "GPIO"
 description = "Generic digital input/output support"
-picture = "/img/lab-280.jpg"
+picture = "/img/raspberrypi3.jpg"
 +++
 
 # Overview
 
 GPIO pins can be leveraged to use as a on/off signal for both input and output.
+Uses include reading a button, a motion sensor, driving a LED or a buzzer.
+
+Package [gpioreg](https://periph.io/x/periph/conn/gpio/gpioreg) permits
+enumerating all the available GPIO pins.
+
+Package [pinreg](https://periph.io/x/periph/conn/pin/pinreg) permits
+enumerating all the available pin headers. This includes non-GPIO pins like
+ground, 3.3V and 5V pins, etc.
 
 
 # Examples
 
-## Toggle a LED
-
-_Purpose:_ Short example including full error checking.
-
-`periph` doesn't expose any _toggle_-like functionality on purpose, it is as
-stateless as possible.
-
-
-~~~go
-package main
-
-import (
-    "log"
-    "time"
-
-    "periph.io/x/periph/conn/gpio"
-    "periph.io/x/periph/host"
-    "periph.io/x/periph/host/rpi"
-)
-
-func main() {
-    // Load all the drivers:
-    if _, err := host.Init(); err != nil {
-        log.Fatal(err)
-    }
-
-    for l := gpio.Low; ; l = !l {
-      // Lookup a pin by its location on the board:
-      if err := rpi.P1_33.Out(l); err != nil {
-        log.Fatal(err)
-      }
-      time.Sleep(500 * time.Millisecond)
-    }
-}
-~~~
-
-
-## GPIO Edge detection
-
-_Purpose:_ Signals when a button was pressed or a motion detector detected a
-movement.
-
-The [gpio.PinIn.Edge()](https://periph.io/x/periph/conn/gpio#PinIn) function
-permits a edge detection without a busy loop. This is useful for **motion
-detectors**, **buttons** and other kinds of inputs where a busy loop would burn
-CPU for no reason.
-
-~~~go
-package main
-
-import (
-    "fmt"
-    "log"
-
-    "periph.io/x/periph/conn/gpio"
-    "periph.io/x/periph/conn/gpio/gpioreg"
-    "periph.io/x/periph/host"
-)
-
-func main() {
-    // Load all the drivers:
-    if _, err := host.Init(); err != nil {
-        log.Fatal(err)
-    }
-
-    // Lookup a pin by its number:
-    p, err := gpioreg.ByName("16")
-    if err != nil {
-        log.Fatal(err)
-    }
-    fmt.Printf("%s: %s\n", p, p.Function())
-
-    // Set it as input, with an internal pull down resistor:
-    if err = p.In(gpio.Down, gpio.BothEdges); err != nil {
-        log.Fatal(err)
-    }
-
-    // Wait for edges as detected by the hardware, and print the value read:
-    for {
-        p.WaitForEdge(-1)
-        fmt.Printf("-> %s\n", p.Read())
-    }
-}
-~~~
+- [Toggle a LED](/device/led/)
+- [Use as a button](/device/button/)
