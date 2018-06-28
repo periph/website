@@ -14,7 +14,7 @@ This can be done via [GPIO pins](/device/gpio/).
 
 It is recommended to use the GPIO as a sink: plug the long lead (positive side)
 on the 3.3V rail, the short lead on a 220Ω resistor, which is itself connected
-the the GPIO.
+to the GPIO.
 
 The reason is that most boards have an easier time to sink current than source
 current.

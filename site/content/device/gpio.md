@@ -22,3 +22,4 @@ ground, 3.3V and 5V pins, etc.
 - [Toggle a LED](/device/led/)
 - [Read button presses](/device/button/)
 - [Detect motion](/device/hc-sr501/)
+- [Make noise with a buzzer](/device/buzzer/)
