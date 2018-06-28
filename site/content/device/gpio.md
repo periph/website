@@ -20,4 +20,5 @@ ground, 3.3V and 5V pins, etc.
 # Examples
 
 - [Toggle a LED](/device/led/)
-- [Use as a button](/device/button/)
+- [Read button presses](/device/button/)
+- [Detect motion](/device/hc-sr501/)

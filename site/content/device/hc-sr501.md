@@ -1,13 +1,13 @@
 +++
-title = "Button"
-description = "React to button presses without polling"
-picture = "/img/button.jpg"
+title = "Motion detector"
+description = "Detect motion without polling"
+picture = "/img/hc-sr501.jpg"
 +++
 
 # Overview
 
-[GPIO pins](/device/gpio/) can be leveraged to read button presses, similar to
-[detecting motion](/device/hc-sr501/).
+[GPIO pins](/device/gpio/) can be leveraged to detect motion, similar to reading
+[button presses](/device/button/).
 
 The [gpio.PinIn.WaitForEdge()](https://periph.io/x/periph/conn/gpio#PinIn)
 function permits a edge detection without a busy loop.
@@ -40,15 +40,17 @@ func main() {
     }
     fmt.Printf("%s: %s\n", p, p.Function())
 
-    // Set it as input, with an internal pull down resistor:
-    if err = p.In(gpio.Down, gpio.BothEdges); err != nil {
+    // Set it as input.
+    if err = p.In(gpio.PullNoChange, gpio.RisingEdge); err != nil {
         log.Fatal(err)
     }
 
-    // Wait for edges as detected by the hardware, and print the value read:
+    // Wait for edges as detected by the hardware.
     for {
         p.WaitForEdge(-1)
-        fmt.Printf("-> %s\n", p.Read())
+        if p.Read() == gpio.High {
+          fmt.Printf("You moved!\n")
+        }
     }
 }
 ~~~
