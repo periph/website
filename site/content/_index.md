@@ -20,39 +20,18 @@ collaborate in the future!
 - Explicit initialization: know what [hardware is detected and what is
   not](https://github.com/google/periph/tree/master/cmd/periph-info)
 - [Interfaces](https://periph.io/x/periph/conn):
-  - [GPIO](https://periph.io/x/periph/conn/gpio): both memory mapped
-  registers and edge detection
-  - [I²C](https://periph.io/x/periph/conn/i2c)
-  - [SPI](https://periph.io/x/periph/conn/spi)
-  - [1-wire](https://periph.io/x/periph/conn/onewire)
-- [Devices](/device/):
-  - Output: [apa102](/device/apa102/), [ssd1306](/device/ssd1306/),
-    [tm1637](/device/tm1637/)
-  - Sensing: [bmp180, bme280 and bmp280](/device/bmxx80/),
-    [ds18b20](/device/ds18b20/), [ir](/device/ir/), [lepton](/device/lepton/)
-  - Interfacing: [ds248x](/device/ds248x/)
-- Continuously tested via [gohci](https://github.com/periph/gohci) on:
-  - [BeagleBone](/platform/#beaglebone)
-  - [C.H.I.P.](/platform/#chip)
-  - [ODROID-C1+](/platform/#odroid-c1)
-  - [Raspberry Pi](/platform/#raspberrypi)
-  - macOS
-  - [Windows 10](/platform/#windows)
+  [GPIO](https://periph.io/x/periph/conn/gpio) (with edge detection),
+  [I²C](https://periph.io/x/periph/conn/i2c),
+  [SPI](https://periph.io/x/periph/conn/spi),
+  [1-wire](https://periph.io/x/periph/conn/onewire)
+- Works with many [devices](/device/)
+- Continuously tested via [gohci](https://github.com/periph/gohci) on many
+  [platforms](/platform/)
 - **[SemVer](http://semver.org) compatibility guarantee**
   - Major version change (`v1.0` to `v2.0`) may introduce breaking changes.
   - Minor version change (`v1.1` to `v1.2`) will be backward compatible.
   - `master` may contain breaking changes, use
     [dep](https://github.com/golang/dep) or another vendoring tool.
-
-
-# Documentation
-
-- [platform/](/platform/) for an overview of supported boards (Raspberry Pi,
-  CHIP, etc) and OSes plus tips and tricks.
-- [device/](/device/) for an overview of included device drivers and examples.
-  [![GoDoc](/img/godoc.svg)](https://periph.io/x/periph)
-- [project/](/project/) to read about design goals, using as a libray, using
-  included tools, contribution rules or expand the list of supported hardware.
 
 
 # Tools
@@ -117,10 +96,6 @@ This example uses basically no CPU: the
 into the kernel, unlike other Go hardware libraries. Instead it *directly*
 writes to the GPIO memory mapped register.
 
-
-## Examples
-
-See [device/](/device/) for more examples.
 
 ![boardimage](/img/lab-280.jpg)
 
