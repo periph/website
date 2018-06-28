@@ -30,18 +30,7 @@
     <ul class="navbar-list">
       {{ partial "navbar-item-eq.html" (dict "c" . "h" "/" "n" "Home") }}
       {{ partial "navbar-item.html" (dict "c" . "h" "/news/" "n" "News") }}
-      <li class="navbar-item">
-        {{ partial "popover-root.html" (dict "c" . "h" "/platform/" "n" "Platforms") }}
-        <div class="popover">
-          <ul class="popover-list popover-list-left">
-            {{ partial "popup-item.html" (dict "c" . "h" "/platform/" "n" "All platforms as single page") }}
-            {{ $root := . }}
-            {{ range $i, $e := (where .Site.RegularPages "Section" "platform") }}
-              {{ partial "popup-item.html" (dict "c" $root "h" $e.URL "n" $e.Title) }}
-            {{ end }}
-          </ul>
-        </div>
-      </li>
+      {{ partial "navbar-item.html" (dict "c" . "h" "/platform/" "n" "Platforms") }}
       {{ partial "navbar-item.html" (dict "c" . "h" "/device/" "n" "Devices") }}
       <li class="navbar-item">
         {{ partial "popover-root.html" (dict "c" . "h" "/project/" "n" "Project") }}

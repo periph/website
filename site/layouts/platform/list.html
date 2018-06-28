@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "html_head.html" . }}
+</head>
+<body>
+  <div class="whole-container">
+    <div class="content-container">
+      {{ partial "body_head.html" . }}
+      <div class="container">
+        <div class="row">
+          <div class="column">
+            {{ .Content }}
+            <ul>
+              {{ range .Data.Pages.ByWeight }}
+              <li class="device-item">
+                <a href="{{.RelPermalink}}">
+                  <img src="{{.Params.picture}}" />
+                  <p class="device-title">{{ .Title }}<br>
+                  <p class="device-description">{{ .Params.description }}</p>
+                  </p>
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-container">
+      {{ partial "footer.html" . }}
+    </div>
+  </div>
+{{ partial "body_end.html" . }}
+</body>
+</html>

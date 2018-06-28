@@ -1,11 +1,10 @@
 +++
 title = "BeagleBone"
 description = "Series of high quality boards"
+picture = "/img/beaglebone-green-wireless.jpg"
 +++
 
 # Overview
-
-![boardimage](/img/beaglebone-green-wireless.jpg)
 
 BeagleBone is a [group of open source board
 designs](https://beagleboard.org/boards). They use a AM335x 1Ghz ARM Cortex-A8

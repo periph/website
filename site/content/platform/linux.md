@@ -2,6 +2,7 @@
 title = "Linux"
 description = "Overview of linux support"
 weight = 1
+picture = "/img/lab-280.jpg"
 +++
 
 # Overview

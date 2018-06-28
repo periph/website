@@ -1,6 +1,7 @@
 +++
 title = "ODROID-C1"
 description = "HardKernel board"
+picture = "/img/odroid-c1.jpg"
 +++
 
 # Overview
@@ -13,8 +14,6 @@ distributions. These boards use an Amlogic S805 processor (called
 - 2x I²C buses
 - 1x SPI bus with 1x chip-enable
 - 25x GPIO pins on the main J2 header
-
-![boardimage](/img/odroid-c1.jpg)
 
 
 # Buying

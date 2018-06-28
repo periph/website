@@ -1,6 +1,7 @@
 +++
 title = "Raspberry Pi"
 description = "running Raspbian Jessie Lite"
+picture = "/img/raspberrypi3.jpg"
 +++
 
 # Overview
@@ -12,8 +13,6 @@ are very well supported. The following functionality is supported:
 - 2x I²C buses
 - 2x SPI bus
 - 46x high performance edge detection enabled memory-mapped GPIO pins
-
-![boardimage](/img/raspberrypi3.jpg)
 
 
 # Buying

@@ -152,8 +152,8 @@ img[alt=boardimage] {
   filter: none;
 }
 .device-item img {
-  width: 128px;
-  height: 128px;
+  max-width: 128px;
+  max-height: 128px;
   margin-bottom: 0.5rem;
 }
 .device-title {

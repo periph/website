@@ -1,6 +1,7 @@
 +++
 title = "C.H.I.P."
 description = "NextThing Co's board"
+picture = "/img/chip.jpg"
 +++
 
 # Overview
@@ -14,8 +15,6 @@ functionality is supported:
 - 41x high performance memory-mapped GPIO pins (the "LCD" and "CSI" pins and a
   few more)
 - 8x low performance GPIO pins via pcf8574 I²C I/O extender ("XIO" pins)
-
-![boardimage](/img/chip.jpg)
 
 
 # Buying

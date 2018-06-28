@@ -7,3 +7,5 @@ description = "Overview of officially supported platforms"
 
 `periph` is designed to compile on any OSes and CPU architecture and does not
 use `cgo` to provide a full cross-compiling enabled experience.
+
+# Platforms
