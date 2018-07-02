@@ -7,4 +7,11 @@ set -eu
 
 cd "$(dirname $0)"
 
-hugo server -s site -d ../www --bind=0.0.0.0 -w -b $(hostname)
+# This is the equivalent of:
+#  hugo -s site -d ../www server --bind=0.0.0.0 -w -b $(hostname) --port 3131
+#
+# See https://github.com/maruel/hugo-tidy/ for more infos.
+#
+TAG=marcaruel/hugo-tidy:hugo-0.42.2-alpine-3.7-brotli-1.0.5-minify-2.3.5
+docker pull $TAG
+docker run -t --rm -u $(id -u):$(id -g) -v $(pwd):/data --network=host $TAG --bind=0.0.0.0 -w -b $(hostname) --port 3131

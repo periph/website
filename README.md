@@ -8,6 +8,14 @@ PR as per [contributing
 guidelines](https://periph.io/project/contributing/).
 
 
+## Running locally
+
+- `./gen.sh` generates the web site in `./www`.
+- `./serve.sh` serves the website over port 3131.
+
+This requires [docker](https://docker.com) to be installed.
+
+
 ## Setup
 
 - [caddy](https://caddyserver.com) to serve over https
