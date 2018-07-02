@@ -249,6 +249,11 @@ header a {
 .nobreak {
   white-space: nowrap;
 }
+.fork-and-edit {
+  color: #FFCCCC;
+  font-size: 150%;
+  font-weight: 600;
+}
 
 /* NAVBAR */
 
