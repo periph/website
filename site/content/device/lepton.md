@@ -36,11 +36,14 @@ radiometry.
 
 # Example
 
+Please [fork and edit this
+page](https://github.com/periph/website/edit/master/site/content/device/lepton.md)
+to complete the example. Thanks!
+
 ```go
 package main
 
 func main() {
   // TODO 😳
-  // Please sent a PR against https://github.com/periph/website
 }
 ```
