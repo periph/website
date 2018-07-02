@@ -8,7 +8,7 @@ set -eu
 cd "$(dirname $0)"
 
 # This is the equivalent of:
-#  hugo -s site -d ../www server --bind=0.0.0.0 -w -b $(hostname) --port 3131
+#  hugo server -s site -d ../www --bind=0.0.0.0 -w -b $(hostname) --port 3131
 #
 # See https://github.com/maruel/hugo-tidy/ for more infos.
 #
