@@ -19,6 +19,7 @@ cd "$(dirname $0)"
 #
 # See https://github.com/maruel/hugo-tidy/ for more infos.
 #
+# Don't forget to update resources/alt?.periph.io.conf and serve.sh.
 TAG=marcaruel/hugo-tidy:hugo-0.42.2-alpine-3.7-brotli-1.0.5-minify-2.3.5
 docker pull $TAG
 docker run --rm -u $(id -u):$(id -g) -v $(pwd):/data $TAG
