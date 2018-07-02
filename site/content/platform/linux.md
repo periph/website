@@ -23,3 +23,14 @@ and other functionality.
 It is possible to change the ACL on the _sysfs files_ via _udev_ rules to enable
 running without root level. The actual rules are distro specific. That said,
 using memory mapped GPIO registers usually require root anyway.
+
+
+# cgo
+
+Some drivers in [periph.io/x/extra](https://periph.io/x/extra) requires `cgo`.
+
+
+On Debian, including Raspbian and Ubuntu, you need to install pkg-config to
+enable `cgo`, run:
+
+    sudo apt install pkg-config
