@@ -36,8 +36,8 @@ radiometry.
 
 # Example
 
-Please [fork and edit this
-page](https://github.com/periph/website/edit/master/site/content/device/lepton.md)
+Please [edit this page on
+GitHub](https://github.com/periph/website/edit/master/site/content/device/lepton.md)
 to complete the example. Thanks!
 
 ```go

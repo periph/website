@@ -23,8 +23,8 @@ The user must do stuff.
 
 # Example
 
-Please [fork and edit this
-page](https://github.com/periph/website/edit/master/site/content/device/template.md)
+Please [edit this page on
+GitHub](https://github.com/periph/website/edit/master/site/content/device/template.md)
 to complete the example. Thanks!
 
 ```go
