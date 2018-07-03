@@ -102,3 +102,19 @@ func main() {
   // TODO 😳
 }
 ```
+
+
+# Buying
+
+These links are for the FT232H, which is higher speed than the FT232R for nearly
+the same price:
+
+- Adafruit: [adafruit.com/?q=ft232h](https://www.adafruit.com/?q=ft232h)
+- Pimoroni: [shop.pimoroni.com/?q=ft232h](https://shop.pimoroni.com/?q=ft232h)
+
+It is **not** recommended to buy chips on AliExpress or Amazon (except for the
+adafruit branded boards). Most of these are cheap counterfeit that have
+incomplete support. They are often sold under the brand "CJMCU".
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

@@ -53,3 +53,8 @@ func main() {
   }
 }
 ~~~
+
+
+# Buying
+
+LEDs are generally best bought in bulk (e.g. 200 LEDs in a bag).

@@ -15,13 +15,6 @@ are very well supported. The following functionality is supported:
 - 46x high performance edge detection enabled memory-mapped GPIO pins
 
 
-# Buying
-
-Raspberry Pis can be bought pretty much anywhere. At worst a Raspberry Pi 3 can
-be bought at around 38$USD on Aliexpress with free shipping in various
-countries.
-
-
 # Support
 
 - Tested on recent [Raspbian Stretch
@@ -253,3 +246,22 @@ UART1 can be enabled with:
 ```
 dtoverlay=uart1
 ```
+
+
+# Buying
+
+As the most popular micro-computer, Raspberry Pis can be bought at many places.
+
+- Adafruit: [adafruit.com/?q=raspberry](https://www.adafruit.com/?q=raspberry)
+- Aliexpress:
+  [aliexpress.com/wholesale?SearchText=raspberry](https://aliexpress.com/wholesale?SearchText=raspberry)
+  (quality will vary among resellers)
+- Amazon:
+  [amazon.com/s?field-keywords=raspberry](https://amazon.com/s?field-keywords=raspberry)
+  (quality will vary among resellers)
+- Newark: [newark.com/raspberry](http://newark.com/raspberry)
+- SeeedStudio:
+  [seeedstudio.com/s/raspberry.html](https://seeedstudio.com/s/raspberry.html)
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

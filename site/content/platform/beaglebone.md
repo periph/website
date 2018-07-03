@@ -11,13 +11,6 @@ designs](https://beagleboard.org/boards). They use a AM335x 1Ghz ARM Cortex-A8
 or AM5728 Cortex-A16 CPUs.
 
 
-# Buying
-
-The board can be bought directly from
-[SeeedStudio](https://www.seeedstudio.com/category/Beaglebone-c-8.html) or
-[various resellers](https://beagleboard.org/boards).
-
-
 # Support
 
 - BeagleBone Black/Green both non-wireless and Wireless are fully supported.
@@ -138,3 +131,25 @@ efficient operation.
     curl -sSL https://goo.gl/JcTSsH -o setup.sh
     bash setup.sh -- do_beaglebone_trim
     ```
+
+
+# Buying
+
+There are multiple BeagleBone versions so it is important to decide the type of
+board desired. Most have internal flash, which makes these desirable as an
+SDCard is not required.
+
+- Adafruit: [adafruit.com/?q=beaglebone](https://www.adafruit.com/?q=beaglebone)
+- Aliexpress:
+  [aliexpress.com/wholesale?SearchText=beaglebone](https://aliexpress.com/wholesale?SearchText=beaglebone)
+  (quality will vary among resellers)
+- Amazon:
+  [amazon.com/s?field-keywords=beaglebone](https://amazon.com/s?field-keywords=beaglebone)
+  (quality will vary among resellers)
+- Newark: [newark.com/beaglebone](http://newark.com/beaglebone)
+- SeeedStudio:
+  [seeedstudio.com/s/beaglebone.html](https://seeedstudio.com/s/beaglebone.html)
+- Various resellers: [beagleboard.org/boards](https://beagleboard.org/boards)
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

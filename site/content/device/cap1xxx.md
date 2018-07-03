@@ -111,3 +111,21 @@ func main() {
 	fmt.Print("\n")
 }
 ```
+
+
+# Buying
+
+- Adafruit: [adafruit.com/?q=cap1188](https://www.adafruit.com/?q=cap1188)
+- Aliexpress:
+  [aliexpress.com/wholesale?SearchText=cap1188](https://aliexpress.com/wholesale?SearchText=cap1188)
+  (quality will vary among resellers)
+- Amazon:
+  [amazon.com/s?field-keywords=cap1188](https://amazon.com/s?field-keywords=cap1188)
+  (quality will vary among resellers)
+- Pimoroni: [shop.pimoroni.com/?q=cap1188](https://shop.pimoroni.com/?q=cap1188)
+  and [shop.pimoroni.com/products/touch-phat](https://shop.pimoroni.com/products/touch-phat)
+- SeeedStudio:
+  [seeedstudio.com/s/cap1188.html](https://seeedstudio.com/s/cap1188.html)
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

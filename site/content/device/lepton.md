@@ -47,3 +47,12 @@ func main() {
   // TODO 😳
 }
 ```
+
+
+# Buying
+
+- GroupGets:
+  [store.groupgets.com/collections/flir-lepton-accessories](https://store.groupgets.com/collections/flir-lepton-accessories)
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

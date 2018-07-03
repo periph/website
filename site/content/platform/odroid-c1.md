@@ -16,11 +16,6 @@ distributions. These boards use an Amlogic S805 processor (called
 - 25x GPIO pins on the main J2 header
 
 
-# Buying
-
-You can buy it directly from [HardKernel](http://hardkernel.com) or resellers.
-
-
 # Support
 
 The ODROID-C1, ODROID-C1+, and ODROID-C0 boards are supported when running a
@@ -87,3 +82,11 @@ This needs to be done at each boot. A good location is to add the above into
 
 1-wire driver is loaded by default. To free up GPIO #83 from 1-wire: `rmmod
 w1-gpio`
+
+
+# Buying
+
+- The ODROID-C1 is directly distributed by [HardKernel](http://hardkernel.com).
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

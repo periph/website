@@ -100,3 +100,16 @@ func main() {
     }
 }
 ~~~
+
+
+# Buying
+
+- Adafruit: [adafruit.com/?q=ir](https://www.adafruit.com/?q=ir)
+- Aliexpress:
+  [aliexpress.com/wholesale?SearchText=vs1838](https://aliexpress.com/wholesale?SearchText=vs1838)
+- Amazon:
+  [amazon.com/s?field-keywords=vs1838](https://amazon.com/s?field-keywords=vs1838)
+- Pimoroni: [shop.pimoroni.com/?q=ir](https://shop.pimoroni.com/?q=ir)
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

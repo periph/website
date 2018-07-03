@@ -17,11 +17,6 @@ functionality is supported:
 - 8x low performance GPIO pins via pcf8574 I²C I/O extender ("XIO" pins)
 
 
-# Buying
-
-C.H.I.P. is directly distributed by [NextThing Co](https://getchip.com/).
-
-
 # Support
 
 The NextThing Co's C.H.I.P. board is supported using sysfs drivers as well as
@@ -103,3 +98,11 @@ cat /lib/firmware/nextthingco/chip/sample-spi.dtbo > /sys/kernel/config/device-t
 
 This needs to be done at each boot. A good location is to add the above into
 `/etc/rc.local` before the `exit 0` statement.
+
+
+# Buying
+
+- The C.H.I.P. is directly distributed by [NextThing Co](https://getchip.com/).
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

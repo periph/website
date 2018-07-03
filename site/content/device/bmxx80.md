@@ -103,3 +103,22 @@ test](https://periph.io/x/periph/devices/bmxx80/bmx280smoketest):
 It confirms that two BME280/BMP280 sensors can be driven simultaneously, one
 connected via I²C, one via SPI. They shall measure mostly the same atmospheric
 properties.
+
+
+# Buying
+
+These links are for the BME280:
+
+- Adafruit: [adafruit.com/?q=bme280](https://www.adafruit.com/?q=bme280)
+- Aliexpress:
+  [aliexpress.com/wholesale?SearchText=bme280](https://aliexpress.com/wholesale?SearchText=bme280)
+  (quality will vary among resellers)
+- Amazon:
+  [amazon.com/s?field-keywords=bme280](https://amazon.com/s?field-keywords=bme280)
+  (quality will vary among resellers)
+- Pimoroni: [shop.pimoroni.com/?q=bme280](https://shop.pimoroni.com/?q=bme280)
+- SeeedStudio:
+  [seeedstudio.com/s/bme280.html](https://seeedstudio.com/s/bme280.html)
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

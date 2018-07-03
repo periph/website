@@ -52,3 +52,30 @@ func main() {
     }
 }
 ~~~
+
+
+# Buying
+
+Buttons come in various forms and prices, here's a selection:
+
+- Adafruit:
+  [adafruit.com/?q=tactile%20button](https://www.adafruit.com/?q=tactile%20button)
+  or
+  [adafruit.com/?q=arcade%20button](https://www.adafruit.com/?q=arcade%20button)
+- Aliexpress:
+  [aliexpress.com/wholesale?SearchText=tactile%20button](https://aliexpress.com/wholesale?SearchText=tactile%20button)
+  or
+  [aliexpress.com/wholesale?SearchText=arcade%20button](https://aliexpress.com/wholesale?SearchText=arcade%20button)
+- Amazon:
+  [amazon.com/s?field-keywords=tactile%20button](https://amazon.com/s?field-keywords=tactile%20button)
+  or
+  [amazon.com/s?field-keywords=arcade%20button](https://amazon.com/s?field-keywords=arcade%20button)
+- Pimoroni:
+  [shop.pimoroni.com/?q=tactile%20button](https://shop.pimoroni.com/?q=tactile%20button)
+  or
+  [shop.pimoroni.com/?q=arcade%20button](https://shop.pimoroni.com/?q=arcade%20button)
+- SeeedStudio:
+  [seeedstudio.com/s/button.html](https://seeedstudio.com/s/button.html)
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

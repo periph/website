@@ -71,3 +71,18 @@ func main() {
   }
 }
 ~~~
+
+
+# Buying
+
+- Adafruit: [adafruit.com/?q=buzzer](https://www.adafruit.com/?q=buzzer)
+- Aliexpress:
+  [aliexpress.com/wholesale?SearchText=buzzer](https://aliexpress.com/wholesale?SearchText=buzzer)
+- Amazon:
+  [amazon.com/s?field-keywords=buzzer](https://amazon.com/s?field-keywords=buzzer)
+- Pimoroni: [shop.pimoroni.com/?q=buzzer](https://shop.pimoroni.com/?q=buzzer)
+- SeeedStudio:
+  [seeedstudio.com/s/buzzer.html](https://seeedstudio.com/s/buzzer.html)
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._

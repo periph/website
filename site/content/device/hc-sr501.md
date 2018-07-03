@@ -54,3 +54,19 @@ func main() {
     }
 }
 ~~~
+
+
+# Buying
+
+- Adafruit: [adafruit.com/?q=motion%20pir](https://www.adafruit.com/?q=motion%20pir)
+- Aliexpress:
+  [aliexpress.com/wholesale?SearchText=hc-sr501](https://aliexpress.com/wholesale?SearchText=hc-sr501)
+- Amazon:
+  [amazon.com/s?field-keywords=hc-sr501](https://amazon.com/s?field-keywords=hc-sr501)
+- Pimoroni:
+  [shop.pimoroni.com/?q=motion%20pir](https://shop.pimoroni.com/?q=motion%20pir)
+- SeeedStudio:
+  [seeedstudio.com/s/pir%20motion.html](https://seeedstudio.com/s/pir%20motion.html)
+
+_The periph authors do not endorse any specific seller. These are only provided
+for your convenience._
