@@ -18,12 +18,29 @@ representing each board as a whole object.
 - [Detailed Design](design/) to understand more about how things are done.
 
 
-## Classes of hardware
+# Source Code
+
+The main periph code is located at
+[github.com/google/periph](https://github.com/google/periph)
+
+Supplemental projects are located at
+[github.com/periph](https://github.com/periph). This includes:
+
+- The [website](https://github.com/periph/website) itself, so you can easily
+  submit a PR to improve the documentation.
+- [gohci](https://github.com/periph/gohci) for hardware smoke testing.
+- [periph-tester](https://github.com/periph/periph-tester) which is a board used
+  to confirm the buses (I²C, SPI, 1-wire) are correctly working.
+- [bootstrap](https://github.com/periph/bootstrap) tool to automate the
+  deployment of Raspberry Pis.
+
+
+# Classes of hardware
 
 This document distinguishes two classes of drivers.
 
 
-### Enablers
+## Enablers
 
 They are what make the interconnects work, so that you can then use real stuff.
 That's both point-to-point connections (GPIO, UART, TCP) and buses (I²C, SPI,
@@ -31,7 +48,7 @@ BT) where individual devices can be addressed. They enable you to do something
 but are not the essence of what you want to do.
 
 
-### Devices
+## Devices
 
 They are the end goal, to do something functional. There are multiple subclasses
 of devices like sensors, output devices, etc.

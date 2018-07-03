@@ -70,6 +70,50 @@ maintenance.
   [Background](../#background).
 
 
+# Philosophy
+
+The project was designed with a very clear vision:
+
+1. Optimize for simplicity, correctness and usability in that order.
+   - e.g. everything, interfaces and structs, uses strict typing, there's no
+     `interface{}` in sight.
+2. OS agnostic. Clear separation of interfaces in
+   [conn/](https://periph.io/x/periph/conn),
+   enablers in [host/](https://periph.io/x/periph/host) and device
+   drivers in [devices/](https://periph.io/x/periph/devices).
+   - e.g. no devfs or sysfs path in sight.
+   - e.g. conditional compilation enables only the relevant drivers to be loaded
+     on each platform.
+3. ... yet doesn't get in the way of platform specific code.
+   - e.g. A user can use statically typed global variables
+     [rpi.P1_3](https://periph.io/x/periph/host/rpi#P1_3),
+     [bcm283x.GPIO2](https://periph.io/x/periph/host/bcm283x#GPIO2)
+     to refer to the exact same pin on a Raspberry Pi.
+3. The user can chose to optimize for performance instead of usability.
+   - e.g.
+     [apa102.Dev](https://periph.io/x/periph/devices/apa102#Dev)
+     exposes both high level
+     [draw.Image](https://golang.org/pkg/image/draw/#Image) to draw an image and
+     low level [io.Writer](https://golang.org/pkg/io/#Writer) to write raw RGB
+     24 bits pixels. The user chooses.
+4. Use a divide and conquer approach. Each component has exactly one
+   responsibility.
+   - e.g. instead of having a driver per "platform", there's a driver per
+     "component": one for the CPU, one for the board headers, one for each
+     bus and sensor, etc.
+5. Extensible via a [driver
+   registry](https://periph.io/x/periph#Register).
+   - e.g. a user can inject a custom driver to expose more pins, headers, etc.
+     A USB device (like an FT232H) can expose headers _in addition_ to the
+     headers found on the board.
+6. The drivers must use the fastest possible implementation.
+   - e.g. both [allwinner](https://periph.io/x/periph/host/allwinner) and
+     [bcm283x](https://periph.io/x/periph/host/bcm283x) leverage [sysfs
+     gpio](https://periph.io/x/periph/host/sysfs#Pin) to expose interrupt driven
+     edge detection, yet use memory mapped GPIO registers to perform
+     single-cycle reads and writes.
+
+
 # Success criteria
 
 - Preferred library used by first time Go users and by experts.

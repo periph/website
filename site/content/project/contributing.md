@@ -27,6 +27,10 @@ easier to avoid frustration later on.
 All submissions, including submissions by project members, require review. The
 `periph` project uses Github pull requests for this purpose.
 
+`periph` provides an extensible driver registry and common bus interfaces.
+`periph` is designed to work well with drivers living in external packages so it
+is fine to start device drivers in your own repository.
+
 
 # Code quality
 
@@ -43,14 +47,18 @@ The `periph` project uses [gohci](https://github.com/periph/gohci) for automated
 testing on devices. The devices run unit tests, `go vet` and
 [periph-smoketest](https://github.com/google/periph/tree/master/cmd/periph-smoketest).
 
+**Every commit is tested on real hardware via
+[gohci](https://github.com/periph/gohci) workers.**
+
 The fleet currently is currently hosted by [maruel](https://github.com/maruel):
 
 - [BeagleBone](/platform/beaglebone/) Green Wireless
 - [C.H.I.P.](/platform/chip/) running Debian headless image provided by NTC
 - [ODROID-C1+](/platform/odroid-c1/)
-- [Raspberry Pi 3](/platform/raspberrypi/) running [Raspbian Jessie
+- [Raspberry Pi 3](/platform/raspberrypi/) running [Raspbian Stretch
   Lite](https://www.raspberrypi.org/downloads/raspbian/)
-- Windows 10 VM
+- [macOS](/platform/macos/) laptop
+- [Windows 10](/platform/windows/) laptop
 
 Tests must not be broken by a PR.
 
@@ -60,7 +68,7 @@ Tests must not be broken by a PR.
 While this project is not related to the Go project itself, `periph` abides to
 the same code of conduct as the Go project as described at
 https://golang.org/conduct. `periph` doesn't yet have a formal committee, please
-email directly `maruel@chromium.org` for issues encountered.
+email directly `conduct@maruel.ca` for issues encountered.
 
 
 # The small print

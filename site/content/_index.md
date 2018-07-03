@@ -7,57 +7,54 @@ description = "Peripherals I/O in Go"
 
 # Overview
 
-[periph.io/x/periph](https://periph.io/x/periph) is a standalone library with no
-external dependency to interface with hardware. It can be viewed as a lower
-level layer than [Gobot](https://gobot.io), and yes we're discussing to
-collaborate in the future!
+[periph.io/x/periph](https://periph.io/x/periph) is a standalone hardware
+library with no external dependency. It can be viewed as a lower level layer
+than [Gobot](https://gobot.io), and yes we're discussing to collaborate in the
+future!
 
 
 # Features
 
-- No external dependencies
-- No C dependency, doesn't use `cgo`
+- No external dependencies.
+- No C dependency, doesn't use `cgo`.
 - Explicit initialization: know what [hardware is detected and what is
-  not](https://github.com/google/periph/tree/master/cmd/periph-info)
+  not](https://github.com/google/periph/tree/master/cmd/periph-info).
 - [Interfaces](https://periph.io/x/periph/conn):
   [GPIO](https://periph.io/x/periph/conn/gpio) (with edge detection),
   [I²C](https://periph.io/x/periph/conn/i2c),
   [SPI](https://periph.io/x/periph/conn/spi),
-  [1-wire](https://periph.io/x/periph/conn/onewire)
-- Works with many [devices](/device/)
+  [1-wire](https://periph.io/x/periph/conn/onewire).
+- Works with many [devices](/device/).
 - Continuously tested via [gohci](https://github.com/periph/gohci) on many
-  [platforms](/platform/)
-- **[SemVer](http://semver.org) compatibility guarantee**
-  - Major version change (`v1.0` to `v2.0`) may introduce breaking changes.
-  - Minor version change (`v1.1` to `v1.2`) will be backward compatible.
-  - `master` may contain breaking changes, use
-    [dep](https://github.com/golang/dep) or another vendoring tool.
+  [platforms](/platform/).
+- [SemVer](http://semver.org) compatibility guarantee.
 
 
 # Tools
 
-`periph` includes [many ready-to-use
-tools](https://github.com/google/periph/tree/master/cmd/)! See [project/tools/](/project/tools/)
-for more info about using the included tools.
+`periph` includes many [ready-to-use tools](/project/tools/):
 
 ```bash
-# Retrieve and install all the commands at once:
 go get periph.io/x/periph/cmd/...
 # List the host drivers registered and/or initialized:
 periph-info
-# List the known headers:
+# List the board headers:
 headers-list
-# List the known GPIO state:
+# List the state of each GPIO:
 gpio-list
+# Set P1_7/GPIO4 on a Raspberry Pi to high:
+gpio-write P1_7 1
 ```
 
 
 # Library
 
-For [application developers](/project/library/), using `periph` as a library
-provides OS-independent bus interfacing. It really tries hard to _get out of the
-way_.  Here's the minimal "toggle a LED" example:
+`periph` tries hard to get out of the way when [used as a
+library](/project/library/).
 
+[![GoDoc](/img/godoc.svg)](https://godoc.org/periph.io/x/periph)
+
+Here's the minimal "toggle a LED" example:
 
 ~~~go
 package main
@@ -86,20 +83,11 @@ Learn more [about GPIOs](/device/gpio/).
 ![boardimage](/img/lab-280.jpg)
 
 
-# Code
+# More infos
 
-Code is located at [github.com/google/periph](https://github.com/google/periph)
-
-Supplemental projects are located at
-[github.com/periph](https://github.com/periph). This includes:
-
-- The [website](https://github.com/periph/website) itself, so you can easily
-  submit a PR to improve the documentation.
-- [gohci](https://github.com/periph/gohci) for hardware smoke testing.
-- [periph-tester](https://github.com/periph/periph-tester) which is a board used
-  to confirm the buses (I²C, SPI, 1-wire) are correctly working.
-- [bootstrap](https://github.com/periph/bootstrap) tool to automate the
-  deployment of Raspberry Pis.
+- Read the [source code](/project/#source-code).
+- [Contribute](/project/contributing/) to the project.
+- Learn about the [project philosophy](/project/goals/#philosophy).
 
 
 # Contact
@@ -111,64 +99,7 @@ Supplemental projects are located at
   [github.com/google/periph/issues](https://github.com/google/periph/issues)
 
 
-# Contributions
-
-`periph` provides an extensible driver registry and common bus interfaces which
-are explained in more details at [project/](/project/). `periph` is designed to
-work well with drivers living in external packages.
-
-**Every commit is [tested on real hardware](/project/contributing/#testing)
-via [gohci](https://github.com/periph/gohci) workers.**
-
-We gladly accept contributions for documentation improvements and from device
-driver developers via GitHub pull requests, as long as the author has signed the
-Google Contributor License. Please see
-[project/contributing/](/project/contributing/) for more details.
-
-
-# Philosophy
-
-1. Optimize for simplicity, correctness and usability in that order.
-   - e.g. everything, interfaces and structs, uses strict typing, there's no
-     `interface{}` in sight.
-2. OS agnostic. Clear separation of interfaces in
-   [conn/](https://periph.io/x/periph/conn),
-   enablers in [host/](https://periph.io/x/periph/host) and device
-   drivers in [devices/](https://periph.io/x/periph/devices).
-   - e.g. no devfs or sysfs path in sight.
-   - e.g. conditional compilation enables only the relevant drivers to be loaded
-     on each platform.
-3. ... yet doesn't get in the way of platform specific code.
-   - e.g. A user can use statically typed global variables
-     [rpi.P1_3](https://periph.io/x/periph/host/rpi#P1_3),
-     [bcm283x.GPIO2](https://periph.io/x/periph/host/bcm283x#GPIO2)
-     to refer to the exact same pin on a Raspberry Pi.
-3. The user can chose to optimize for performance instead of usability.
-   - e.g.
-     [apa102.Dev](https://periph.io/x/periph/devices/apa102#Dev)
-     exposes both high level
-     [draw.Image](https://golang.org/pkg/image/draw/#Image) to draw an image and
-     low level [io.Writer](https://golang.org/pkg/io/#Writer) to write raw RGB
-     24 bits pixels. The user chooses.
-4. Use a divide and conquer approach. Each component has exactly one
-   responsibility.
-   - e.g. instead of having a driver per "platform", there's a driver per
-     "component": one for the CPU, one for the board headers, one for each
-     bus and sensor, etc.
-5. Extensible via a [driver
-   registry](https://periph.io/x/periph#Register).
-   - e.g. a user can inject a custom driver to expose more pins, headers, etc.
-     A USB device (like an FT232H) can expose headers _in addition_ to the
-     headers found on the board.
-6. The drivers must use the fastest possible implementation.
-   - e.g. both [allwinner](https://periph.io/x/periph/host/allwinner) and
-     [bcm283x](https://periph.io/x/periph/host/bcm283x) leverage [sysfs
-     gpio](https://periph.io/x/periph/host/sysfs#Pin) to expose interrupt driven
-     edge detection, yet use memory mapped GPIO registers to perform
-     single-cycle reads and writes.
-
-
-# Authors
+## Authors
 
 `periph` was initiated with ❤️️ and passion by [Marc-Antoine
 Ruel](https://github.com/maruel).  The full list of contributors is in
@@ -176,7 +107,7 @@ Ruel](https://github.com/maruel).  The full list of contributors is in
 [CONTRIBUTORS](https://github.com/google/periph/blob/master/CONTRIBUTORS).
 
 
-# Disclaimer
+## Disclaimer
 
 This is not an official Google product (experimental or otherwise), it
 is just code that happens to be owned by Google.
