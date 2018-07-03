@@ -137,29 +137,40 @@ img[alt=boardimage] {
 .highlighted {
   background-color: #FDFF9E;
 }
-.device-item {
+.table-item {
   display: inline-block;
   line-height: 1em;
-  margin: 2em;
   text-align: center;
-  width: 140px;
   vertical-align: top;
 }
-.device-item a {
+.table-item-large {
+  margin: 2rem;
+  margin-bottom: 0.5rem;
+  width: 140px;
+}
+.table-item-small {
+  margin: 1rem;
+  margin-bottom: 0.25rem;
+  width: 120px;
+}
+.table-item a {
   filter: grayscale(80%);
 }
-.device-item a:focus, .device-item a:hover {
+.table-item a:focus, .table-item a:hover {
   filter: none;
 }
-.device-item img {
+.table-item-large img {
   max-width: 128px;
   max-height: 128px;
-  margin-bottom: 0.5rem;
 }
-.device-title {
+.table-item-small img {
+  max-width: 64px;
+  max-height: 64px;
+}
+.table-item-title {
   margin-bottom: 0.6rem;
 }
-.device-description {
+.table-item-description {
   color: #555;
   font-size: 1.25rem;
   line-height: 1.4rem;

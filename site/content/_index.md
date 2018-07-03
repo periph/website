@@ -25,9 +25,19 @@ future!
   [SPI](https://periph.io/x/periph/conn/spi),
   [1-wire](https://periph.io/x/periph/conn/onewire).
 - Works with many [devices](/device/).
-- Continuously tested via [gohci](https://github.com/periph/gohci) on many
-  [platforms](/platform/).
+- [Continuously tested](/project/contributing/#testing) via
+  [gohci](https://github.com/periph/gohci).
 - [SemVer](http://semver.org) compatibility guarantee.
+
+
+## Platforms
+
+{{< cutetable platform >}}
+
+
+## Devices
+
+{{< cutetable device >}}
 
 
 # Tools

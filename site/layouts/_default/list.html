@@ -13,11 +13,11 @@
             {{ .Content }}
             <ul>
               {{ range .Data.Pages.ByWeight }}
-              <li class="device-item">
+              <li class="table-item table-item-large">
                 <a href="{{.RelPermalink}}">
                   <img src="{{.Params.picture}}" />
-                  <p class="device-title">{{ .Title }}<br>
-                  <p class="device-description">{{ .Params.description }}</p>
+                  <p class="table-item-title">{{ .Title }}<br>
+                  <p class="table-item-description">{{ .Params.description }}</p>
                   </p>
                 </a>
               </li>

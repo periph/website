@@ -1,0 +1,17 @@
+<ul>
+  {{ $v := .Get 0 }}
+  {{ range $section := .Site.Sections }}
+    {{ if eq $section.Section $v }}
+      {{ range $e := $section.Pages }}
+        <li class="table-item table-item-small">
+          <a href="{{$e.RelPermalink}}">
+            <img src="{{$e.Params.picture}}" />
+            <p class="table-item-title">{{ $e.Title }}<br>
+            <p class="table-item-description">{{ $e.Params.description }}</p>
+            </p>
+          </a>
+        </li>
+      {{end}}
+    {{end}}
+  {{end}}
+</ul>

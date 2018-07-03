@@ -1,6 +1,6 @@
 +++
 title = "Raspberry Pi"
-description = "running Raspbian Jessie Lite"
+description = "running Raspbian Lite"
 picture = "/img/raspberrypi3.jpg"
 +++
 
