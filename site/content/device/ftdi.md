@@ -1,5 +1,5 @@
 +++
-title = "FTDI"
+title = "FTDI FT232x"
 description = "Fast USB multi-protocol connectivity"
 #   convert -strip -interlace Plane -gaussian-blur 0.05 -quality 85% -resize 256x256 source.jpg final.jpg
 picture = "/img/ftdi.jpg"

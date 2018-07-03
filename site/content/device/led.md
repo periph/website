@@ -20,6 +20,11 @@ The reason is that most boards have an easier time to sink current than source
 current.
 
 
+# Learn more
+
+- [LED on Wikipedia](https://en.wikipedia.org/wiki/Light-emitting_diode)
+
+
 # Example
 
 `periph` doesn't expose any _toggle_-like functionality on purpose, it is as

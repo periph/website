@@ -7,7 +7,7 @@ picture = "/img/button.jpg"
 # Overview
 
 [GPIO pins](/device/gpio/) can be leveraged to read button presses, similar to
-[detecting motion](/device/hc-sr501/).
+[detecting motion](/device/pir/).
 
 The [gpio.PinIn.WaitForEdge()](https://periph.io/x/periph/conn/gpio#PinIn)
 function permits a edge detection without a busy loop.

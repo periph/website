@@ -6,11 +6,20 @@ picture = "/img/hc-sr501.jpg"
 
 # Overview
 
-[GPIO pins](/device/gpio/) can be leveraged to detect motion, similar to reading
+[GPIO pins](/device/gpio/) can be leveraged to detect motion via a PIR
+(Passive/Pyroelectric InfraRed sensor), similar to reading
 [button presses](/device/button/).
 
 The [gpio.PinIn.WaitForEdge()](https://periph.io/x/periph/conn/gpio#PinIn)
 function permits a edge detection without a busy loop.
+
+
+# Learn more
+
+- [PIR tutorial on
+  Adafruit](https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/)
+  that explains the physics behind the sensor
+- [PIR on Wikipedia](https://en.wikipedia.org/wiki/Passive_infrared_sensor)
 
 
 # Example

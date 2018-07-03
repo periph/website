@@ -35,6 +35,11 @@ Use
 retrieve measurement from the device.
 
 
+# Learn more
+
+- [BME280 at Adafruit](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout?view=all)
+
+
 # Example
 
 _Purpose:_ gather temperature, pressure and relative humidity (BME280 only).

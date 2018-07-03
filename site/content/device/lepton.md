@@ -25,15 +25,6 @@ Use
 query the camera state, trigger a calibration (FFC) or capture an image.
 
 
-# Buy
-
-The recommended buy is the Lepton breakout board + Lepton 2.5 with radiometry at
-239$USD at [GroupGets](https://store.groupgets.com/).
-
-Note that this driver was tested with an older version of this board without
-radiometry.
-
-
 # Example
 
 Please [edit this page on
@@ -50,6 +41,10 @@ func main() {
 
 
 # Buying
+
+The recommended buy is the Lepton breakout board + Lepton with radiometry at at
+[GroupGets](https://store.groupgets.com/). This is quite expensive. Note that
+this driver was tested with an older version of this board without radiometry.
 
 - GroupGets:
   [store.groupgets.com/collections/flir-lepton-accessories](https://store.groupgets.com/collections/flir-lepton-accessories)
