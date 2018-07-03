@@ -59,6 +59,11 @@ func main() {
 }
 ~~~
 
+This example uses basically no CPU: the
+[Out()](https://godoc.org/periph.io/x/periph/conn/gpio#PinOut) call above
+doesn't call into the kernel, unlike other Go hardware libraries. Instead it
+*directly* writes to the GPIO memory mapped register.
+
 
 # Buying
 

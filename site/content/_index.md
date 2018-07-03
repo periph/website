@@ -71,30 +71,16 @@ import (
 
 func main() {
     host.Init()
+    p := gpioreg.ByName("11")
+    t := time.NewTicker(500 * time.Millisecond)
     for l := gpio.Low; ; l = !l {
-        gpioreg.ByName("11").Out(l)
-        time.Sleep(500 * time.Millisecond)
+        p.Out(l)
+        <-t.C
     }
 }
 ~~~
 
-The following are synonyms, use the form you prefer:
-
-- Runtime discovery:
-  - [`gpioreg.ByName("11")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName): gpio number
-  - [`gpioreg.ByName("GPIO11")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName): gpio name as per the CPU driver
-  - [`gpioreg.ByName("P1_23")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName): board header `P1` position `23`
-  - [`gpioreg.ByName("SPI0_CLK")`](https://periph.io/x/periph/conn/gpio/gpioreg#ByName): function clock on SPI bus 0
-- Using global variables:
-  - [`rpi.P1_23`](https://periph.io/x/periph/host/rpi#P1_33) to
-    select the pin via its _position on the board_
-  - [`bcm283x.GPIO11`](https://periph.io/x/periph/host/bcm283x#GPIO13) for the
-    pin as defined by the CPU
-
-This example uses basically no CPU: the
-[Out()](https://godoc.org/periph.io/x/periph/conn/gpio#PinOut) call doesn't call
-into the kernel, unlike other Go hardware libraries. Instead it *directly*
-writes to the GPIO memory mapped register.
+Learn more [about GPIOs](/device/gpio/).
 
 
 ![boardimage](/img/lab-280.jpg)
