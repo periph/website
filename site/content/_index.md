@@ -29,12 +29,12 @@ future!
 - [SemVer](http://semver.org) compatibility guarantee.
 
 
-## Platforms
+## [Platforms](/platform/)
 
 {{< cutetable platform >}}
 
 
-## Devices
+## [Devices](/device/)
 
 {{< cutetable device >}}
 
