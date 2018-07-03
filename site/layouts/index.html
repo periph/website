@@ -9,14 +9,14 @@
       {{ partial "body_head.html" . }}
       <div class="container">
         <h1>News</h1>
-        {{ range first 8 (where .Data.Pages "Section" "news").ByDate.Reverse }}
+        {{ range first 6 (where .Data.Pages "Section" "news").ByDate.Reverse }}
           <div>
             <span class="date-tag">{{- .Date.Format "2006-01-02" -}}</span>
             <a href="{{.RelPermalink}}">{{ .Title }}</a>: {{.Params.description}}
           </div>
         {{ end }}
           <div>
-            <span style="margin-left: 20px"><a href="/news/">(more...)</a></span>
+            <span style="margin-left: 20px"><a href="/news/">See all {{len (where .Data.Pages "Section" "news")}} news entry...</a></span>
           </div>
         <div class="row">
           <div class="column">

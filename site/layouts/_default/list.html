@@ -12,21 +12,19 @@
           <div class="column">
             {{ .Content }}
             <ul>
-            {{ range .Data.Pages.ByWeight }}
-            <li><a href="#{{ .TranslationBaseName }}">{{ .Title }}</a></li>
-            {{ end }}
+              {{ range .Data.Pages.ByWeight }}
+              <li class="device-item">
+                <a href="{{.RelPermalink}}">
+                  <img src="{{.Params.picture}}" />
+                  <p class="device-title">{{ .Title }}<br>
+                  <p class="device-description">{{ .Params.description }}</p>
+                  </p>
+                </a>
+              </li>
+              {{ end }}
             </ul>
           </div>
         </div>
-        {{ range .Data.Pages.ByWeight }}
-        <hr class="margin-below">
-        <div class="row">
-          <div class="column">
-            <h1 id="{{ .TranslationBaseName }}" class="center_title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-            {{- .Content -}}
-          </div>
-        </div>
-        {{ end }}
       </div>
     </div>
     <div class="footer-container">

@@ -190,5 +190,3 @@ use this as a learning experience.
   should be wrapped at reasonable width.
 - Comments should start with a capitalized letter and end with a period.
 - Markdown style is a "try to have similar style to the current doc".
-
-# Subpages
