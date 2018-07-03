@@ -24,7 +24,6 @@ future!
   [I²C](https://periph.io/x/periph/conn/i2c),
   [SPI](https://periph.io/x/periph/conn/spi),
   [1-wire](https://periph.io/x/periph/conn/onewire).
-- Works with many [devices](/device/).
 - [Continuously tested](/project/contributing/#testing) via
   [gohci](https://github.com/periph/gohci).
 - [SemVer](http://semver.org) compatibility guarantee.
