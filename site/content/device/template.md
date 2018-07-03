@@ -15,10 +15,20 @@ draft = true
 [foo](https://periph.io/x/periph/devices/foo) provides support to interact with
 bar.
 
+Insert description of device bar.
+
 
 # Configuration
 
-The user must do stuff.
+Do not forget to connect wires. Keep the section only if relevant (most do not
+need one).
+
+
+# Learn more
+
+- Link to an Amazing tutorial on Adafruit, if relevant.
+- Link to Wikipedia on the subject to learn more about the physics behind, if
+  relevant.
 
 
 # Example
