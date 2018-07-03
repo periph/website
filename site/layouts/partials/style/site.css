@@ -269,7 +269,7 @@ header a {
 /* NAVBAR */
 
 .currentLink {
-  font-weight: 900 !important;
+  text-shadow: 1px 1px 5px blue;
 }
 
 .navbar, .navbar-spacer {
