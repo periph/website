@@ -44,39 +44,52 @@
           - https://godoc.org/github.com/spf13/hugo/hugolib#Position
           - https://github.com/gohugoio/hugo/blob/master/hugolib/pagesPrevNext.go
         */}}
-        {{ $pages := .Page.CurrentSection.Pages.ByWeight }}
-        {{ $prev := $pages.Prev .Page }}
-        {{ $next := $pages.Next .Page }}
-        {{ $first := index $pages 0 }}
-        {{ $indexLast := sub $pages.Len 1 }}
-        {{ $last := index $pages $indexLast }}
 
         {{/*
-          In Go 1.11, it is possible to update a variable but not in previous
-          Go versions, so we need to create more temporary variable to get to the
-          exact values we want.
+          This enables grabbing all pages, including
+          descendants in subsections. This is needed for /news/. It'd be nice to
+          find a better way to achieve this without a silly loop, like it's done
+          in shortcodes/cutetable.html.
         */}}
-        {{ $isFirst := eq $prev.RelPermalink $last.RelPermalink }}
-        {{ $isLast := eq $next.RelPermalink $first.RelPermalink }}
-        {{ $hasPrev := not $isFirst }}
-        {{ $hasNext := not $isLast }}
-        {{ if or $hasPrev $hasNext }}
-          <div class="row">
-            <div class="column">
-              <hr>
-              <p>
-                {{ if $hasPrev }}
-                  <a href="{{$prev.RelPermalink}}">← {{$prev.Title}}</a>
-                {{ end }}
-                {{ if and $hasPrev $hasNext }} | {{ end }}
-                {{ if $hasNext }}
-                  <a href="{{ $next.RelPermalink }}">{{$next.Title}} →</a>
-                {{ end }}
-              </p>
-            </div>
+        {{ $page := .Page }}
+        {{ range $section := $page.Site.Sections }}
+          {{ if hasPrefix $page.RelPermalink $section.RelPermalink }}
+            {{ $pages := (where .Site.AllRegularPages "Section" $section.Section).ByWeight }}
+
+            {{ $prev := $pages.Prev $page }}
+            {{ $next := $pages.Next $page }}
+            {{ $first := index $pages 0 }}
+            {{ $indexLast := sub $pages.Len 1 }}
+            {{ $last := index $pages $indexLast }}
+
+            {{/*
+              In Go 1.11, it is possible to update a variable but not in
+              previous Go versions, so we need to create more temporary variable
+              to get to the exact values we want.
+            */}}
+            {{ $isFirst := eq $prev.RelPermalink $last.RelPermalink }}
+            {{ $isLast := eq $next.RelPermalink $first.RelPermalink }}
+            {{ $hasPrev := not $isFirst }}
+            {{ $hasNext := not $isLast }}
+            {{ if or $hasPrev $hasNext }}
+              <div class="row">
+                <div class="column">
+                  <hr>
+                  <p>
+                    {{ if $hasPrev }}
+                      <a href="{{$prev.RelPermalink}}">← {{$prev.Title}}</a>
+                    {{ end }}
+                    {{ if and $hasPrev $hasNext }} | {{ end }}
+                    {{ if $hasNext }}
+                      <a href="{{ $next.RelPermalink }}">{{$next.Title}} →</a>
+                    {{ end }}
+                  </p>
+                </div>
+              </div>
+            {{ end }}
           </div>
         {{ end }}
-      </div>
+      {{ end }}
     </div>
     <div class="footer-container">
       {{ partial "footer.html" . }}
