@@ -17,19 +17,28 @@ functionality is supported:
 - 8x low performance GPIO pins via pcf8574 I²C I/O extender ("XIO" pins)
 
 
+# Warning
+
+Sadly NextThing Co [shut down its
+activities](https://hackaday.com/2018/04/03/is-this-the-end-for-the-c-h-i-p/).
+
+The main drawback is that the web flasher doesn't work anymore, and the server
+to host the binary files is down.
+
+http://www.chip-community.org/ and https://github.com/NextThingCo are still good
+sources.
+
+
 # Support
 
 The NextThing Co's C.H.I.P. board is supported using sysfs drivers as well as
 using high performance memory-mapped I/O for gpio pins.
 
-- `periph` is tested with [NTC provided 4.4.13+ kernel
-  Debian](https://docs.getchip.com/chip.html#flash-chip-firmware) which can be
-  done via their [Web UI flashing tool](https://flash.getchip.com/). It should
-  work with any flavor, [file a bug](https://github.com/google/periph/issues)
-  otherwise.
+- `periph` is tested with NTC provided 4.4.13+ kernel Debian It should work with
+  any flavor, [file a bug](https://github.com/google/periph/issues) otherwise.
 - C.H.I.P. is fully supported
-- C.H.I.P. Pro and PocketCHIP specific pinouts will be supported very soon
-  (hardware is already acquired)
+- C.H.I.P. Pro and PocketCHIP specific headers are not defined, just use the CPU
+  gpio number instead.
 
 
 ## Drivers
@@ -45,11 +54,6 @@ using high performance memory-mapped I/O for gpio pins.
 
 
 # Configuration
-
-CHIP is described at NextThing's [product
-page](https://www.getchip.com/pages/chip) and in much more detail in the [CHIP
-Hardware](http://docs.getchip.com/chip.html#chip-hardware) section of the
-documentation.
 
 For in-depth information about the hardware the best reference is in the
 [community wiki](http://www.chip-community.org/index.php/Hardware_Information),
@@ -102,7 +106,8 @@ This needs to be done at each boot. A good location is to add the above into
 
 # Buying
 
-- The C.H.I.P. is directly distributed by [NextThing Co](https://getchip.com/).
+- The C.H.I.P. was directly distributed by NextThing Co but is not available
+  anymore.
 
 _The periph authors do not endorse any specific seller. These are only provided
 for your convenience._
