@@ -10,12 +10,72 @@
       <div class="container">
         <div class="row">
           <div class="column">
+            {{/* TODO(maruel): Add on right side? <div id="toc">{{.TableOfContents}}</div> */}}
             {{if .Params.picture}}
               <img class="top-right-picture" src="{{.Params.picture}}">
             {{end}}
             {{- .Content -}}
+            {{- if .Params.author}}
+              <div class="by-author">— By
+                {{if .Params.authorlink}}
+                  <a href="{{.Params.authorlink}}">{{.Params.author}}</a>
+                {{else}}{{.Params.author}}
+                {{end}}
+              </div>
+            {{end -}}
           </div>
         </div>
+        {{/*
+          This is fairly contrived:
+          - Page.Next uses publish date, which is not what we want, we want by
+            weight.
+          - Pages.Prev and Pages.Next will wrap around instead of returning nil
+            on the first/last item (!!!!)
+          - eq directly on Page doesn't work, so compare their link instead.
+          - Page.CurrentSection returns the actual current section, but for news
+            we want the root one so use FirstSection, which was added in Hugo
+            0.45.1.
+
+          So we first need to find our section, then reorder, then take
+          prev/next based on this temporary list, then manually figure out if
+          wraparound occured via comparison on the page URL.
+
+          Refs:
+          - https://godoc.org/github.com/spf13/hugo/hugolib#Position
+          - https://github.com/gohugoio/hugo/blob/master/hugolib/pagesPrevNext.go
+        */}}
+        {{ $pages := .Page.CurrentSection.Pages.ByWeight }}
+        {{ $prev := $pages.Prev .Page }}
+        {{ $next := $pages.Next .Page }}
+        {{ $first := index $pages 0 }}
+        {{ $indexLast := sub $pages.Len 1 }}
+        {{ $last := index $pages $indexLast }}
+
+        {{/*
+          In Go 1.11, it is possible to update a variable but not in previous
+          Go versions, so we need to create more temporary variable to get to the
+          exact values we want.
+        */}}
+        {{ $isFirst := eq $prev.RelPermalink $last.RelPermalink }}
+        {{ $isLast := eq $next.RelPermalink $first.RelPermalink }}
+        {{ $hasPrev := not $isFirst }}
+        {{ $hasNext := not $isLast }}
+        {{ if or $hasPrev $hasNext }}
+          <div class="row">
+            <div class="column">
+              <hr>
+              <p>
+                {{ if $hasPrev }}
+                  <a href="{{$prev.RelPermalink}}">← {{$prev.Title}}</a>
+                {{ end }}
+                {{ if and $hasPrev $hasNext }} | {{ end }}
+                {{ if $hasNext }}
+                  <a href="{{ $next.RelPermalink }}">{{$next.Title}} →</a>
+                {{ end }}
+              </p>
+            </div>
+          </div>
+        {{ end }}
       </div>
     </div>
     <div class="footer-container">
