@@ -19,7 +19,7 @@ tags = []
 notruncate = false
 +++
 
-[Version %(version)s](https://github.com/google/periph/releases/tag/%(version)s) is
+[Version %(version_num)s](https://github.com/google/periph/releases/tag/%(version)s) is
 released!
 
 This is a feature and bug fix update.
@@ -49,7 +49,7 @@ diff stat of `%(diff_stat)s`.
 
 Thanks to:
 
-- Joe
+%(thanks)s
 
 I ([@maruel](https://github.com/maruel)) did the rest, including the release
 process and the [gohci test lab](https://github.com/periph/gohci).
@@ -83,9 +83,21 @@ def main():
   print('Comparing against version %s' % prev_version)
   diff_stat = cmdlines(['git', 'diff', '--stat', prev_version], cwd=repo)[-1]
   changes = cmdlines(
-      ['git', 'log', '--format=%an %s', '%s..%s' % (prev_version, version)], cwd=repo)
+      ['git', 'log', '--format=%an: %s', '%s..%s' % (prev_version, version)], cwd=repo)
   changes.sort()
   num_changes = len(changes)
+
+  # Explicitly try to handle if there's ever a ':' in one of the names.
+  names = set(cmdlines(
+      ['git', 'log', '--format=%an', '%s..%s' % (prev_version, version)],
+      cwd=repo))
+  names = {n:0 for n in names}
+  # O(n^2)
+  for c in changes:
+    for n in names:
+      if c.startswith(n+': '):
+        names[n] += 1
+        break
 
   now = datetime.datetime.now()
   content = TXT % {
@@ -94,7 +106,10 @@ def main():
     'diff_stat': diff_stat,
     'num_changes': num_changes,
     'prev_version': prev_version,
+    'thanks': '\n'.join(
+        '- %s contributed %d changes.' % (n, c) for n, c in sorted(names.iteritems())),
     'version': version,
+    'version_num': version[1:],
   }
   p = os.path.join('site', 'content', 'news', str(now.year), '%s.md' % version)
   with open(p, 'wb') as f:
