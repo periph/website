@@ -27,8 +27,8 @@ This is a feature and bug fix update.
 <!--more-->
 
 The new release contains [%(num_changes)d
-changes](https://github.com/google/periph/compare/%(prev_version)s...%(version)s) for a
-diff stat of `%(diff_stat)s`.
+changes](https://github.com/google/periph/compare/%(prev_version)s...%(version)s)
+from %(num_authors)d contributors for a diff stat of `%(diff_stat)s`.
 
 
 %(changes)s
@@ -69,34 +69,33 @@ updates!
 """
 
 
-def cmdlines(*args, **kwargs):
-  return subprocess.check_output(*args, **kwargs).splitlines()
+def gitlines(cmd, *args, **kwargs):
+  return subprocess.check_output(['git'] + cmd, *args, **kwargs).splitlines()
 
 
 def main():
   # TODO(maruel): Natural sorting.
   repo = os.path.join(os.environ['GOPATH'], 'src', 'periph.io', 'x', 'periph')
-  versions = subprocess.check_output(['git', 'tag'], cwd=repo).splitlines()
+  versions = gitlines(['tag'], cwd=repo)
   version = versions[-1]
   print('Found version %s' % version)
   prev_version = versions[-2]
   print('Comparing against version %s' % prev_version)
-  diff_stat = cmdlines(['git', 'diff', '--stat', prev_version], cwd=repo)[-1]
-  changes = cmdlines(
-      ['git', 'log', '--format=%an: %s', '%s..%s' % (prev_version, version)], cwd=repo)
+  diff_stat = gitlines(['diff', '--stat', prev_version], cwd=repo)[-1]
+  changes = gitlines(
+      ['log', '--format=%an: %s', '%s..%s' % (prev_version, version)], cwd=repo)
   changes.sort()
   num_changes = len(changes)
 
   # Explicitly try to handle if there's ever a ':' in one of the names.
-  names = set(cmdlines(
-      ['git', 'log', '--format=%an', '%s..%s' % (prev_version, version)],
-      cwd=repo))
-  names = {n:0 for n in names}
+  authors = set(gitlines(
+      ['log', '--format=%an', '%s..%s' % (prev_version, version)], cwd=repo))
+  authors = {n:0 for n in authors}
   # O(n^2)
   for c in changes:
-    for n in names:
+    for n in authors:
       if c.startswith(n+': '):
-        names[n] += 1
+        authors[n] += 1
         break
 
   now = datetime.datetime.now()
@@ -104,10 +103,11 @@ def main():
     'changes': '\n'.join(changes),
     'date': str(now.date()),
     'diff_stat': diff_stat,
+    'num_authors': len(authors),
     'num_changes': num_changes,
     'prev_version': prev_version,
     'thanks': '\n'.join(
-        '- %s contributed %d changes.' % (n, c) for n, c in sorted(names.iteritems())),
+        '- %s contributed %d changes.' % (n, c) for n, c in sorted(authors.iteritems())),
     'version': version,
     'version_num': version[1:],
   }
