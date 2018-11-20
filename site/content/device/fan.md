@@ -1,11 +1,11 @@
 +++
-title = "PC Cooling Fan"
+title = "Fan"
 description = "Move air across to cool a embedded components."
-picture = "/img/pc-cooling-fan.jpg"
+picture = "/img/fan.jpg"
 +++
 
 # Overview
-Fans power can be controlled via a PWM is due to the fact that the duty cycle of the signal can be adjusted.
+The fan's speed can be controlled with a PWM via its duty cycle.
 
 ## Current
 
@@ -55,11 +55,11 @@ func main() {
 	pin := gpioreg.ByName("GPIO6")
 
 	// start the fan
-	Start()
+	Start(pin)
 
 	// stop the fan after 10 seconds
-	stopFan := time.AfterFunc(time.Second*10, Stop())
-	defer stopFan.Stop()
+	time.Sleep(10*time.Second)
+	Stop(pin)
 }
 ~~~
 
