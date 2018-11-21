@@ -9,7 +9,8 @@ The fan's speed can be controlled with a PWM via its duty cycle.
 
 ## Current
 
-Fans can vary a lot, and have different volts and amps and somtimes can be too much for a GPIO.
+Fan's motor draw more current than what a GPIO pin can normally provide.
+So an amplifier like a L2930 should be used to drive the fan.
 
 # Example
 
