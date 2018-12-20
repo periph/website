@@ -34,14 +34,14 @@ func main() {
     }
 
     // Lookup a pin by its number:
-    p, err := gpioreg.ByName("16")
+    p := gpioreg.ByName("16")
     if err != nil {
         log.Fatal(err)
     }
     fmt.Printf("%s: %s\n", p, p.Function())
 
     // Set it as input, with an internal pull down resistor:
-    if err = p.In(gpio.Down, gpio.BothEdges); err != nil {
+    if err = p.In(gpio.PullDown, gpio.BothEdges); err != nil {
         log.Fatal(err)
     }
 
