@@ -107,7 +107,8 @@ def main():
     'num_changes': num_changes,
     'prev_version': prev_version,
     'thanks': '\n'.join(
-        '- %s contributed %d changes.' % (n, c) for n, c in sorted(authors.iteritems())),
+        '- %s contributed %d change%s.' % (n, c, 's' if len(c) > 1 else '')
+        for n, c in sorted(authors.iteritems())),
     'version': version,
     'version_num': version[1:],
   }
