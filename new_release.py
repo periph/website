@@ -22,7 +22,7 @@ notruncate = false
 [Version %(version_num)s](https://github.com/google/periph/releases/tag/%(version)s) is
 released!
 
-This is a feature and bug fix update.
+This is a feature and bug fix release.
 
 <!--more-->
 
