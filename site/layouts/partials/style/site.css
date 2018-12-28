@@ -260,10 +260,22 @@ header a {
 .nobreak {
   white-space: nowrap;
 }
+
+/* Edit text */
 .fork-and-edit {
-  color: #FFCCCC;
-  font-size: 150%;
-  font-weight: 600;
+  background-color: #EEE;
+  border: solid #DDD 1px;
+  float: right;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.fork-and-edit a {
+  color: #333;
+  font-size: 66%;
+}
+.fork-and-edit img {
+  max-height: 1rem;
 }
 
 /* NAVBAR */
