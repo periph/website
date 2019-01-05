@@ -281,7 +281,10 @@ header a {
 /* NAVBAR */
 
 .currentLink {
-  text-shadow: 1px 1px 5px blue;
+  border-bottom-color: #2a78bd;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-radius: 2px;
 }
 
 .navbar, .navbar-spacer {
