@@ -57,7 +57,7 @@ import (
     "log"
 
     "periph.io/x/periph/conn/i2c/i2creg"
-    "periph.io/x/periph/devices"
+    "periph.io/x/periph/conn/physic"
     "periph.io/x/periph/devices/bmxx80"
     "periph.io/x/periph/host"
 )
@@ -77,14 +77,14 @@ func main() {
 
     // Open a handle to a bme280/bmp280 connected on the I²C bus using default
     // settings:
-    dev, err := bmxx80.NewI2C(bus, 0x76, nil)
+    dev, err := bmxx80.NewI2C(bus, 0x76, &bmxx80.DefaultOpts)
     if err != nil {
         log.Fatal(err)
     }
     defer dev.Halt()
 
     // Read temperature from the sensor:
-    var env devices.Environment
+    var env physic.Env
     if err = dev.Sense(&env); err != nil {
         log.Fatal(err)
     }
