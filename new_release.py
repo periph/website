@@ -96,7 +96,8 @@ def select_range(repo):
 def email_to_user(name, email):
   """Converts an email address to a github user name."""
   if email.endswith('@users.noreply.github.com'):
-    return email.split('+')[1].split('@')[0]
+    parts = email.split('+', 2)
+    return parts[-1].split('@')[0]
   url = 'https://api.github.com/search/users?q=%s+in:email' % email
   data = json.load(urllib.urlopen(url))
   if 'message' in data:
@@ -152,7 +153,8 @@ def get_logs(prev_version, version, repo):
 
 
 def main():
-  repo = os.path.join(os.environ['GOPATH'], 'src', 'periph.io', 'x', 'periph')
+  gopath = os.environ.get('GOPATH') or os.path.expanduser(os.path.join('~', 'go'))
+  repo = os.path.join(gopath, 'src', 'periph.io', 'x', 'periph')
   version, prev_version = select_range(repo)
   diff_stat = gitlines(['diff', '--stat', prev_version], cwd=repo)[-1]
   changes, account_mapping = get_logs(prev_version, version, repo)
