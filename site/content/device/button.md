@@ -34,10 +34,11 @@ func main() {
     }
 
     // Lookup a pin by its number:
-    p := gpioreg.ByName("16")
-    if err != nil {
-        log.Fatal(err)
+    p := gpioreg.ByName("GPIO2")
+    if p == nil {
+        log.Fatal("Failed to find GPIO2")
     }
+    
     fmt.Printf("%s: %s\n", p, p.Function())
 
     // Set it as input, with an internal pull down resistor:
