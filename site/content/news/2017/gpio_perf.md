@@ -6,6 +6,7 @@ title = "🚄 Reaching 80MHz"
 description = "How we cranked up GPIO performance in v2.1.0"
 tags = []
 notruncate = false
+image = "https://periph.io/img/news_2017_gpio_perf_after.png"
 +++
 
 
