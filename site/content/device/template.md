@@ -41,7 +41,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"testing"
 
 	"periph.io/x/extra/hostextra/d2xx"
 	"periph.io/x/periph/conn/physic"
@@ -49,7 +48,7 @@ import (
 	"periph.io/x/periph/host"
 )
 
-func TestSpi(t *testing.T) {
+func main() {
 	if _, err := host.Init(); err != nil {
 		log.Fatal(err)
 	}
@@ -79,5 +78,6 @@ func TestSpi(t *testing.T) {
 	// Use read.
 	fmt.Printf("%v\n", read[1:])
 }
+
 
 ```
