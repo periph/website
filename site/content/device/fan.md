@@ -19,50 +19,49 @@ This can be done via [GPIO pins](/device/gpio/).
 **Note:** The PWM support is still iffy at best on the Raspberry Pi, and this
 must be run as root.
 
-~~~go
+```go
 import (
-	"log"
-	"time"
+    "log"
+    "time"
 
-	"periph.io/x/periph/conn/gpio"
-	"periph.io/x/periph/conn/gpio/gpioreg"
-	"periph.io/x/periph/conn/physic"
-	"periph.io/x/periph/host"
+    "periph.io/x/periph/conn/gpio"
+    "periph.io/x/periph/conn/gpio/gpioreg"
+    "periph.io/x/periph/conn/physic"
+    "periph.io/x/periph/host"
 )
 
 // Start starts the Fan.
 func Start(pin gpio.PinIO) {
-	// Generate a 33% duty cycle 10KHz signal.
-	if err := pin.PWM(gpio.DutyMax/3, 440*physic.Hertz); err != nil {
-		log.Fatal(err)
-	}
+    // Generate a 33% duty cycle 10KHz signal.
+    if err := pin.PWM(gpio.DutyMax/3, 440*physic.Hertz); err != nil {
+        log.Fatal(err)
+    }
 }
 
 // Stop stops the Fan.
 func Stop(pin gpio.PinIO) {
-	if err := pin.Halt(); err != nil {
-		log.Fatal(err)
-	}
+    if err := pin.Halt(); err != nil {
+        log.Fatal(err)
+    }
 }
 
 func main() {
+    // Make sure periph is initialized.
+    if _, err := host.Init(); err != nil {
+        log.Fatal(err)
+    }
 
-	// Make sure periph is initialized.
-	if _, err := host.Init(); err != nil {
-		log.Fatal(err)
-	}
+    // Use gpioreg GPIO pin registry to find a GPIO pin by name.
+    pin := gpioreg.ByName("GPIO6")
 
-	// Use gpioreg GPIO pin registry to find a GPIO pin by name.
-	pin := gpioreg.ByName("GPIO6")
+    // start the fan
+    Start(pin)
 
-	// start the fan
-	Start(pin)
-
-	// stop the fan after 10 seconds
-	time.Sleep(10*time.Second)
-	Stop(pin)
+    // stop the fan after 10 seconds
+    time.Sleep(10*time.Second)
+    Stop(pin)
 }
-~~~
+```
 
 
 # Buying

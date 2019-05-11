@@ -39,38 +39,38 @@ This example is for an active buzzer.
 **Note:** The PWM support is still iffy at best on the Raspberry Pi, and this
 must be run as root.
 
-~~~go
+```go
 package main
 
 import (
-  "log"
-  "time"
+    "log"
+    "time"
 
-  "periph.io/x/periph/conn/gpio"
-  "periph.io/x/periph/conn/gpio/gpioreg"
-  "periph.io/x/periph/conn/physic"
-  "periph.io/x/periph/host"
+    "periph.io/x/periph/conn/gpio"
+    "periph.io/x/periph/conn/gpio/gpioreg"
+    "periph.io/x/periph/conn/physic"
+    "periph.io/x/periph/host"
 )
 
 func main() {
-  // Load all the drivers:
-  if _, err := host.Init(); err != nil {
-    log.Fatal(err)
-  }
+    // Load all the drivers:
+    if _, err := host.Init(); err != nil {
+        log.Fatal(err)
+    }
 
-  p := gpioreg.ByName("PWM1_OUT")
-  if p == nil {
-    log.Fatal("Failed to find PWM1_OUT")
-  }
-  if err := p.PWM(gpio.DutyHalf, 440*physic.Hertz); err != nil {
-    log.Fatal(err)
-  }
-  time.Sleep(2 * time.Second)
-  if err := p.Halt(); err != nil {
-    log.Fatal(err)
-  }
+    p := gpioreg.ByName("PWM1_OUT")
+    if p == nil {
+        log.Fatal("Failed to find PWM1_OUT")
+    }
+    if err := p.PWM(gpio.DutyHalf, 440*physic.Hertz); err != nil {
+        log.Fatal(err)
+    }
+    time.Sleep(2 * time.Second)
+    if err := p.Halt(); err != nil {
+        log.Fatal(err)
+    }
 }
-~~~
+```
 
 
 # Buying

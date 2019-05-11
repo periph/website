@@ -49,7 +49,7 @@ BMP280](https://periph.io/x/periph/devices/bmxx80) connected via
 [I²C](https://periph.io/x/periph/conn/i2c).
 
 
-~~~go
+```go
 package main
 
 import (
@@ -90,7 +90,7 @@ func main() {
     }
     fmt.Printf("%8s %10s %9s\n", env.Temperature, env.Pressure, env.Humidity)
 }
-~~~
+```
 
 
 # Smoke test

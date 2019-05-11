@@ -24,7 +24,7 @@ function permits a edge detection without a busy loop.
 
 # Example
 
-~~~go
+```go
 package main
 
 import (
@@ -62,7 +62,7 @@ func main() {
         }
     }
 }
-~~~
+```
 
 This example uses basically no CPU: the
 [WaitForEdge()](https://godoc.org/periph.io/x/periph/conn/gpio#PinIn) leverages

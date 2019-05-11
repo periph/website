@@ -35,7 +35,7 @@ to complete the example. Thanks!
 package main
 
 func main() {
-  // TODO 😳
+    // TODO 😳
 }
 ```
 

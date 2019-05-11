@@ -68,7 +68,7 @@ This example uses lirc (http://www.lirc.org/). This assumes you installed lirc
 and configured it. See [devices/lirc](https://periph.io/x/periph/devices/lirc)
 for more information.
 
-~~~go
+```go
 package main
 
 import (
@@ -99,7 +99,7 @@ func main() {
         }
     }
 }
-~~~
+```
 
 
 # Buying

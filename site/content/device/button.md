@@ -15,7 +15,7 @@ function permits a edge detection without a busy loop.
 
 # Example
 
-~~~go
+```go
 package main
 
 import (
@@ -38,7 +38,7 @@ func main() {
     if p == nil {
         log.Fatal("Failed to find GPIO2")
     }
-    
+
     fmt.Printf("%s: %s\n", p, p.Function())
 
     // Set it as input, with an internal pull down resistor:
@@ -52,7 +52,7 @@ func main() {
         fmt.Printf("-> %s\n", p.Read())
     }
 }
-~~~
+```
 
 This example uses basically no CPU: the
 [WaitForEdge()](https://godoc.org/periph.io/x/periph/conn/gpio#PinIn) leverages
