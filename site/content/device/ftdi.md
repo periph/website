@@ -91,15 +91,50 @@ This permanently disable Apple's FTDI driver.
 
 # Example
 
-Please [edit this page on
-GitHub](https://github.com/periph/website/edit/master/site/content/device/template.md)
-to complete the example. Thanks!
+Use SPI on a FT232H.
 
 ```go
 package main
 
+import (
+    "fmt"
+    "log"
+
+    "periph.io/x/extra/hostextra/d2xx"
+    "periph.io/x/periph/conn/physic"
+    "periph.io/x/periph/conn/spi"
+    "periph.io/x/periph/host"
+)
+
 func main() {
-  // TODO 😳
+    if _, err := host.Init(); err != nil {
+        log.Fatal(err)
+    }
+
+    all := d2xx.All()
+    if len(all) == 0 {
+        log.Fatal("found no FTDI device on the USB bus")
+    }
+
+    // Use channel A.
+    ft232h, ok := all[0].(*d2xx.FT232H)
+    if !ok {
+        log.Fatal("not FTDI device on the USB bus")
+    }
+
+    s, err := ft232h.SPI()
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    c, err := s.Connect(physic.KiloHertz*100, spi.Mode3, 8)
+    write := []byte{0x10, 0x00}
+    read := make([]byte, len(write))
+    if err := c.Tx(write, read); err != nil {
+        log.Fatal(err)
+    }
+    // Use read.
+    fmt.Printf("%v\n", read[1:])
 }
 ```
 
