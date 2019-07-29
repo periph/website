@@ -1,41 +1,35 @@
 # periph.io website
 
-Contains all the code necessary to generate https://periph.io via
-[Hugo](https://gohugo.io) and serve via [Caddy](https://caddyserver.com/).
+This repository contains all the code necessary to generate https://periph.io.
 
-The web pages content is located at [site/content/](site/content/). Please send
-PR as per [contributing
-guidelines](https://periph.io/project/contributing/).
+The web site content is located at [site/content/](site/content/). Please send
+PR as per [contributing guidelines](https://periph.io/project/contributing/).
 
 
 ## Running locally
 
-- `./gen.sh` generates the web site in `./www`.
-- `./serve.sh` serves the website over port 3131.
+The scripts to serve the web site locally requires either **one** of the
+following to be installed:
 
-This requires [docker](https://docker.com) to be installed.
+- [Docker](https://docker.com)
+- [Hugo](https://gohugo.io)
+
+Use one of:
+
+- `./gen.sh`: generates the web site in `./www`.
+- `./serve.sh`: serves the website over port 3131.
 
 
-## Setup
+## Production setup
 
-- [caddy](https://caddyserver.com) to serve over https
-- [docker](https://docker.com) to be functional and callable from caddy.
+- [Caddy](https://caddyserver.com) to serve over https
+- [Docker](https://docker.com) to be functional and callable from caddy.
+- [hub.docker.com/r/marcaruel/hugo-tidy/](https://hub.docker.com/r/marcaruel/hugo-tidy/)
+  generates the production website.
 
 The [github webhook
 handler](https://github.com/periph/website/blob/master/resources/periph.io.conf)
-leverages
-[hub.docker.com/r/marcaruel/hugo-tidy/](https://hub.docker.com/r/marcaruel/hugo-tidy/)
-to do the processing whenever a new commit happens.
-
-hugo-tidy leverages:
-- [pygment](http://pygments.org) to generate the syntax highlighting: `pip
-  install --user Pygments`
-- [hugo](https://gohugo.io) to generate the html
-- [minify](https://github.com/tdewolff/minify/tree/master/cmd/minify) to reduce
-  the size: `go get -u -v github.com/tdewolff/minify/cmd/minify`
-
-The syntax styles was generated with `pygmentize -f html -S colorful -a .syntax >> site/static/css/style.css`
-and small modifications.
+regenerates the web site automatically whenever a new commit happens.
 
 
 ## Latency
