@@ -11,7 +11,7 @@ TAG="$(cat ./tag)"
 
 if (which docker > /dev/null); then
   # See https://github.com/maruel/hugo-tidy/ for more info.
-  docker pull $TAG
+  [ ! -z $(docker images -q $TAG) ] || docker pull $TAG
   docker run --rm -u $(id -u):$(id -g) -v $(pwd):/data $TAG
 elif (which hugo > /dev/null); then
   hugo -s site -d ../www

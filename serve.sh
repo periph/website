@@ -13,7 +13,7 @@ echo "Note: Use --bind=0.0.0.0 to be accessible on the local network."
 
 if (which docker > /dev/null); then
   # See https://github.com/maruel/hugo-tidy/ for more info.
-  docker pull $TAG
+  [ ! -z $(docker images -q $TAG) ] || docker pull $TAG
   docker run -t --rm -u $(id -u):$(id -g) -v $(pwd):/data --network=host $TAG \
     -w -b $(hostname) --port 3131 "$@"
 elif (which hugo > /dev/null); then
