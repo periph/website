@@ -14,7 +14,7 @@
             {{ range $e := .Site.AllRegularPages.ByDate.Reverse }}
               {{ if hasPrefix $e.RelPermalink $cur.RelPermalink }}
                 <div class="news-hdr">
-                  <h1 id="{{ .TranslationBaseName }}"><a href="{{.RelPermalink}}">{{.Title}}</a></h1>
+                  <h1 id="{{ .File.TranslationBaseName }}"><a href="{{.RelPermalink}}">{{.Title}}</a></h1>
                   <span class="news-desc">{{.Params.description}}</span>
                   <span class="date-tag float-right">{{- .Date.Format "2006-01-02" -}}</span>
                 </div>

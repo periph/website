@@ -49,6 +49,7 @@
   </div>
 </nav>
 
+{{ if .File }}
 <div class="fork-and-edit">
   <a
      href="https://github.com/periph/website/edit/master/site/content/{{.File.Path}}">
@@ -56,3 +57,4 @@
     Edit this page
   </a>
 </div>
+{{ end }}
