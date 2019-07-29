@@ -1,18 +1,24 @@
-#!/bin/sh
+#!/bin/bash
 # Copyright 2017 The Periph Authors. All rights reserved.
 # Use of this source code is governed under the Apache License, Version 2.0
 # that can be found in the LICENSE file.
 
 set -eu
-
 cd "$(dirname $0)"
 
-# This is the equivalent of:
-#  hugo server -s site -d ../www --bind=0.0.0.0 -w -b $(hostname) --port 3131
-#
-# See https://github.com/maruel/hugo-tidy/ for more infos.
-#
-# Don't forget to update resources/alt?.periph.io.conf and gen.sh.
-TAG=marcaruel/hugo-tidy:hugo-0.54.0-alpine-3.9-brotli-1.0.7-minify-2.3.8
-docker pull $TAG
-docker run -t --rm -u $(id -u):$(id -g) -v $(pwd):/data --network=host $TAG --bind=0.0.0.0 -w -b $(hostname) --port 3131
+# Don't forget to update resources/*.conf.
+TAG="$(cat ./tag)"
+
+echo "Note: Use --bind=0.0.0.0 to be accessible on the local network."
+
+if (which docker > /dev/null); then
+  # See https://github.com/maruel/hugo-tidy/ for more info.
+  docker pull $TAG
+  docker run -t --rm -u $(id -u):$(id -g) -v $(pwd):/data --network=host $TAG \
+    -w -b $(hostname) --port 3131 "$@"
+elif (which hugo > /dev/null); then
+  hugo server -s site -d ../www -w -b $(hostname) --port 3131 "$@"
+else
+  echo "Please either setup docker or install hugo from https://gohugo.io"
+  exit 1
+fi
