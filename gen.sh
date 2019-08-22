@@ -6,15 +6,18 @@
 set -eu
 cd "$(dirname $0)"
 
-# Don't forget to update resources/*.conf.
+# Determine the docker image to use.
 TAG="$(cat ./tag)"
+IMAGE="marcaruel/hugo-tidy:${TAG}"
 
 if (which docker > /dev/null); then
   # See https://github.com/maruel/hugo-tidy/ for more info.
-  [ ! -z $(docker images -q $TAG) ] || docker pull $TAG
-  docker run --rm -u $(id -u):$(id -g) -v $(pwd):/data $TAG
+  # First, pull the image only if missing.
+  [ ! -z $(docker images -q "${IMAGE}") ] || docker pull "${IMAGE}"
+  # Run it.
+  docker run --rm -u $(id -u):$(id -g) -v $(pwd):/data "${IMAGE}"
 elif (which hugo > /dev/null); then
-  hugo -s site -d ../www
+  hugo -s site -d ../www --buildFuture
   rm -rf www.new
   # The docker image also does the following:
   #   minify -r -o www.new www.new
