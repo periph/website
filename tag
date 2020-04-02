@@ -1,1 +1,1 @@
-hugo-0.57.2-alpine-3.10.2-brotli-1.0.7-minify-2.5.1
+hugo-0.59.1-alpine-3.11.5-brotli-1.0.7-minify-2.7.3

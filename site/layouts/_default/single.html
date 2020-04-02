@@ -54,7 +54,7 @@
         {{ $page := .Page }}
         {{ range $section := $page.Site.Sections }}
           {{ if hasPrefix $page.RelPermalink $section.RelPermalink }}
-            {{ $pages := (where .Site.AllRegularPages "Section" $section.Section).ByWeight }}
+            {{ $pages := (where .Site.AllRegularPages "Section" $section.Section).ByWeight.Reverse }}
 
             {{ $prev := $pages.Prev $page }}
             {{ $next := $pages.Next $page }}
@@ -67,8 +67,8 @@
               previous Go versions, so we need to create more temporary variable
               to get to the exact values we want.
             */}}
-            {{ $isFirst := eq $prev.RelPermalink $last.RelPermalink }}
-            {{ $isLast := eq $next.RelPermalink $first.RelPermalink }}
+            {{ $isFirst := not $prev}}
+            {{ $isLast := not $next }}
             {{ $hasPrev := not $isFirst }}
             {{ $hasNext := not $isLast }}
             {{ if or $hasPrev $hasNext }}
