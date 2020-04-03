@@ -8,9 +8,7 @@ description = "Peripherals I/O in Go"
 # Overview
 
 [periph.io/x/periph](https://periph.io/x/periph) is a standalone hardware
-library with no external dependency. It can be viewed as a lower level layer
-than [Gobot](https://gobot.io) and, *yes*, we're discussing to collaborate in the
-future!
+library with no external dependency.
 
 
 # Features
