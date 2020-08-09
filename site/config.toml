@@ -1,6 +1,15 @@
+# https://gohugo.io/getting-started/configuration/
+
+# URL handling.
 baseURL = "https://periph.io/"
+canonifyurls = false
+
+
+# Syntax coloring.
 pygmentsuseclasses = true
 PygmentsCodeFences = true
+
+
 disableKinds = ["RSS"]
 
 [params]
