@@ -10,14 +10,26 @@ cd "$(dirname $0)"
 TAG="$(cat ./tag)"
 IMAGE="marcaruel/hugo-tidy:${TAG}"
 
-if (which docker > /dev/null); then
-  # See https://github.com/maruel/hugo-tidy/ for more info.
-  # First, pull the image only if missing.
-  [ ! -z $(docker images -q "${IMAGE}") ] || docker pull "${IMAGE}"
-  # Run it.
-  docker run --rm -u $(id -u):$(id -g) -v $(pwd):/data "${IMAGE}"
-elif (which hugo > /dev/null); then
-  hugo -s site -d ../www --buildFuture
+echo "Tips:"
+echo " - Use --buildDrafts to render drafts."
+
+# Only use docker if not passing a flag, otherwise the container doesn't work as
+# expected.
+if [ $# == 0 ]; then
+  if (which docker > /dev/null); then
+    echo "Using hugo-tidy"
+    # See https://github.com/maruel/hugo-tidy/ for more info.
+    # First, pull the image only if missing.
+    [ ! -z $(docker images -q "${IMAGE}") ] || docker pull "${IMAGE}"
+    # Run it.
+    docker run -t -i --rm -u $(id -u):$(id -g) -v $(pwd):/data "${IMAGE}"
+    exit 0
+  fi
+fi
+
+if (which hugo > /dev/null); then
+  echo "Using hugo"
+  hugo -s site -d ../www --buildFuture "$@"
   rm -rf www.new
   # The docker image also does the following:
   #   minify -r -o www.new www.new
@@ -28,7 +40,10 @@ elif (which hugo > /dev/null); then
   #     -name '*.xml' -o -name '*.svg' \) \
   #     -exec /bin/sh -c '/usr/local/bin/brotli -q 11 -o "$1.br" "$1"' /bin/sh {} \;
 else
-  echo "Please either setup docker or install hugo from https://gohugo.io"
+  echo "Please either:"
+  echo " - setup docker"
+  echo " - install hugo from https://gohugo.io"
+  echo " - go get github.com/gohugoio/hugo"
   exit 1
 fi
 echo ""
