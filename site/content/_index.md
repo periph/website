@@ -101,7 +101,7 @@ Learn more [about GPIOs](/device/gpio/).
 
 - [#periph](https://gophers.slack.com/messages/periph/) on gophers.slack.com.
   Request access at
-  [invite.slack.golangbridge.org](https://invite.slack.golangbridge.org/)
+  [invite.slack.golangbridge.org](http://invite.slack.golangbridge.org/)
 - File issues at
   [github.com/google/periph/issues](https://github.com/google/periph/issues)
 

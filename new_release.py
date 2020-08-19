@@ -66,7 +66,7 @@ process and the [gohci test lab](https://github.com/periph/gohci).
 - Join the [periph.io slack channel](https://gophers.slack.com/messages/periph/)
   to chat with us!
   - Need an account? [Get an invite
-    here](https://invite.slack.golangbridge.org/).
+    here](http://invite.slack.golangbridge.org/).
 
 Follow [twitter.com/periphio](https://twitter.com/periphio) for news and
 updates!
