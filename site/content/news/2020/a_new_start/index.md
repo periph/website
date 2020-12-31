@@ -43,16 +43,21 @@ The new packages require go1.13 or later.
 Run the following in bash in your repository:
 
 ```
+git ls-files -z -- "*.go" | xargs -0 -L 1 sed -i 's#\([^a-zA-Z]\)periph\.Driver#\1driver.Impl#g'
 git ls-files -z -- . | xargs -0 -L 1 sed -i 's#periph\.io/x/periph/conn#periph.io/x/conn/v3#g'
 git ls-files -z -- . | xargs -0 -L 1 sed -i 's#periph\.io/x/periph/experimental/conn#periph.io/x/conn/v3#g'
 git ls-files -z -- . | xargs -0 -L 1 sed -i 's#periph\.io/x/periph/host#periph.io/x/host/v3#g'
 git ls-files -z -- . | xargs -0 -L 1 sed -i 's#periph\.io/x/periph/devices#periph.io/x/devices/v3#g'
 git ls-files -z -- . | xargs -0 -L 1 sed -i 's#periph\.io/x/periph/experimental/devices#periph.io/x/devices/v3#g'
-git ls-files -z -- "*.go" | xargs -0 -L 1 sed -i 's#([^a-zA-Z])periph\.([A-Z])#\1driverreg.\2#g'
+git ls-files -z -- . | xargs -0 -L 1 sed -i 's#"periph\.io/x/periph"#"periph.io/x/conn/v3/driver/driverreg"#g'
+git ls-files -z -- "*.go" | xargs -0 -L 1 sed -i 's#\([^a-zA-Z]\)periph\.\([A-Z]\)#\1driverreg.\2#g'
 git checkout HEAD -- go.mod go.sum
 go mod tidy
+goimports -w .
 go test ./...
 ```
+
+You can get goimports via `cd; go get golang.org/x/tools/cmd/goimports`
 
 Having issues? Please reach out on the slack channel and we'll update the
 instructions. Thanks!
