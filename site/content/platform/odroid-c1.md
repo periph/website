@@ -28,11 +28,11 @@ linux based distribution.
 ## Drivers
 
 - Headers driver lives in
-  [periph.io/x/periph/host/odroidc1](https://periph.io/x/periph/host/odroidc1).
+  [periph.io/x/host/v3/odroidc1](https://periph.io/x/host/v3/odroidc1).
   It exports the main `J2` header, which is rPi compatible except for a couple
   of analog pins (which are not currently supported).
 - sysfs driver lives in
-  [periph.io/x/periph/host/sysfs](https://periph.io/x/periph/host/sysfs).
+  [periph.io/x/host/v3/sysfs](https://periph.io/x/host/v3/sysfs).
 
 
 # Tips and tricks
@@ -52,7 +52,7 @@ of this [wiki page](http://odroid.com/dokuwiki/doku.php?id=en:odroid-c1#ubuntu).
 
 Currently no package for memory-mapped I/O has been written for the Amlogic S805
 processor, thus all gpio functions are implemented via
-[sysfs](https://periph.io/x/periph/host/sysfs).
+[sysfs](https://periph.io/x/host/v3/sysfs).
 
 Interrupts on GPIO pins are limited to 8 pins when using rising or falling edges
 and 4 pins when using both edges.

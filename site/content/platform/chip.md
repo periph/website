@@ -44,13 +44,13 @@ using high performance memory-mapped I/O for gpio pins.
 ## Drivers
 
 - CPU driver lives in
-  [periph.io/x/periph/host/allwinner](https://periph.io/x/periph/host/allwinner).
+  [periph.io/x/host/v3/allwinner](https://periph.io/x/host/v3/allwinner).
 - Headers driver lives in
-  [periph.io/x/periph/host/chip](https://periph.io/x/periph/host/chip). It
+  [periph.io/x/host/v3/chip](https://periph.io/x/host/v3/chip). It
   defines both `U13` and `U14` with the aliases as printed on the actual
   headers.
 - sysfs driver lives in
-  [periph.io/x/periph/host/sysfs](https://periph.io/x/periph/host/sysfs).
+  [periph.io/x/host/v3/sysfs](https://periph.io/x/host/v3/sysfs).
 
 
 # Configuration

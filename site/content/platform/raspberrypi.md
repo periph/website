@@ -29,14 +29,14 @@ are very well supported. The following functionality is supported:
 ## Drivers
 
 - CPU driver lives in
-  [periph.io/x/periph/host/bcm283x](https://periph.io/x/periph/host/bcm283x).
+  [periph.io/x/host/v3/bcm283x](https://periph.io/x/host/v3/bcm283x).
 - Headers driver lives in
-  [periph.io/x/periph/host/rpi](https://periph.io/x/periph/host/rpi). It exports
+  [periph.io/x/host/v3/rpi](https://periph.io/x/host/v3/rpi). It exports
   the headers based on the detected host.
 - sysfs driver lives in
-  [periph.io/x/periph/host/sysfs](https://periph.io/x/periph/host/sysfs).
+  [periph.io/x/host/v3/sysfs](https://periph.io/x/host/v3/sysfs).
 - videocore driver (GPU driver for DMA operations) lives in
-  [periph.io/x/periph/host/videocore](https://periph.io/x/periph/host/videocore).
+  [periph.io/x/host/v3/videocore](https://periph.io/x/host/v3/videocore).
 
 
 # Configuration

@@ -6,8 +6,8 @@ picture = "/img/bmxx80.jpg"
 
 # Overview
 
-[bmxx80](https://periph.io/x/periph/devices/bmxx80) provides support for a
-[popular sensor family from
+[bmxx80](https://periph.io/x/devices/v3/bmxx80) provides support for a [popular
+sensor family from
 Bosch](https://www.bosch-sensortec.com/bst/products/environmental/overview_environmental):
 
 * BMP180 and BMP280, temperature and pressure
@@ -45,8 +45,8 @@ retrieve measurement from the device.
 _Purpose:_ gather temperature, pressure and relative humidity (BME280 only).
 
 This example uses either a [BME280 or
-BMP280](https://periph.io/x/periph/devices/bmxx80) connected via
-[I²C](https://periph.io/x/periph/conn/i2c).
+BMP280](https://periph.io/x/devices/v3/bmxx80) connected via
+[I²C](https://periph.io/x/conn/v3/i2c).
 
 
 ```go
@@ -56,10 +56,10 @@ import (
     "fmt"
     "log"
 
-    "periph.io/x/periph/conn/i2c/i2creg"
-    "periph.io/x/periph/conn/physic"
-    "periph.io/x/periph/devices/bmxx80"
-    "periph.io/x/periph/host"
+    "periph.io/x/conn/v3/i2c/i2creg"
+    "periph.io/x/conn/v3/physic"
+    "periph.io/x/devices/v3/bmxx80"
+    "periph.io/x/host/v3"
 )
 
 func main() {
@@ -96,12 +96,12 @@ func main() {
 # Smoke test
 
 Setup for [BME280/BMP280 smoke
-test](https://periph.io/x/periph/devices/bmxx80/bmx280smoketest):
+test](https://periph.io/x/devices/v3/bmxx80/bmx280smoketest):
 
-- Two [BME280 or BMP280](https://periph.io/x/periph/devices/bmxx80) connected to
+- Two [BME280 or BMP280](https://periph.io/x/devices/v3/bmxx80) connected to
   a Raspberry Pi 3:
-  - the top one is connected via [I²C](https://periph.io/x/periph/conn/i2c)
-  - the bottom one is connected via [SPI](https://periph.io/x/periph/conn/spi):
+  - the top one is connected via [I²C](https://periph.io/x/conn/v3/i2c)
+  - the bottom one is connected via [SPI](https://periph.io/x/conn/v3/spi):
 
 ![bme280](/img/bme280-two.jpg)
 

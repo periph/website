@@ -3,8 +3,11 @@ title = "Library"
 description = "Leverage periph to write Go applications"
 +++
 
-The complete API documentation, including examples, is at
-[![GoDoc](/img/godoc.svg)](https://godoc.org/periph.io/x/periph)
+The complete API documentation, including examples, are at:
+
+* [periph.io/x/conn/v3](https://periph.io/x/conn/v3)
+* [periph.io/x/host/v3](https://periph.io/x/host/v3)
+* [periph.io/x/devices/v3](https://periph.io/x/devices/v3)
 
 
 # Introduction
@@ -16,19 +19,19 @@ differentiates between drivers that _enable_ functionality on the host and
 drivers for devices connected _to_ the host.
 
 Most micro computers expose at least some of the following:
-[I²C bus](https://periph.io/x/periph/conn/i2c#Bus), [SPI
-bus](https://periph.io/x/periph/conn/spi#Conn), [GPIO
-pins](https://periph.io/x/periph/conn/gpio#PinIO), [analog
-pins](https://periph.io/x/periph/experimental/conn/analog),
-[UART](https://periph.io/x/periph/experimental/conn/uart), I2S and PWM.
+[I²C bus](https://periph.io/x/conn/v3/i2c#Bus), [SPI
+bus](https://periph.io/x/conn/v3/spi#Conn), [GPIO
+pins](https://periph.io/x/conn/v3/gpio#PinIO), [analog
+pins](https://periph.io/x/conn/v3/analog),
+[UART](https://periph.io/x/conn/v3/uart), I2S and PWM.
 
 Note: not all of the above is implemented yet!
 
-- The interfaces are defined in [conn](https://periph.io/x/periph/conn).
+- The interfaces are defined in [conn](https://periph.io/x/conn/v3).
 - The concrete objects _implementing_ the interfaces are in
-  [host](https://periph.io/x/periph/host).
+  [host](https://periph.io/x/host/v3).
 - The device drivers _using_ these interfaces are located in
-  [devices](https://periph.io/x/periph/devices).
+  [devices](https://periph.io/x/devices/v3).
 
 A device can be connected on a bus, let's say an LED strip connected over SPI.
 In this case the application needs to obtain a handle to the SPI bus and then
@@ -48,55 +51,56 @@ connect the LED device driver to the SPI bus handle.
 # Initialization
 
 The function to initialize the drivers registered by default is
-[host.Init()](https://periph.io/x/periph/host#Init). It returns a
-[periph.State](https://periph.io/x/periph#State):
+[host.Init()](https://periph.io/x/host/v3#Init). It returns a
+[driverreg.State](https://periph.io/x/conn/v3/driver/driverreg#State):
 
 ~~~go
 state, err := host.Init()
 ~~~
 
-[periph.State](https://periph.io/x/periph#State) contains information about:
+[driverreg.State](https://periph.io/x/conn/v3/driver/driverreg#State) contains
+information about:
 
 - The drivers loaded and active.
 - The drivers skipped, because the relevant hardware wasn't found.
 - The drivers that failed to load due to an error. The app may still run without
   these drivers.
 
-In addition, [host.Init()](https://periph.io/x/periph/host#Init) may return an
+In addition, [host.Init()](https://periph.io/x/host/v3#Init) may return an
 error when there's a structural issue, for example two drivers with the same
 name were registered. This is a fatal failure. The package
-[periph/host](https://periph.io/x/periph/host) registers all the drivers under
+[periph/host](https://periph.io/x/host/v3) registers all the drivers under
 it.
 
 
 # Connection
 
-A connection [conn.Conn](https://periph.io/x/periph/conn#Conn) is a
+A connection [conn.Conn](https://periph.io/x/conn/v3#Conn) is a
 **point-to-point** connection between the host and a device where the
 application is the master driving the I/O.
 
 A `Conn` can be multiplexed over the underlying bus. For example an I²C bus
-[i2c.Bus](https://periph.io/x/periph/conn/i2c#Bus) may have multiple connections
+[i2c.Bus](https://periph.io/x/conn/v3/i2c#Bus) may have multiple connections
 (slaves) to the master, each addressed by the device address.
 
 
 ## SPI connection
 
-An [spi.Conn](https://periph.io/x/periph/conn/spi#Conn) **is** a
-[conn.Conn](https://periph.io/x/periph/conn#Conn). The reason is that spi.Conn
+An [spi.Conn](https://periph.io/x/conn/v3/spi#Conn) **is** a
+[conn.Conn](https://periph.io/x/conn/v3#Conn). The reason is that spi.Conn
 is locked on a specific CS line, so it is effectively treated as a
 point-to-point connection and not as a bus.
 
 
 ## I²C connection
 
-An [i2c.Bus](https://periph.io/x/periph/conn/i2c#Bus) is **not** a
-[conn.Conn](https://periph.io/x/periph/conn#Conn). This is because an I²C bus is
+An [i2c.Bus](https://periph.io/x/conn/v3/i2c#Bus) is **not** a
+[conn.Conn](https://periph.io/x/conn/v3#Conn). This is because an I²C bus is
 **not** a point-to-point connection but instead is a real bus where multiple
 devices can be connected simultaneously, like a USB bus. To create a
 point-to-point connection to a device which does implement
-[conn.Conn](https://periph.io/x/periph/conn#Conn) use
-[i2c.Dev](https://periph.io/x/periph/conn/i2c#Dev), which embeds the device's
+[conn.Conn](https://periph.io/x/conn/v3#Conn) use
+[i2c.Dev](https://periph.io/x/conn/v3/i2c#Dev), which embeds the device's
 address:
 
 ~~~go
@@ -114,7 +118,7 @@ specify the address.
 
 ## GPIO
 
-[GPIO pins](https://periph.io/x/periph/conn/gpio#PinIO) can be leveraged for
+[GPIO pins](https://periph.io/x/conn/v3/gpio#PinIO) can be leveraged for
 arbitrary uses, such as buttons, LEDs, relays, etc.
 
 
@@ -138,19 +142,19 @@ import (
     "log"
 
     "github.com/example/virtual_i2c"
-    "periph.io/x/periph"
-    "periph.io/x/periph/host"
-    "periph.io/x/periph/conn/i2c"
-    "periph.io/x/periph/conn/i2c/i2creg"
+    "periph.io/x/conn/v3/driver"
+    "periph.io/x/conn/v3/i2c"
+    "periph.io/x/conn/v3/i2c/i2creg"
+    "periph.io/x/host/v3"
 )
 
-type driver struct{}
+type driverImpl struct{}
 
-func (d *driver) String() string          { return "virtual_i2c" }
-func (d *driver) Type() periph.Type       { return periph.Bus }
-func (d *driver) Prerequisites() []string { return nil }
+func (d *driverImpl) String() string          { return "virtual_i2c" }
+func (d *driverImpl) Prerequisites() []string { return nil }
+func (d *driverImpl) After() []string { return nil }
 
-func (d *driver) Init() (bool, error) {
+func (d *driverImpl) Init() (bool, error) {
     // Load the driver. Note that drivers are loaded *concurrently* by periph.
     if err := virtual_i2c.Load(); err != nil {
         return true, err
@@ -166,7 +170,7 @@ func (d *driver) Init() (bool, error) {
 
 func main() {
     // Register your driver in the registry:
-    if _, err := drivers.Register(driver); err != nil {
+    if _, err := driverreg.Register(driver); err != nil {
         log.Fatal(err)
     }
     // Initialize normally. Your driver will be loaded:

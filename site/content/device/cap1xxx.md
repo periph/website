@@ -6,7 +6,7 @@ picture = "/img/cap1xxx.jpg"
 
 # Overview
 
-[cap1xxx](https://periph.io/x/periph/devices/cap1xxx) provides support to
+[cap1xxx](https://periph.io/x/devices/v3/cap1xxx) provides support to
 interact with the cap1xxx family of capacitive touch sensors by
 [Microchip](https://www.microchip.com/wwwproducts/en/CAP1188). The sensor family
 is made of the cap1105, cap1106, cap1114, cap1133, cap1126, cap1128, cap1166,
@@ -69,10 +69,10 @@ import (
     "fmt"
     "log"
 
-    "periph.io/x/periph/conn/gpio"
-    "periph.io/x/periph/conn/gpio/gpioreg"
-    "periph.io/x/periph/conn/i2c/i2creg"
-    "periph.io/x/periph/devices/cap1xxx"
+    "periph.io/x/conn/v3/gpio"
+    "periph.io/x/conn/v3/gpio/gpioreg"
+    "periph.io/x/conn/v3/i2c/i2creg"
+    "periph.io/x/devices/v3/cap1xxx"
 )
 
 func main() {

@@ -101,9 +101,9 @@ import (
     "log"
 
     "periph.io/x/extra/hostextra/d2xx"
-    "periph.io/x/periph/conn/physic"
-    "periph.io/x/periph/conn/spi"
-    "periph.io/x/periph/host"
+    "periph.io/x/conn/v3/physic"
+    "periph.io/x/conn/v3/spi"
+    "periph.io/x/host/v3"
 )
 
 func main() {

@@ -6,7 +6,7 @@ picture = "/img/ir.jpg"
 
 # Overview
 
-[lirc](https://periph.io/x/periph/devices/lirc) provides support to interact
+[lirc](https://periph.io/x/devices/v3/lirc) provides support to interact
 with the [lircd service](http://www.lirc.org/). This is a linux only driver.
 
 
@@ -65,7 +65,7 @@ keypresses. Some boards come with one IR device directly on it.
 _Purpose:_ display IR remote keys.
 
 This example uses lirc (http://www.lirc.org/). This assumes you installed lirc
-and configured it. See [devices/lirc](https://periph.io/x/periph/devices/lirc)
+and configured it. See [devices/lirc](https://periph.io/x/devices/v3/lirc)
 for more information.
 
 ```go
@@ -75,8 +75,8 @@ import (
     "fmt"
     "log"
 
-    "periph.io/x/periph/devices/lirc"
-    "periph.io/x/periph/host"
+    "periph.io/x/devices/v3/lirc"
+    "periph.io/x/host/v3"
 )
 
 func main() {

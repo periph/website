@@ -6,7 +6,7 @@ picture = "/img/lepton.jpg"
 
 # Overview
 
-[lepton](https://periph.io/x/periph/devices/lepton) provides support for the
+[lepton](https://periph.io/x/devices/v3/lepton) provides support for the
 FLIR Lepton InfraRed camera.
 
 
@@ -15,13 +15,13 @@ FLIR Lepton InfraRed camera.
 The driver as the following functionality:
 
 - Full 14 bits depth
-- Access to the [CCI interface](https://periph.io/x/periph/devices/lepton/cci)
+- Access to the [CCI interface](https://periph.io/x/devices/v3/lepton/cci)
 
 
 # Tool
 
 Use
-[cmd/lepton](https://github.com/google/periph/blob/master/cmd/lepton/main.go) to
+[cmd/lepton](https://github.com/periph/cmd/blob/main/lepton/main.go) to
 query the camera state, trigger a calibration (FFC) or capture an image.
 
 

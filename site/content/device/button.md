@@ -9,7 +9,7 @@ picture = "/img/button.jpg"
 [GPIO pins](/device/gpio/) can be leveraged to read button presses, similar to
 [detecting motion](/device/pir/).
 
-The [gpio.PinIn.WaitForEdge()](https://periph.io/x/periph/conn/gpio#PinIn)
+The [gpio.PinIn.WaitForEdge()](https://periph.io/x/conn/v3/gpio#PinIn)
 function permits a edge detection without a busy loop.
 
 
@@ -22,9 +22,9 @@ import (
     "fmt"
     "log"
 
-    "periph.io/x/periph/conn/gpio"
-    "periph.io/x/periph/conn/gpio/gpioreg"
-    "periph.io/x/periph/host"
+    "periph.io/x/conn/v3/gpio"
+    "periph.io/x/conn/v3/gpio/gpioreg"
+    "periph.io/x/host/v3"
 )
 
 func main() {
@@ -55,7 +55,7 @@ func main() {
 ```
 
 This example uses basically no CPU: the
-[WaitForEdge()](https://godoc.org/periph.io/x/periph/conn/gpio#PinIn) leverages
+[WaitForEdge()](https://godoc.org/periph.io/x/conn/v3/gpio#PinIn) leverages
 the edge detection provided by the kernel, unlike other Go hardware libraries.
 
 

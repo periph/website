@@ -6,7 +6,7 @@ description = "Overview for users who want ready-to-use tools"
 
 # Batteries included
 
-[periph.io/x/periph/cmd](https://github.com/google/periph/tree/master/cmd/)
+[periph.io/x/cmd](https://github.com/periph/cmd/tree/main/)
 contains executables usable as-is.
 
 The `periph` project doesn't release binaries at the moment, you are expected to
@@ -25,12 +25,12 @@ tries to stay compatible with Go 1.5.3.
 It is done via:
 
 ```bash
-go get -u periph.io/x/periph/cmd/...
+go get -u periph.io/x/cmd/...
 ```
 
 To use [periph.io/x/extra](https://periph.io/x/extra) provided packages, use:
 ```
-go get -tags periphextra -u periph.io/x/periph/cmd/...
+go get -tags periphextra -u periph.io/x/cmd/...
 ```
 
 On many platforms (board/OS combination), many tools requires running as root
@@ -47,7 +47,7 @@ you with this:
 
 ```bash
 go get -u periph.io/x/bootstrap/cmd/push
-push -host raspberrypi periph.io/x/periph/cmd/bmxx80
+push -host raspberrypi periph.io/x/cmd/bmxx80
 ```
 
 

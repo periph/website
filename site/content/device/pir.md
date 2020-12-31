@@ -10,7 +10,7 @@ picture = "/img/hc-sr501.jpg"
 (Passive/Pyroelectric InfraRed sensor), similar to reading
 [button presses](/device/button/).
 
-The [gpio.PinIn.WaitForEdge()](https://periph.io/x/periph/conn/gpio#PinIn)
+The [gpio.PinIn.WaitForEdge()](https://periph.io/x/conn/v3/gpio#PinIn)
 function permits a edge detection without a busy loop.
 
 
@@ -31,9 +31,9 @@ import (
     "fmt"
     "log"
 
-    "periph.io/x/periph/conn/gpio"
-    "periph.io/x/periph/conn/gpio/gpioreg"
-    "periph.io/x/periph/host"
+    "periph.io/x/conn/v3/gpio"
+    "periph.io/x/conn/v3/gpio/gpioreg"
+    "periph.io/x/host/v3"
 )
 
 func main() {
@@ -65,7 +65,7 @@ func main() {
 ```
 
 This example uses basically no CPU: the
-[WaitForEdge()](https://godoc.org/periph.io/x/periph/conn/gpio#PinIn) leverages
+[WaitForEdge()](https://godoc.org/periph.io/x/conn/v3/gpio#PinIn) leverages
 the edge detection provided by the kernel, unlike other Go hardware libraries.
 
 

@@ -82,7 +82,7 @@ directory. The following process must be followed:
   and respond to the code review.
 
 At this point, it is available for use to everyone but it is not loaded by
-default by [host.Init()](https://periph.io/x/periph/host#Init).
+default by [host.Init()](https://periph.io/x/host/v3#Init).
 
 There is no API compatibility guarantee for drivers under
 [experimental/](https://github.com/google/periph/tree/master/experimental/).
@@ -146,7 +146,7 @@ use this as a learning experience.
   - No `interface{}` unless strictly required.
   - Minimal use of factories except for protocol level registries.
   - No `init()` code that accesses peripherals on process startup. These belong
-    to [Driver.Init()](https://periph.io/x/periph#Driver).
+    to [Driver.Init()](https://periph.io/x/conn/v3/driver#Impl).
 - Exact naming
   - Driver for a chipset must have the name of the chipset or the chipset
     family. Don't use `oleddisplay`, use `ssd1306`.
@@ -161,7 +161,7 @@ use this as a learning experience.
   - When relevant, include a smoke test. The smoke test tests a real device to
     confirm the driver physically works for devices. It must be under the
     package being tested, named as `foosmoketest` for package `foo`. Modify
-    [periph-smoketests/](https://github.com/google/periph/tree/master/cmd/periph-smoketests/)
+    [periph-smoketests/](https://github.com/periph/cmd/tree/main/periph-smoketests/)
     to expose this smoke test.
 - Usability
   - Provide a standalone executable in
@@ -178,12 +178,12 @@ use this as a learning experience.
   - Drivers controlling an output device must have a generic path accepting
     a higher level interface when found in the stdlib, e.g.
     [image.Image](https://golang.org/pkg/image/#Image).
-  - Floating point arithmetic should only be used when absolutely necesary in
+  - Floating point arithmetic should only be used when absolutely necessary in
     the driver code. Most of the cases can be replaced by fixed point
     arithmetic, for example
-    [devices.Milli](https://periph.io/x/periph/devices#Milli).
+    [physic](https://periph.io/x/conn/v3/physic).
     Floating point arithmetic is acceptable in the unit tests and tools in
-    [cmd/](https://github.com/google/periph/tree/master/cmd/) but should not be
+    [cmd/](https://github.com/periph/cmd/tree/main/) but should not be
     abused.
   - Drivers must be implemented with performance in mind. For example I²C
     operations should be batched to minimize overhead.

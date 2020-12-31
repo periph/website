@@ -20,15 +20,15 @@ or AM5728 Cortex-A16 CPUs.
 ## Drivers
 
 - CPU driver lives in
-  [periph.io/x/periph/host/am335x](https://periph.io/x/periph/host/am335x) but
+  [periph.io/x/host/v3/am335x](https://periph.io/x/host/v3/am335x) but
   is just a stub for now.
 - Headers driver lives in subpackages of
-  [periph.io/x/periph/host/beagle](https://periph.io/x/periph/host/beagle).
-  [bone](https://periph.io/x/periph/host/beagle/bone) and
-  [green](https://periph.io/x/periph/host/beagle/green) exports the headers
+  [periph.io/x/host/v3/beagle](https://periph.io/x/host/v3/beagle).
+  [bone](https://periph.io/x/host/v3/beagle/bone) and
+  [green](https://periph.io/x/host/v3/beagle/green) exports the headers
   based on the detected host.
 - sysfs driver lives in
-  [periph.io/x/periph/host/sysfs](https://periph.io/x/periph/host/sysfs).
+  [periph.io/x/host/v3/sysfs](https://periph.io/x/host/v3/sysfs).
 
 
 # Setup

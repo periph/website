@@ -7,8 +7,7 @@ description = "Peripherals I/O in Go"
 
 # Overview
 
-[periph.io/x/periph](https://periph.io/x/periph) is a standalone hardware
-library with no external dependency.
+Periph is a standalone hardware library with limited external dependencies.
 
 
 # Features
@@ -16,12 +15,12 @@ library with no external dependency.
 - No external dependencies.
 - No C dependency, doesn't use `cgo`.
 - Explicit initialization: know what [hardware is detected and what is
-  not](https://github.com/google/periph/tree/master/cmd/periph-info).
-- [Interfaces](https://periph.io/x/periph/conn):
-  [GPIO](https://periph.io/x/periph/conn/gpio) (with edge detection),
-  [I²C](https://periph.io/x/periph/conn/i2c),
-  [SPI](https://periph.io/x/periph/conn/spi),
-  [1-wire](https://periph.io/x/periph/conn/onewire).
+  not](https://github.com/periph/cmd/tree/main/periph-info).
+- [Interfaces](https://periph.io/x/conn/v3):
+  [GPIO](https://periph.io/x/conn/v3/gpio) (with edge detection),
+  [I²C](https://periph.io/x/conn/v3/i2c),
+  [SPI](https://periph.io/x/conn/v3/spi),
+  [1-wire](https://periph.io/x/conn/v3/onewire).
 - [Continuously tested](/project/contributing/#testing) via
   [gohci](https://github.com/periph/gohci).
 - [SemVer](http://semver.org) compatibility guarantee.
@@ -42,7 +41,7 @@ library with no external dependency.
 `periph` includes many [ready-to-use tools](/project/tools/):
 
 ```bash
-go get periph.io/x/periph/cmd/...
+go get periph.io/x/cmd/...
 # List the host drivers registered and/or initialized:
 periph-info
 # List the board headers:
@@ -59,8 +58,6 @@ gpio-write P1_7 1
 `periph` tries hard to get out of the way when [used as a
 library](/project/library/).
 
-[![GoDoc](/img/godoc.svg)](https://godoc.org/periph.io/x/periph)
-
 Here's the minimal "toggle a LED" example:
 
 ~~~go
@@ -68,9 +65,9 @@ package main
 
 import (
     "time"
-    "periph.io/x/periph/conn/gpio"
-    "periph.io/x/periph/conn/gpio/gpioreg"
-    "periph.io/x/periph/host"
+    "periph.io/x/conn/v3/gpio"
+    "periph.io/x/conn/v3/gpio/gpioreg"
+    "periph.io/x/host/v3"
 )
 
 func main() {

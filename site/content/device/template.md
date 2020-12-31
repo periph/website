@@ -12,7 +12,7 @@ draft = true
 
 # Overview
 
-[foo](https://periph.io/x/periph/devices/foo) provides support to interact with
+[foo](https://periph.io/x/devices/v3/foo) provides support to interact with
 bar.
 
 Insert description of device bar.
