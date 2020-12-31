@@ -1,7 +1,7 @@
 +++
 date = "2020-12-30T00:00:00"
 title = "A new start"
-description = "A new layout for Go modules"
+description = "A new layout for Go modules in v3.6.7"
 author = "Marc-Antoine Ruel"
 authorlink = "https://maruel.ca"
 tags = []
