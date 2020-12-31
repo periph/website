@@ -31,7 +31,7 @@ The driver as the following functionality:
 # Tool
 
 Use
-[cmd/bmxx80](https://github.com/google/periph/blob/master/cmd/bmxx80/main.go) to
+[cmd/bmxx80](https://github.com/periph/cmd/blob/main/bmxx80/main.go) to
 retrieve measurement from the device.
 
 

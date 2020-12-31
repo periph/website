@@ -44,7 +44,7 @@ Why micro-optimize the GPIO to be as fast as possible? Use cases include:
 # Overall Methodology
 
 I took measurements via [periph-smoketest](
-https://github.com/google/periph/tree/master/cmd/periph-smoketest),
+https://github.com/periph/cmd/tree/main/periph-smoketest),
 which leverages the excellent benchmarking support in package
 [testing](https://golang.org/pkg/testing/#hdr-Benchmarks) from the Go standard
 library.
@@ -120,7 +120,7 @@ https://github.com/NextThingCo/CHIP-Hardware/blob/master/CHIP%5Bv1_0%5D/CHIPv1_0
 chip connected over I²C, so the CPU driver cannot be used to control it.
 
 Screenshot of a slower run of [bcm283x-benchmark](
-https://github.com/google/periph/blob/master/host/bcm283x/bcm283xsmoketest/benchmark.go)
+https://github.com/periph/host/blob/main/bcm283x/bcm283xsmoketest/benchmark.go)
 with two boards running the benchmark simultaneously:
 
 {{< figure src="/img/news_2017_gpio_perf_before.png" title="It works! Blue is RPi3, yellow is RPiZW" >}}
@@ -488,7 +488,7 @@ hot_ code paths.
 
 Here's the full results on a Raspberry Pi 3. The code used is in the
 [bcm283xsmoketest/](
-https://github.com/google/periph/tree/master/host/bcm283x/bcm283xsmoketest)
+https://github.com/periph/host/tree/main/bcm283x/bcm283xsmoketest)
 directory.
 
 ```
@@ -542,8 +542,8 @@ drop in the performance.
 - Same goes with variables in very hot path.
 
 If you need MHz range performance, run the GPIO benchmarks provided by
-[periph-smoketest](
-https://github.com/google/periph/tree/master/cmd/periph-smoketest) and use the
+[periph-smoketest](https://github.com/periph/cmd/tree/main/periph-smoketest)
+and use the
 choose the right algorithm for your project.
 
 ```go

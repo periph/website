@@ -165,7 +165,7 @@ use this as a learning experience.
     to expose this smoke test.
 - Usability
   - Provide a standalone executable in
-    [cmd/](https://github.com/google/periph/tree/master/cmd/) to expose the
+    [cmd/](https://github.com/periph/cmd/tree/main/) to expose the
     functionality.  It is acceptable to only expose a small subset of the
     functionality but _the tool must have purpose_.
   - Provide a `func Example()` along your test to describe basic usage of your

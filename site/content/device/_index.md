@@ -11,7 +11,7 @@ the board. Yet this is not useful if there is not at least a few device drivers
 included!
 
 You are encouraged to look at tools in
-[cmd/](https://github.com/google/periph/tree/master/cmd/). These can be used as
+[cmd/](https://github.com/periph/cmd/tree/main/). These can be used as
 the basis of your projects.
 
 To try the example for each device, put the code into a file named `example.go`

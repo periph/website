@@ -44,7 +44,7 @@ connect the LED device driver to the SPI bus handle.
 
 - Major version change (`v1.0` to `v2.0`) may introduce breaking changes.
 - Minor version change (`v1.1` to `v1.2`) will be backward compatible.
-- `master` may contain breaking changes, use
+- `main` may contain breaking changes, use
 	[dep](https://github.com/golang/dep).
 
 

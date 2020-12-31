@@ -106,9 +106,8 @@ Learn more [about GPIOs](/device/gpio/).
 ## Authors
 
 `periph` was initiated with ❤️️ and passion by [Marc-Antoine
-Ruel](https://github.com/maruel).  The full list of contributors is in
-[AUTHORS](https://github.com/google/periph/blob/master/AUTHORS) and
-[CONTRIBUTORS](https://github.com/google/periph/blob/master/CONTRIBUTORS).
+Ruel](https://github.com/maruel).  The full list of contributors is in AUTHORS
+and CONTRIBUTORS in each repository.
 
 
 ## Disclaimer

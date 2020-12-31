@@ -45,7 +45,7 @@ device support.
 
 The `periph` project uses [gohci](https://github.com/periph/gohci) for automated
 testing on devices. The devices run unit tests, `go vet` and
-[periph-smoketest](https://github.com/google/periph/tree/master/cmd/periph-smoketest).
+[periph-smoketest](https://github.com/periph/cmd/tree/periph-smoketest).
 
 **Every commit is tested on real hardware via
 [gohci](https://github.com/periph/gohci) workers.**
