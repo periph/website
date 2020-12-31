@@ -15,7 +15,7 @@
     <meta name="go-import" content="periph.io/x/{{$repoName}} git https://github.com/periph/{{$repoName}}" />
   {{- end -}}
   <noscript>
-    <meta name="destination" http-equiv="refresh" content="0; URL='https://godoc.org/periph.io{{$path}}'" />
+    <meta name="destination" http-equiv="refresh" content="0; URL='https://pkg.go.dev/periph.io{{$path}}'" />
   </noscript>
   {{/*
     Keep in sync with ../../layout/partials/html_head_ga.html.
@@ -29,7 +29,7 @@
   ga('send', 'pageview');
   </script>
 </head>
-<body>Redirecting to <a id=dest href="https://godoc.org/periph.io{{$path}}">https://godoc.org/periph.io{{$path}}</a>...</body>
+<body>Redirecting to <a id=dest href="https://pkg.go.dev/periph.io{{$path}}">https://pkg.go.dev/periph.io{{$path}}</a>...</body>
 <script>
 window.location.href = document.getElementById('dest').href + (window.location.search || '') + (window.location.hash || '');
 </script>
