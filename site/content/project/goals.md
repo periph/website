@@ -6,7 +6,7 @@ description = "Design goals"
 
 # Abstract
 
-Go developped a fairly large hardware hacker community in part because the
+Go developed a fairly large hardware hacker community in part because the
 language and its tooling have the following properties:
 
 - Native support in the tool chain to cross compile to ARM/Linux via `GOOS=linux
@@ -26,7 +26,7 @@ maintenance.
 
 # Goals
 
-`periph` was created as an anwer to specific goals:
+`periph` was created as an answer to specific goals:
 
 - Not more abstract than absolutely needed. Use concrete types whenever
   possible.

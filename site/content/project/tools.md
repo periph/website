@@ -9,15 +9,14 @@ description = "Overview for users who want ready-to-use tools"
 [periph.io/x/cmd](https://github.com/periph/cmd/tree/main/)
 contains executables usable as-is.
 
-The `periph` project doesn't release binaries at the moment, you are expected to
-build from sources.
+You are expected to build them from sources.
 
 
 ## Prerequisite
 
 First, make sure to have [Go installed](https://golang.org/dl/). If you don't
 mind using an old Go version, you can use `sudo apt install golang`. `periph`
-tries to stay compatible with Go 1.5.3.
+tries to stay compatible with Go 1.13.15.
 
 
 ## Installation
@@ -26,11 +25,6 @@ It is done via:
 
 ```bash
 go get -u periph.io/x/cmd/...
-```
-
-To use [periph.io/x/extra](https://periph.io/x/extra) provided packages, use:
-```
-go get -tags periphextra -u periph.io/x/cmd/...
 ```
 
 On many platforms (board/OS combination), many tools requires running as root

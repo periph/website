@@ -43,8 +43,9 @@ device support.
 
 # Testing
 
-The `periph` project uses [gohci](https://github.com/periph/gohci) for automated
-testing on devices. The devices run unit tests, `go vet` and
+The `periph` project uses both GitHub Actions for generic linux/macOS/Windows
+testing and [gohci](https://github.com/periph/gohci) for automated testing on
+devices. The devices run unit tests and
 [periph-smoketest](https://github.com/periph/cmd/tree/periph-smoketest).
 
 **Every commit is tested on real hardware via
@@ -53,7 +54,6 @@ testing on devices. The devices run unit tests, `go vet` and
 The fleet currently is currently hosted by [maruel](https://github.com/maruel):
 
 - [BeagleBone](/platform/beaglebone/) Green Wireless
-- [C.H.I.P.](/platform/chip/) running Debian headless image provided by NTC
 - [ODROID-C1+](/platform/odroid-c1/)
 - [Raspberry Pi 3](/platform/raspberrypi/) running [Raspbian Stretch
   Lite](https://www.raspberrypi.org/downloads/raspbian/)

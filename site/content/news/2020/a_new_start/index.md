@@ -9,7 +9,8 @@ tags = []
 
 The project is having a make over!
 
-Not only are we leaving 2020 behind, we are also leaving periph.io/x/periph behind.
+Not only are we leaving 2020 behind, we are also leaving periph.io/x/periph
+v3.6.7 behind.
 
 <!--more-->
 
@@ -36,7 +37,8 @@ The translation is:
 *   periph.io/x/**periph/experimental**/cmd/... ➡ periph.io/x/cmd/...
 *   periph.io/x/**periph** ➡ periph.io/x/conn/**v3/driver/driverreg**
 
-To simplify the transition, no API was changed.
+To simplify the transition, no API was changed. The translation is valid for
+v3.6.7.
 
 periph.io/x/periph will continue working but will not be updated anymore.
 
@@ -93,10 +95,6 @@ goals:
 * I used the occasion to use 'main' instead of 'master' as the primary branch.
 
 ## Follow ups
-
-The website will have all its documentation updated. Help is immensely
-appreciated! Click on "Edit this page" link on the top of any page to create a
-PR.
 
 extra will be migrated later. Periph prided itself from not having external
 dependencies but this will change (regress?). This should be easier to manage

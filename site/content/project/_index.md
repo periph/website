@@ -6,9 +6,9 @@ description = "Design, contribution, driver writing"
 
 # Background
 
-The main purpose of `periph` is to provide interfaces to assemble components
-to communicate with hardware peripherals. As such, it splits boards
-into their individual components: CPU, buses, physical headers, etc, instead of
+`periph` provides interfaces to assemble components to communicate with hardware
+peripherals. It is designed to be composable. As such, it splits boards into
+their individual components: CPU, buses, physical headers, etc, instead of
 representing each board as a whole object.
 
 
@@ -20,11 +20,17 @@ representing each board as a whole object.
 
 # Source Code
 
-The main periph code is located at
-[github.com/google/periph](https://github.com/google/periph)
+The main periph code is located in repositories at
+[github.com/periph](https://github.com/periph):
 
-Supplemental projects are located at
-[github.com/periph](https://github.com/periph). This includes:
+- [conn](https://github.com/periph/conn) defines the base interfaces.
+- [host](https://github.com/periph/host) implements the drivers for the
+  peripheral on the host, e.g. the SPI/I²C buses.
+- [devices](https://github.com/periph/devices) implements device drivers for
+  things connected over the buses.
+- [cmd](https://github.com/periph/cmd) contains ready-to-use executables.
+
+Supplemental projects are:
 
 - The [website](https://github.com/periph/website) itself, so you can easily
   submit a PR to improve the documentation.
@@ -54,88 +60,14 @@ They are the end goal, to do something functional. There are multiple subclasses
 of devices like sensors, output devices, etc.
 
 
-# Driver lifetime management
-
-Proper driver lifetime management is key to the success of this project. There
-must be clear expectations to add, update and remove drivers for the core
-project. As described in the [Risks section in Goals page](goals/#risks), poor
-drivers or high churn rate will destroy the value proposition.
-
-This is critical as drivers can be silently broken by seemingly innocuous
-changes. Because the testing of hardware drivers is significantly harder than
-that of software-only projects, there’s an inherent faith in the quality of the
-code that must be asserted.
-
-
-## Experimental
-
-Any driver can be requested to be added to the library under the
-[experimental/](https://github.com/google/periph/tree/master/experimental/)
-directory. The following process must be followed:
-
-- Create a driver out of tree an make it work.
-- Improve the driver so it meets a minimal quality bar under the promise of
-  being improved. See [Requirements](#requirements) for the extensive list.
-- Follow the [contributing/](contributing/) requirements.
-- Create a Pull Request for integration under
-  [experimental/](https://github.com/google/periph/tree/master/experimental/)
-  and respond to the code review.
-
-At this point, it is available for use to everyone but it is not loaded by
-default by [host.Init()](https://periph.io/x/host/v3#Init).
-
-There is no API compatibility guarantee for drivers under
-[experimental/](https://github.com/google/periph/tree/master/experimental/).
-
-
-## Stable
-
-A driver in
-[experimental/](https://github.com/google/periph/tree/master/experimental/) can
-be promoted to stable in either
-[devices/](https://github.com/google/periph/tree/master/devices/) or
-[host/](https://github.com/google/periph/tree/master/host/) as appropriate. The
-following process must be followed:
-
-- Declare at least one (or multiple) owners that are responsive to
-  feature requests and bug reports.
-  - There could be a threshold, > _TO BE DETERMINED_ lines, where more than one
-    owner is required.
-  - The owners commit to support the driver for the foreseeable future and
-    **promptly** do code reviews to keep the driver quality at the expected
-    standard.
-- There are multiple reports that the driver is functioning as expected.
-- If another driver exists for an intersecting class of devices, the other
-  driver must enter deprecation phase.
-- At this point the driver must maintain an API compatibility promise.
-
-
-## Deprecation
-
-A driver can be subsumed by a newer driver with a better core implementation or
-a new breaking API. The previous driver must be deprecated, moved back to
-[experimental/](https://github.com/google/periph/tree/master/experimental/) and
-announced to be deleted after _TO BE DETERMINED_ amount of time.
-
-
-## Contributing a new driver
-
-A new proposed driver must first be implemented out of tree and fit all the
-items in [Requirements](#requirements) listed below. It can then be proposed as
-[Experimental](#experimental), and finally requested to be promoted to
-[Stable](#stable).
-
-
 # Requirements
 
 All the code must fit the following requirements.
 
 **Fear not!** We know the list _is_ daunting but as you create your pull request
-to add something in
-[experimental/](https://github.com/google/periph/tree/master/experimental/)
-we'll happily guide you in the process to help improve the code to meet the
-expected standard. The end goal is to write *high quality maintainable code* and
-use this as a learning experience.
+to add something we'll happily guide you in the process to help improve the code
+to meet the expected standard. The end goal is to write *high quality
+maintainable code* and use this as a learning experience.
 
 - The code must be Go idiomatic.
   - Constructor `NewXXX()` returns an object of concrete type.
