@@ -2,9 +2,9 @@
   Implement redirection for periph.io/x/... URLs.
   This file is processed by Caddy, not Hugo!
   */}}
-{{- $path := .URL.Query.Get "path" -}}
+{{- $path := .Req.URL.Query.Get "path" -}}
 {{- if len $path | ne 0 -}}
-  {{- $repoName := index (.Split $path "/") 2 -}}
+  {{- $repoName := index (splitList $path "/") 2 -}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
