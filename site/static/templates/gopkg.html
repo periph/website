@@ -4,7 +4,7 @@
   */}}
 {{- $path := .Req.URL.Query.Get "path" -}}
 {{- if len $path | ne 0 -}}
-  {{- $repoName := index (splitList $path "/") 2 -}}
+  {{- $repoName := index (splitList "/" $path) 2 -}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
