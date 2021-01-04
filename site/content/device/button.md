@@ -55,8 +55,8 @@ func main() {
 ```
 
 This example uses basically no CPU: the
-[WaitForEdge()](https://pkg.go.dev/periph.io/x/conn/v3/gpio#PinIn) leverages
-the edge detection provided by the kernel, unlike other Go hardware libraries.
+[WaitForEdge()](https://periph.io/x/conn/v3/gpio#PinIn) leverages the edge
+detection provided by the kernel, unlike other Go hardware libraries.
 
 
 # Buying
