@@ -26,29 +26,12 @@ plug it into ethernet to get network connectivity.
 - The easiest way to get up and running is to plug in a monitor, keyboard, and mouse.  There are directions for
 headless setup that can be found [here](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-headless) and [here](https://www.jetsonhacks.com/2019/08/21/jetson-nano-headless-setup/)
 
-- A handy dev flow is to install GO directly on the Jetson Nano and compile and debug on target.  Delv has recently been ported to 64 bit ARM and you can debug directly on the target. 
 
-- Some nice instructions for installing GO on a Raspberry Pi are [here](https://www.jeremymorgan.com/tutorials/raspberry-pi/install-go-raspberry-pi/).  These same instructions are applicable to the Jetson Nano.  
-
-- Download the ARMv8 (arm64) version of GO as you are following the instructions above from  https://golang.org/dl/. Extra steps not covered in the linked instructions:
-  ```
-  Create a go directory with needed subdirectories
-  mkdir ~/go
-  mkdir ~/go/bin
-  mkdir ~/go/src
-  mkdir ~/go/pkg
-  Add the following to your ~/.profile file (in addition to the edits you made following the instructions above)
-  PATH=$PATH:$HOME/go/bin
-  This step is needed so all your GO tools will be in your path
-  ```
-- An easy way to install all the GO tools needed to is to install Vscode on the Jetson Nano and the GO extension.  The extension will offer to install all the needed GO add ons for you.  Click yes to all and it will install all the tools into your $HOME/go/bin directory.  If you don't go the Vscode route, then you can install the Delv debugger manually
-  ```
-  go get github.com/go-delve/delve/cmd/dlv
-  ```
 - To enable SPI check out this link [here](https://www.jetsonhacks.com/2020/05/04/spi-on-jetson-using-jetson-io/)
 # Support (tested on the bench manually)
 ## GPIO
 - Write tested and working
+- Read tested and working
 ## I2C
 - Read and write tested and working
 ## SPI 
@@ -60,7 +43,7 @@ headless setup that can be found [here](https://developer.nvidia.com/embedded/le
 
 There are multiple places to purchase a Jetson Nano Dev Kit:
 
-- Check out this link: https://developer.nvidia.com/buy-jetson?product=jetson_nano&location=US
+- Nvidia site: https://developer.nvidia.com/buy-jetson?product=jetson_nano&location=US
 
 _The periph authors do not endorse any specific seller. These are only provided
 for your convenience._
