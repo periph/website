@@ -6,10 +6,6 @@
 set -eu
 cd "$(dirname $0)"
 
-# Determine the docker image to use.
-TAG="$(cat ./tag)"
-IMAGE="marcaruel/hugo-tidy:${TAG}"
-
 echo "Tips:"
 echo " - Use --buildDrafts to render drafts."
 
@@ -17,6 +13,10 @@ echo " - Use --buildDrafts to render drafts."
 # expected.
 if [ $# == 0 ]; then
   if (which docker > /dev/null); then
+    # Determine the docker image to use.
+    TAG="$(cat ./tag)"
+    IMAGE="marcaruel/hugo-tidy:${TAG}"
+
     echo "Using hugo-tidy"
     # See https://github.com/maruel/hugo-tidy/ for more info.
     # First, pull the image only if missing.
