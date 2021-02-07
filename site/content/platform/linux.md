@@ -24,6 +24,19 @@ It is possible to change the ACL on the _sysfs files_ via _udev_ rules to enable
 running without root level. The actual rules are distro specific. That said,
 using memory mapped GPIO registers usually require root anyway.
 
+## SPI
+
+On Linux, SPI support uses the [spidev](https://www.kernel.org/doc/html/latest/spi/spidev.html) kernel driver.
+
+On embedded boards running Linux, SPI ports might not be enabled by default.
+Check for `/dev/spidev*.*` nodes.
+
+If there aren't, you might need to add a [Device Tree Overlay](https://www.kernel.org/doc/html/latest/devicetree/overlay-notes.html)
+enabling `spidev`.
+
+An example for the [Pine A64(+) Board](https://www.pine64.org/devices/single-board-computers/pine-a64/)
+can be found [here](https://forum.pine64.org/showthread.php?tid=3145&pid=35406#pid35406).
+
 
 # cgo
 
