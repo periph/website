@@ -26,7 +26,6 @@ plug it into ethernet to get network connectivity.
 - The easiest way to get up and running is to plug in a monitor, keyboard, and mouse.  There are directions for
 headless setup that can be found [here](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup-headless) and [here](https://www.jetsonhacks.com/2019/08/21/jetson-nano-headless-setup/)
 
-
 - To enable SPI check out this link [here](https://www.jetsonhacks.com/2020/05/04/spi-on-jetson-using-jetson-io/)
 # Support (tested on the bench manually)
 ## GPIO
