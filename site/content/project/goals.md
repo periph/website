@@ -123,9 +123,9 @@ The project was designed with a very clear vision:
 
 # Risks
 
-The risks below are being addressed via a strong commitment to [driver lifetime
-management](../#driver-lifetime-management) and having a high quality bar via an
-explicit list of [requirements](../#requirements).
+The risks below are being addressed via Go modules versioning, continuous
+integration testing and having a high quality bar via an explicit list of
+[requirements](../#requirements).
 
 The enablers (boards, CPU, buses) is what will break or make this project.
 Nobody want to do them but they are needed. You need a large base of enablers so

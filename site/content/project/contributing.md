@@ -36,9 +36,8 @@ is fine to start device drivers in your own repository.
 
 All submissions, including submissions by project members, require abiding to
 high code quality. See [Requirements](../#requirements) for the
-expectations and take a look at the [driver lifetime
-management](../#driver-lifetime-management) to learn how to contribute new
-device support.
+expectations. Contributions need to pass the GitHub actions checks and must not
+introduce flaky tests.
 
 
 # Testing
