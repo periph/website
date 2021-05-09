@@ -30,10 +30,6 @@ If you are unable to read tags, a bad power supply could be one reason.
 - VCC is connected to 3.3 V
 - GND to ground
 
-
-![boardimage](/img/mfrc522)
-
-
 ```go
 package main
 
