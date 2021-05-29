@@ -14,7 +14,8 @@ A good starter device is the [FTDI](/device/ftdi/) ones.
 
 # cgo
 
-Some drivers in [periph.io/x/extra](https://periph.io/x/extra) requires `cgo`:
+Some drivers in [periph.io/x/host/v3](https://periph.io/x/host/v3) requires
+`cgo`:
 
 1. Install [Homebrew](https://brew.sh)
    - See below how to install it without root privilege.
@@ -27,7 +28,7 @@ Some drivers in [periph.io/x/extra](https://periph.io/x/extra) requires `cgo`:
 Optionally install homebrew without root with the following steps:
 
     mkdir -p ~/homebrew
-    curl -sL https://github.com/Homebrew/brew/tarball/1.6.9 | tar xz --strip 1 -C ~/homebrew
+    curl -sL https://github.com/Homebrew/brew/tarball/3.1.9 | tar xz --strip 1 -C ~/homebrew
     export PATH="$PATH:$HOME/homebrew/bin"
     echo 'export PATH="$PATH:$HOME/homebrew/bin"' >> ~/.bash_profile
     brew upgrade

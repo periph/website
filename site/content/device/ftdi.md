@@ -8,9 +8,10 @@ picture = "/img/ftdi.jpg"
 
 # Overview
 
-Package [d2xx](https://periph.io/x/extra/hostextra/d2xx) provides support for
-FT232H/FT232R devices via the [Future Technology "D2XX" driver](
-https://ftdichip.com/drivers/d2xx-drivers/).
+Package [ftdi](https://periph.io/x/host/v3/ftdi) provides support for
+FT232H/FT232R/FT2232H devices via the [Future Technology "D2XX" driver](
+https://ftdichip.com/drivers/d2xx-drivers/) with minimal configuration on your
+side.
 
 The driver implements:
 
@@ -43,7 +44,7 @@ sudo rmmod ftdi_sio usbserial
 Run these commands **before** connecting your FTDI device:
 
 ```
-cd $GOPATH/src/periph.io/x/extra/hostextra/d2xx
+curl https://raw.githubusercontent.com/periph/host/main/ftdi/debian/98-ft232h.rules > 98-ft232h.rules
 sudo cp debian/98-ft232h.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 sudo udevadm trigger --verbose
@@ -100,10 +101,10 @@ import (
     "fmt"
     "log"
 
-    "periph.io/x/extra/hostextra/d2xx"
     "periph.io/x/conn/v3/physic"
     "periph.io/x/conn/v3/spi"
     "periph.io/x/host/v3"
+    "periph.io/x/host/v3/ftdi"
 )
 
 func main() {
@@ -111,13 +112,13 @@ func main() {
         log.Fatal(err)
     }
 
-    all := d2xx.All()
+    all := ftdi.All()
     if len(all) == 0 {
         log.Fatal("found no FTDI device on the USB bus")
     }
 
     // Use channel A.
-    ft232h, ok := all[0].(*d2xx.FT232H)
+    ft232h, ok := all[0].(*ftdi.FT232H)
     if !ok {
         log.Fatal("not FTDI device on the USB bus")
     }

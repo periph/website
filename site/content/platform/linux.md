@@ -40,7 +40,8 @@ can be found [here](https://forum.pine64.org/showthread.php?tid=3145&pid=35406#p
 
 # cgo
 
-Some drivers in [periph.io/x/extra](https://periph.io/x/extra) requires `cgo`.
+Some drivers in [periph.io/x/host/v3](https://periph.io/x/host/v3) requires
+`cgo`.
 
 
 On Debian, including Raspbian and Ubuntu, you need to install pkg-config to
