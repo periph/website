@@ -259,7 +259,7 @@ As the most popular micro-computer, Raspberry Pis can be bought at many places.
 - Amazon:
   [amazon.com/s?field-keywords=raspberry](https://amazon.com/s?field-keywords=raspberry)
   (quality will vary among resellers)
-- Newark: [newark.com/raspberry](http://newark.com/raspberry)
+- Newark: [newark.com/raspberry](https://www.newark.com/buy-raspberry-pi)
 - SeeedStudio:
   [seeedstudio.com/s/raspberry.html](https://seeedstudio.com/s/raspberry.html)
 

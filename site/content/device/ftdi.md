@@ -10,7 +10,7 @@ picture = "/img/ftdi.jpg"
 
 Package [d2xx](https://periph.io/x/extra/hostextra/d2xx) provides support for
 FT232H/FT232R devices via the [Future Technology "D2XX" driver](
-http://www.ftdichip.com/Drivers/D2XX.htm).
+https://ftdichip.com/drivers/d2xx-drivers/).
 
 The driver implements:
 
@@ -73,9 +73,9 @@ sudo kextunload -b com.apple.driver.AppleUSBFTDI
 This permanently disable Apple's FTDI driver.
 
 1. Download
-   [D2xxHelper](http://www.ftdichip.com/Drivers/D2XX/MacOSX/D2xxHelper_v2.0.0.pkg).
+   [D2xxHelper](https://www.ftdichip.com/Drivers/D2XX/MacOSX/D2xxHelper_v2.0.0.pkg).
    - It is available at
-     [ftdichip.com/Drivers/D2XX.htm](http://www.ftdichip.com/Drivers/D2XX.htm).
+     [ftdichip.com/drivers/d2xx-drivers/](https://ftdichip.com/drivers/d2xx-drivers/).
 1. Run `D2xxHelper_xxx.pkg` you just downloaded.
 1. Reboot.
 
@@ -86,7 +86,7 @@ This permanently disable Apple's FTDI driver.
 1. Windows Update should install the FTDI D2XX driver automatically. Wait for it
    to occur.
    - If this fails, install the driver from
-     [ftdichip.com/Drivers/D2XX.htm](http://www.ftdichip.com/Drivers/D2XX.htm).
+     [ftdichip.com/drivers/d2xx-drivers/](https://ftdichip.com/drivers/d2xx-drivers/).
 
 
 # Example

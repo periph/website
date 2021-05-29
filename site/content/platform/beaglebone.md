@@ -14,7 +14,7 @@ or AM5728 Cortex-A16 CPUs.
 # Support
 
 - BeagleBone Black/Green both non-wireless and Wireless are fully supported.
-- Tested on recent [Debian Stretch IoT](http://beagleboard.org/latest-images).
+- Tested on recent [Debian Stretch IoT](https://beagleboard.org/latest-images).
 
 
 ## Drivers
@@ -38,7 +38,7 @@ models with eMMC. This enables your BeagleBone to connect to your wireless
 network, disable unnecessary services and reduces 2.4GHz interfere for more
 efficient operation.
 
-- Install the latest Debian image from http://beagleboard.org/latest-images to
+- Install the latest Debian image from https://beagleboard.org/latest-images to
   a microSD card.
 - Copy your ssh public key from `~/.ssh/id_ed25519.pub` to `/boot`. If you don't
   know what it means, skip this step.
@@ -146,7 +146,7 @@ SDCard is not required.
 - Amazon:
   [amazon.com/s?field-keywords=beaglebone](https://amazon.com/s?field-keywords=beaglebone)
   (quality will vary among resellers)
-- Newark: [newark.com/beaglebone](http://newark.com/beaglebone)
+- Newark: [newark.com/beaglebone](https://www.newark.com/b/beagleboard)
 - SeeedStudio:
   [seeedstudio.com/s/beaglebone.html](https://seeedstudio.com/s/beaglebone.html)
 - Various resellers: [beagleboard.org/boards](https://beagleboard.org/boards)

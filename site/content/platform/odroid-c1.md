@@ -22,7 +22,7 @@ The ODROID-C1, ODROID-C1+, and ODROID-C0 boards are supported when running a
 linux based distribution.
 
 - `periph` is tested with a minimal (head-less) [Ubuntu 16.04
-  build](http://odroid.in/ubuntu_16.04lts/)
+  build](https://odroid.in/ubuntu_16.04lts/)
 
 
 ## Drivers
@@ -38,12 +38,12 @@ linux based distribution.
 # Tips and tricks
 
 The ODROID-C1+ is described on Hardkernel's web site:
-[ODroid-C1+](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G143703355573&tab_idx=2).
+[ODroid-C1+](https://www.hardkernel.com/shop/odroid-c1/).
 The best reference for actually using the various I/O buses is the wiki:
-[Hardware wiki](http://odroid.com/dokuwiki/doku.php?id=en:c1_hardware).
+[Hardware wiki](https://odroid.com/dokuwiki/doku.php?id=en:c1_hardware).
 
 The drivers and some of their peculiarities are described in the Ubuntu section
-of this [wiki page](http://odroid.com/dokuwiki/doku.php?id=en:odroid-c1#ubuntu).
+of this [wiki page](https://odroid.com/dokuwiki/doku.php?id=en:odroid-c1#ubuntu).
 
 
 # Configuration
@@ -86,7 +86,7 @@ w1-gpio`
 
 # Buying
 
-- The ODROID-C1 is directly distributed by [HardKernel](http://hardkernel.com).
+- The ODROID-C1 is directly distributed by [HardKernel](https://hardkernel.com).
 
 _The periph authors do not endorse any specific seller. These are only provided
 for your convenience._

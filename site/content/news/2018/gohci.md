@@ -78,4 +78,4 @@ documentation](https://github.com/periph/gohci/blob/master/CONFIG.md).
 
 Comments? Join the [periph.io slack
 channel](https://gophers.slack.com/messages/periph/). Need an account? [Get an
-invite](http://invite.slack.golangbridge.org/).
+invite](https://invite.slack.golangbridge.org/).

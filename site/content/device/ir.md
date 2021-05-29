@@ -7,7 +7,7 @@ picture = "/img/ir.jpg"
 # Overview
 
 [lirc](https://periph.io/x/devices/v3/lirc) provides support to interact
-with the [lircd service](http://www.lirc.org/). This is a linux only driver.
+with the [lircd service](https://www.lirc.org/). This is a linux only driver.
 
 
 # Configuration
@@ -15,7 +15,7 @@ with the [lircd service](http://www.lirc.org/). This is a linux only driver.
 lircd MUST be configured via TWO files: `/etc/lirc/hardware.conf` and
 `/etc/lirc/lircd.conf`.
 
-See http://www.lirc.org/ for more details about daemon configuration.
+See https://www.lirc.org/ for more details about daemon configuration.
 
 
 ## /etc/lirc/hardware.conf
@@ -30,7 +30,7 @@ This file contains all the known IR codes for the remotes you plan to use
 and convert into key codes. This means you need to "train" lircd with the
 remotes you plan to use.
 
-Keys are listed at http://www.lirc.org/api-docs/html/input__map_8inc_source.html
+Keys are listed at https://www.lirc.org/api-docs/html/input__map_8inc_source.html
 
 # Debugging
 
@@ -64,7 +64,7 @@ keypresses. Some boards come with one IR device directly on it.
 
 _Purpose:_ display IR remote keys.
 
-This example uses lirc (http://www.lirc.org/). This assumes you installed lirc
+This example uses lirc (https://www.lirc.org/). This assumes you installed lirc
 and configured it. See [devices/lirc](https://periph.io/x/devices/v3/lirc)
 for more information.
 
