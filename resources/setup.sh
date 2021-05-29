@@ -70,7 +70,7 @@ if [ ! -d periph.io/www ]; then
   cd ./periph.io
   git fetch
   git reset --hard
-  git checkout origin/master --force
+  git checkout origin/main --force
   docker run --rm -u 1000:1002 -v "$(realpath .):/data" "marcaruel/hugo-tidy:$(cat tag)"
   cd -
 fi

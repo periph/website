@@ -28,7 +28,7 @@ Use one of:
   generates the production website.
 
 The [github webhook
-handler](https://github.com/periph/website/blob/master/resources/periph.io.conf)
+handler](https://github.com/periph/website/blob/main/resources/periph.io.conf)
 regenerates the web site automatically whenever a new commit happens.
 
 

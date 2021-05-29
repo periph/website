@@ -28,7 +28,7 @@ tags = []
 notruncate = false
 +++
 
-[Version %(version_num)s](https://github.com/google/periph/releases/tag/%(version)s) is
+[Version %(version_num)s](https://github.com/periph/host/releases/tag/%(version)s) is
 released!
 
 This is a feature and bug fix release.
@@ -36,7 +36,7 @@ This is a feature and bug fix release.
 <!--more-->
 
 The new release contains [%(num_changes)d
-changes](https://github.com/google/periph/compare/%(prev_version)s...%(version)s)
+changes](https://github.com/periph/host/compare/%(prev_version)s...%(version)s)
 from %(num_authors)d contributors for a diff stat of `%(diff_stat)s`.
 
 
@@ -67,7 +67,7 @@ process and the [gohci test lab](https://github.com/periph/gohci).
 ## Found bugs? Have questions?
 
 - File a report at
-  [github.com/google/periph/issues](https://github.com/google/periph/issues).
+  [github.com/periph/host/issues](https://github.com/periph/host/issues).
 - Join the [periph.io slack channel](https://gophers.slack.com/messages/periph/)
   to chat with us!
   - Need an account? [Get an invite
@@ -105,13 +105,13 @@ def gitlines(cmd, *args, **kwargs):
 
 
 def select_range(repo):
-  master = gitlines(['rev-parse', 'origin/master'], cwd=repo)[0]
+  main = gitlines(['rev-parse', 'origin/main'], cwd=repo)[0]
   versions = gitlines(['tag'], cwd=repo)
   version = versions[-1]
   version_hash = gitlines(['rev-parse', version], cwd=repo)[0]
-  if master != version_hash:
-    logging.warning('origin/master doesn\'t match %s; diffing this', version)
-    return master, version
+  if main != version_hash:
+    logging.warning('origin/main doesn\'t match %s; diffing this', version)
+    return main, version
 
   prev_version = versions[-2]
   return version, prev_version
