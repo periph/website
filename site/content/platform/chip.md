@@ -21,12 +21,17 @@ functionality is supported:
 
 Sadly NextThing Co [shut down its
 activities](https://hackaday.com/2018/04/03/is-this-the-end-for-the-c-h-i-p/).
+It had an awesome web flasher so it's really too bad.
 
-The main drawback is that the web flasher doesn't work anymore, and the server
-to host the binary files is down.
-
-http://www.chip-community.org/ and https://github.com/NextThingCo are still good
-sources.
+- [Reddit /r/ChipCommunity](https://www.reddit.com/r/ChipCommunity/) is still
+  active.
+- GitHub:
+  - https://github.com/chip-community contains slightly more recent content.
+  - https://github.com/NextThingCo contains original content.
+- https://gist.github.com/verticalgrain/deae2821213a891747e08e2d6492808a may be
+  of help to try flashing.
+- chip-community.org used to be volunteer based community but as of 2021 the
+  server is offline.
 
 
 # Support
@@ -34,11 +39,10 @@ sources.
 The NextThing Co's C.H.I.P. board is supported using sysfs drivers as well as
 using high performance memory-mapped I/O for gpio pins.
 
-- `periph` is tested with NTC provided 4.4.13+ kernel Debian It should work with
-  any flavor, [file a bug](https://github.com/google/periph/issues) otherwise.
-- C.H.I.P. is fully supported
-- C.H.I.P. Pro and PocketCHIP specific headers are not defined, just use the CPU
-  gpio number instead.
+- `periph` was tested with NTC provided 4.4.13+ kernel Debian.
+- C.H.I.P. is not officially supported anymore.
+- C.H.I.P. Pro and PocketCHIP never had specific headers defined, just use the
+  CPU gpio number instead.
 
 
 ## Drivers
@@ -51,14 +55,6 @@ using high performance memory-mapped I/O for gpio pins.
   headers.
 - sysfs driver lives in
   [periph.io/x/host/v3/sysfs](https://periph.io/x/host/v3/sysfs).
-
-
-# Configuration
-
-For in-depth information about the hardware the best reference is in the
-[community wiki](http://www.chip-community.org/index.php/Hardware_Information),
-which also has a section on [building kernels and device
-drivers](http://www.chip-community.org/index.php/Kernel_Hacking).
 
 
 ## GPIO
