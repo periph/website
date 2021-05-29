@@ -54,7 +54,7 @@ The fleet currently is currently hosted by [maruel](https://github.com/maruel):
 
 - [BeagleBone](/platform/beaglebone/) Green Wireless
 - [ODROID-C1+](/platform/odroid-c1/)
-- [Raspberry Pi 3](/platform/raspberrypi/) running [Raspbian Stretch
+- [Raspberry Pi 3](/platform/raspberrypi/) running [Raspbian Buster 
   Lite](https://www.raspberrypi.org/downloads/raspbian/)
 - [macOS](/platform/macos/) laptop
 - [Windows 10](/platform/windows/) laptop
