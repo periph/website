@@ -16,7 +16,9 @@ cat > site/content/news/$YEAR/$1/index.md <<EOF
 +++
 date = "$(date --iso-8601)T00:00:00"
 title = "$1"
-summary = "TODO"
+description = "TODO"
+author = "Marc-Antoine Ruel"
+authorlink = "https://maruel.ca"
 tags = []
 draft = true
 +++
