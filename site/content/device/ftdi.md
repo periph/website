@@ -45,7 +45,7 @@ Run these commands **before** connecting your FTDI device:
 
 ```
 curl https://raw.githubusercontent.com/periph/host/main/ftdi/debian/98-ft232h.rules > 98-ft232h.rules
-sudo cp debian/98-ft232h.rules /etc/udev/rules.d/
+sudo cp 98-ft232h.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 sudo udevadm trigger --verbose
 ```
