@@ -1,6 +1,6 @@
 +++
 date = "2022-05-29T00:00:00"
-title = "Removal"
+title = "Cleaning up the old cruft to align on the future"
 description = "Removing periph.io/x/periph"
 author = "Marc-Antoine Ruel"
 authorlink = "https://maruel.ca"
