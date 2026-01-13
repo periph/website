@@ -4,13 +4,15 @@
 baseURL = "https://periph.io/"
 canonifyurls = false
 
-
-# Syntax coloring.
-pygmentsuseclasses = true
-PygmentsCodeFences = true
-
-
 disableKinds = ["RSS"]
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    useClasses = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
   image = "https://periph.io/img/periph-mascot-fb.png"

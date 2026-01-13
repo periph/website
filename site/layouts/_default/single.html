@@ -54,7 +54,7 @@
         {{ $page := .Page }}
         {{ range $section := $page.Site.Sections }}
           {{ if hasPrefix $page.RelPermalink $section.RelPermalink }}
-            {{ $pages := (where .Site.AllRegularPages "Section" $section.Section).ByWeight.Reverse }}
+            {{ $pages := (where .Site.RegularPages "Section" $section.Section).ByWeight.Reverse }}
 
             {{ $prev := $pages.Prev $page }}
             {{ $next := $pages.Next $page }}

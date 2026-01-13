@@ -12,7 +12,7 @@
           <div class="column">
             {{ .Content }}
             <ul>
-              {{ range .Data.Pages.ByWeight }}
+              {{ range .Pages.ByWeight }}
               <li class="table-item table-item-large">
                 <a href="{{.RelPermalink}}">
                   <img src="{{.Params.picture}}" />
