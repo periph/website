@@ -28,7 +28,7 @@ query the camera state, trigger a calibration (FFC) or capture an image.
 # Example
 
 Please [edit this page on
-GitHub](https://github.com/periph/website/edit/master/site/content/device/lepton.md)
+GitHub](https://github.com/periph/website/edit/master/content/device/lepton.md)
 to complete the example. Thanks!
 
 ```go

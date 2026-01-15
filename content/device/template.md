@@ -1,7 +1,7 @@
 +++
 title = "Name of the device"
 description = "Slightly longer description"
-# Be sure to include a relevant picture under /site/static/img/.
+# Be sure to include a relevant picture under /static/img/.
 # Please use imagemagick to recompress the image with:
 #   convert -strip -interlace Plane -gaussian-blur 0.05 -quality 85% -resize 256x256 source.jpg final.jpg
 picture = "/img/picture.jpg"
@@ -34,7 +34,7 @@ need one).
 # Example
 
 Please [edit this page on
-GitHub](https://github.com/periph/website/edit/master/site/content/device/template.md)
+GitHub](https://github.com/periph/website/edit/master/content/device/template.md)
 to complete the example. Thanks!
 
 ```go

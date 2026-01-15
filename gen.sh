@@ -9,23 +9,18 @@ cd "$(dirname $0)"
 echo "Tips:"
 echo " - Use --buildDrafts to render drafts."
 
-if (which hugo > /dev/null); then
-  echo "Using hugo"
-  hugo -s site -d ../www --buildFuture "$@"
-  rm -rf www.new
-  # The docker image also does the following:
-  #   minify -r -o www.new www.new
-  #   find www.new -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o
-  #     -name '*.xml' -o -name '*.svg' \) \
-  #     -exec /bin/sh -c 'gzip -v -f -9 -c "$1" > "$1.gz"' /bin/sh {} \;
-  #   find www.new -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' -o
-  #     -name '*.xml' -o -name '*.svg' \) \
-  #     -exec /bin/sh -c '/usr/local/bin/brotli -q 11 -o "$1.br" "$1"' /bin/sh {} \;
-else
-	echo "Please run ./rsc/install_hugo.py"
+HUGO=hugo
+if [ -x ./hugo ]; then
+  HUGO=./hugo
+elif ! which hugo > /dev/null; then
+  echo "Please run ./rsc/install_hugo.py"
   exit 1
 fi
+
+echo "Using $HUGO"
+$HUGO --buildFuture "$@"
+
 echo ""
 echo "  go install github.com/maruel/serve-dir@latest"
-echo "  serve-dir -port=3131 -root=www"
+echo "  serve-dir -port=3131 -root=public"
 echo "  then visit http://localhost:3131/"

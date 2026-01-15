@@ -31,11 +31,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
-        run: ./hugo --minify --source site
+        run: ./hugo --minify
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./site/public
+          path: ./public
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

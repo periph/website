@@ -225,7 +225,7 @@ def main():
     'version': version,
     'version_num': version[1:],
   }
-  p = os.path.join('site', 'content', 'news', str(now.year), '%s.md' % version)
+  p = os.path.join('content', 'news', str(now.year), '%s.md' % version)
   d = os.path.dirname(p)
   if not os.path.isdir(d):
     os.makedirs(d)

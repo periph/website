@@ -2,7 +2,7 @@
 
 This repository contains all the code necessary to generate https://periph.io.
 
-The web site content is located at [site/content/](site/content/). Please send
+The web site content is located at [content/](content/). Please send
 PR as per [contributing guidelines](https://periph.io/project/contributing/).
 
 

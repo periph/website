@@ -10,10 +10,13 @@ echo "Tips:"
 echo " - Use --bind=0.0.0.0 to be accessible on the local network."
 echo " - Use --buildDrafts to render drafts."
 
-if (which hugo > /dev/null); then
-  echo "Using hugo"
-  hugo server -s site -d ../www --buildFuture -b $(hostname) --port 3131 "$@"
-else
-	echo "Please run ./rsc/install_hugo.py"
+HUGO=hugo
+if [ -x ./hugo ]; then
+  HUGO=./hugo
+elif ! which hugo > /dev/null; then
+  echo "Please run ./rsc/install_hugo.py"
   exit 1
 fi
+
+echo "Using $HUGO"
+$HUGO server --buildFuture -b $(hostname) --port 3131 "$@"

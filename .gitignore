@@ -2,4 +2,5 @@
 /hugo.exe
 /rsc/cwebp
 /rsc/gif2webp
-/site/public
+/public
+/.hugo_build.lock
