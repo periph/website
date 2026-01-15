@@ -1,8 +1,5 @@
 /hugo
 /hugo.exe
-/resources/cwebp
-/resources/gif2webp
+/rsc/cwebp
+/rsc/gif2webp
 /site/public
-/www
-/www.new
-/www.old

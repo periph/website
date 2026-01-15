@@ -9,24 +9,6 @@ cd "$(dirname $0)"
 echo "Tips:"
 echo " - Use --buildDrafts to render drafts."
 
-# Only use docker if not passing a flag, otherwise the container doesn't work as
-# expected.
-if [ $# == 0 ]; then
-  if (which docker > /dev/null); then
-    # Determine the docker image to use.
-    TAG="$(cat ./tag)"
-    IMAGE="marcaruel/hugo-tidy:${TAG}"
-
-    echo "Using hugo-tidy"
-    # See https://github.com/maruel/hugo-tidy/ for more info.
-    # First, pull the image only if missing.
-    [ ! -z $(docker images -q "${IMAGE}") ] || docker pull "${IMAGE}"
-    # Run it.
-    docker run -t -i --rm -u $(id -u):$(id -g) -v $(pwd):/data "${IMAGE}"
-    exit 0
-  fi
-fi
-
 if (which hugo > /dev/null); then
   echo "Using hugo"
   hugo -s site -d ../www --buildFuture "$@"
@@ -40,13 +22,10 @@ if (which hugo > /dev/null); then
   #     -name '*.xml' -o -name '*.svg' \) \
   #     -exec /bin/sh -c '/usr/local/bin/brotli -q 11 -o "$1.br" "$1"' /bin/sh {} \;
 else
-  echo "Please either:"
-  echo " - setup docker"
-  echo " - install hugo from https://gohugo.io"
-  echo " - go get github.com/gohugoio/hugo"
+	echo "Please run ./rsc/install_hugo.py"
   exit 1
 fi
 echo ""
-echo "  go get github.com/maruel/serve-dir"
+echo "  go install github.com/maruel/serve-dir@latest"
 echo "  serve-dir -port=3131 -root=www"
 echo "  then visit http://localhost:3131/"

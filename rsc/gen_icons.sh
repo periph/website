@@ -35,6 +35,6 @@ mv favicon.png favicon.ico
 ## gif2web and cwebp are silly, they may generate *significantly* larger files.
 ## TODO(maruel): Run multiple times with different flags and figure out the best
 ## output. Sometimes it's with -lossless, sometimes without.
-#find . -name '*.gif' -printf '  %p\n' -exec ../../resources/gif2webp -quiet -mixed {} -o {}.webp \;
-#find . -name '*.png' -printf '  %p\n' -exec ../../resources/cwebp -quiet -lossless {} -o {}.webp \;
-#find . -name '*.jpg' -printf '  %p\n' -exec ../../resources/cwebp -quiet {} -o {}.webp \;
+#find . -name '*.gif' -printf '  %p\n' -exec ../../rsc/gif2webp -quiet -mixed {} -o {}.webp \;
+#find . -name '*.png' -printf '  %p\n' -exec ../../rsc/cwebp -quiet -lossless {} -o {}.webp \;
+#find . -name '*.jpg' -printf '  %p\n' -exec ../../rsc/cwebp -quiet {} -o {}.webp \;
