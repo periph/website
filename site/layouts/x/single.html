@@ -1,0 +1,28 @@
+{{- $repo := .File.BaseFileName -}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{- if eq $repo "periph" -}}
+    <meta name="go-import" content="periph.io/x/{{$repo}} git https://github.com/google/{{$repo}}">
+  {{- else -}}
+    <meta name="go-import" content="periph.io/x/{{$repo}} git https://github.com/periph/{{$repo}}">
+  {{- end -}}
+  <meta http-equiv="refresh" content="0; url=https://pkg.go.dev/periph.io/x/{{$repo}}">
+  <title>Redirecting to pkg.go.dev/periph.io/x/{{$repo}}</title>
+</head>
+<body>
+  <p>Redirecting to <a href="https://pkg.go.dev/periph.io/x/{{$repo}}">pkg.go.dev/periph.io/x/{{$repo}}</a>...</p>
+  <script>
+    // Redirect to pkg.go.dev
+    var dest = "https://pkg.go.dev/periph.io/x/{{$repo}}";
+    
+    // If the server supports serving this file for subpaths (e.g. via 404 fallback or rewrite),
+    // we could try to append the rest of the path. 
+    // For now, we redirect to the package root on pkg.go.dev.
+    
+    window.location.href = dest;
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 - Page Not Found</title>
+
+  <!-- Go-import tags for all periph.io repos. 
+       When go get requests a subpackage that doesn't exist statically (like /x/conn/v3/gpio),
+       it will receive this 404 page and find the correct repository root. -->
+  <meta name="go-import" content="periph.io/x/periph git https://github.com/google/periph">
+  <meta name="go-import" content="periph.io/x/conn git https://github.com/periph/conn">
+  <meta name="go-import" content="periph.io/x/host git https://github.com/periph/host">
+  <meta name="go-import" content="periph.io/x/devices git https://github.com/periph/devices">
+  <meta name="go-import" content="periph.io/x/cmd git https://github.com/periph/cmd">
+  <meta name="go-import" content="periph.io/x/bootstrap git https://github.com/periph/bootstrap">
+  <meta name="go-import" content="periph.io/x/gohci git https://github.com/periph/gohci">
+  <meta name="go-import" content="periph.io/x/website git https://github.com/periph/website">
+  <meta name="go-import" content="periph.io/x/extra git https://github.com/periph/extra">
+  <meta name="go-import" content="periph.io/x/periph-tester git https://github.com/periph/periph-tester">
+
+  <script>
+    // Intelligent redirect for human visitors
+    (function() {
+      var path = window.location.pathname;
+      if (path.startsWith("/x/")) {
+        // Try to extract the repo name: /x/repo/subpath -> repo
+        var parts = path.split("/");
+        if (parts.length >= 3) {
+          var repo = parts[2];
+          // Redirect to the documentation for this specific repo/package
+          window.location.href = "https://pkg.go.dev/periph.io" + path + (window.location.search || "");
+          return;
+        }
+      }
+      // For everything else, redirect to the home page after a short delay
+      // Or just stay here if you prefer a standard 404 message.
+      // window.location.href = "/"; 
+    })();
+  </script>
+</head>
+<body>
+  <div style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+    <h1>404</h1>
+    <p>The page you are looking for doesn't exist.</p>
+    <p>Redirecting to <a id="fallback" href="/">periph.io</a>...</p>
+  </div>
+  <script>
+    // If the immediate redirect above didn't trigger, 
+    // we provide a link back to the homepage.
+    var path = window.location.pathname;
+    if (path.startsWith("/x/")) {
+      var link = document.getElementById("fallback");
+      link.href = "https://pkg.go.dev/periph.io" + path;
+      link.innerText = "pkg.go.dev/periph.io" + path;
+    }
+  </script>
+</body>
+</html>
